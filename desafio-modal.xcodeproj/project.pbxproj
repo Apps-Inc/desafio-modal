@@ -13,6 +13,8 @@
 		0E12AF57275E647600B67984 /* DataMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12AF56275E647600B67984 /* DataMockable.swift */; };
 		0E12AF5A275E64B600B67984 /* RepositoriesResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12AF59275E64B600B67984 /* RepositoriesResponseDto.swift */; };
 		0E12AF5C275E64D400B67984 /* RepositoryResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12AF5B275E64D400B67984 /* RepositoryResponseDto.swift */; };
+		0E12AF5E275E8F1E00B67984 /* RepositoryDetailsResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12AF5D275E8F1E00B67984 /* RepositoryDetailsResponseDto.swift */; };
+		0E12AF60275E93FD00B67984 /* repository-details-response-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E12AF5F275E93FD00B67984 /* repository-details-response-mock.json */; };
 		0EF776CB275E296C00F0B742 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CA275E296C00F0B742 /* AppDelegate.swift */; };
 		0EF776CD275E296C00F0B742 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CC275E296C00F0B742 /* SceneDelegate.swift */; };
 		0EF776CF275E296C00F0B742 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CE275E296C00F0B742 /* ViewController.swift */; };
@@ -47,6 +49,8 @@
 		0E12AF56275E647600B67984 /* DataMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMockable.swift; sourceTree = "<group>"; };
 		0E12AF59275E64B600B67984 /* RepositoriesResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesResponseDto.swift; sourceTree = "<group>"; };
 		0E12AF5B275E64D400B67984 /* RepositoryResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResponseDto.swift; sourceTree = "<group>"; };
+		0E12AF5D275E8F1E00B67984 /* RepositoryDetailsResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsResponseDto.swift; sourceTree = "<group>"; };
+		0E12AF5F275E93FD00B67984 /* repository-details-response-mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "repository-details-response-mock.json"; sourceTree = "<group>"; };
 		0EF776C7275E296C00F0B742 /* desafio-modal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-modal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF776CA275E296C00F0B742 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EF776CC275E296C00F0B742 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 		0E12AF52275E534300B67984 /* mocks */ = {
 			isa = PBXGroup;
 			children = (
+				0E12AF5F275E93FD00B67984 /* repository-details-response-mock.json */,
 				0E12AF53275E535C00B67984 /* repositories-response-mock.json */,
 			);
 			path = mocks;
@@ -143,6 +148,7 @@
 			children = (
 				0E12AF59275E64B600B67984 /* RepositoriesResponseDto.swift */,
 				0E12AF5B275E64D400B67984 /* RepositoryResponseDto.swift */,
+				0E12AF5D275E8F1E00B67984 /* RepositoryDetailsResponseDto.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 			files = (
 				0EF776D7275E296E00F0B742 /* LaunchScreen.storyboard in Resources */,
 				0E12AF4B275E2DC900B67984 /* ViewController.xib in Resources */,
+				0E12AF60275E93FD00B67984 /* repository-details-response-mock.json in Resources */,
 				0E12AF54275E535C00B67984 /* repositories-response-mock.json in Resources */,
 				0EF776D4275E296E00F0B742 /* Assets.xcassets in Resources */,
 			);
@@ -365,6 +372,7 @@
 				0EF776CD275E296C00F0B742 /* SceneDelegate.swift in Sources */,
 				0E12AF57275E647600B67984 /* DataMockable.swift in Sources */,
 				0E12AF5C275E64D400B67984 /* RepositoryResponseDto.swift in Sources */,
+				0E12AF5E275E8F1E00B67984 /* RepositoryDetailsResponseDto.swift in Sources */,
 				0E12AF5A275E64B600B67984 /* RepositoriesResponseDto.swift in Sources */,
 				0E12AF50275E4CBB00B67984 /* GitHubApi.swift in Sources */,
 			);

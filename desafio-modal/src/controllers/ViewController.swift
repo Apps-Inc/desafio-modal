@@ -8,7 +8,11 @@ class ViewController: UIViewController {
         view.backgroundColor = .red
 
         GitHubApi.Get.repositories { res in
-            print("compiler flag: \(res[0 ... 3])")
+            print("repositories: \(res[0 ... 3])")
+        }
+
+        GitHubApi.Get.repositoryDetails(owner: "Apps-Inc", repo: "desafio-modal") { res in
+            print("details: \(res)")
         }
     }
 }

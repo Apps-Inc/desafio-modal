@@ -20,29 +20,65 @@ struct GitHubApi {
     struct Get {
         static func repositories(
             completionHandler: @escaping (RepositoriesResponseDto) -> Void
+        ) { if useMockedResponses {
+            completionHandler(decodeMock(for: RepositoriesResponseDto.self)!)
+        } else {
+            getDecoded(
+                as: RepositoriesResponseDto.self,
+                from: baseUrl + "repositories",
+                onComplete: completionHandler
+            )
+        }}
+
+        static func repositoryDetails(
+            fullName: String,
+            completionHandler: @escaping (RepositoryDetailsResponseDto) -> Void
+        ) { if useMockedResponses {
+            completionHandler(decodeMock(for: RepositoryDetailsResponseDto.self)!)
+        } else {
+            let url = baseUrl + String(
+                format: "repos/%@",
+                fullName
+            )
+
+            getDecoded(
+                as: RepositoryDetailsResponseDto.self,
+                from: url,
+                onComplete: completionHandler
+            )
+        }}
+
+        static func repositoryDetails(
+            owner: String,
+            repo: String,
+            completionHandler: @escaping (RepositoryDetailsResponseDto) -> Void
         ) {
-            let url = baseUrl + "repositories"
-            print(url)
-
-            if GitHubApi.useMockedResponses {
-                completionHandler(decode(
-                    as: RepositoriesResponseDto.self,
-                    data: RepositoriesResponseDto.dataMock
-                )!)
-            } else {
-                get(from: URL(string: url)!) { data in
-                    guard let decodedData = decode(
-                        as: RepositoriesResponseDto.self,
-                        data: data
-                    ) else {
-                        print("Got null decoded data")
-                        return
-                    }
-
-                    completionHandler(decodedData)
-                }
-            }
+            repositoryDetails(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
         }
+    }
+}
+
+private func decodeMock<T: DataMockable>(for type: T.Type) -> T? {
+    guard let decoded = decode(as: T.self, data: T.dataMock) else {
+        print("Got nil while decoding mock for type \(T.self)")
+        return nil
+    }
+
+    return decoded
+}
+
+private func getDecoded<T: Decodable>(
+    as type: T.Type,
+    from url: String,
+    onComplete: @escaping (T) -> Void
+) {
+    get(from: URL(string: url)!) { data in
+        guard let decodedData = decode(as: T.self, data: data) else {
+            print("Got null decoded data when decoding type \(T.self)")
+            return
+        }
+
+        onComplete(decodedData)
     }
 }
 
