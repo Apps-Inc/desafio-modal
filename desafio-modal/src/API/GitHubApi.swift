@@ -19,39 +19,36 @@ struct GitHubApi {
 
     struct Get {
         static func repositories(
-            completionHandler: @escaping (RepositoriesResponseDto) -> Void
+            completionHandler: @escaping (Repositories) -> Void
         ) { if useMockedResponses {
-            completionHandler(decodeMock(for: RepositoriesResponseDto.self)!)
+            completionHandler(Repositories(decodeMock(for: RepositoriesResponseDto.self)!))
         } else {
-            getDecoded(
-                as: RepositoriesResponseDto.self,
-                from: baseUrl + "repositories",
-                onComplete: completionHandler
-            )
+            getDecoded(as: RepositoriesResponseDto.self, from: baseUrl + "repositories") { dto in
+                completionHandler(Repositories(dto))
+            }
         }}
 
         static func repositoryDetails(
             fullName: String,
-            completionHandler: @escaping (RepositoryDetailsResponseDto) -> Void
+            completionHandler: @escaping (RepositoryDetails) -> Void
         ) { if useMockedResponses {
-            completionHandler(decodeMock(for: RepositoryDetailsResponseDto.self)!)
+            let dto = decodeMock(for: RepositoryDetailsResponseDto.self)!
+            completionHandler(RepositoryDetails(dto)!)
         } else {
             let url = baseUrl + String(
                 format: "repos/%@",
                 fullName
             )
 
-            getDecoded(
-                as: RepositoryDetailsResponseDto.self,
-                from: url,
-                onComplete: completionHandler
-            )
+            getDecoded(as: RepositoryDetailsResponseDto.self, from: url) { dto in
+                completionHandler(RepositoryDetails(dto)!)
+            }
         }}
 
         static func repositoryDetails(
             owner: String,
             repo: String,
-            completionHandler: @escaping (RepositoryDetailsResponseDto) -> Void
+            completionHandler: @escaping (RepositoryDetails) -> Void
         ) {
             repositoryDetails(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
         }
