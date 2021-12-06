@@ -52,6 +52,40 @@ struct GitHubApi {
         ) {
             repositoryDetails(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
         }
+
+        static func readme(
+            fullName: String,
+            completionHandler: @escaping (String?) -> Void
+        ) { if useMockedResponses {
+            completionHandler(try? String(contentsOf: Bundle.main.url(
+                forResource: "repository-readme-mock",
+                withExtension: "md"
+            )!))
+        } else {
+            let url = baseUrl + String(
+                format: "repos/%@/readme",
+                fullName
+            )
+
+            getDecoded(as: RepositoryReadmeResponseDto.self, from: url) { dto in
+                guard let downloadUrl = URL(string: dto.downloadUrl) else {
+                    completionHandler(nil)
+                    return
+                }
+
+                get(from: downloadUrl) { data in
+                    completionHandler(String(data: data, encoding: .utf8))
+                }
+            }
+        }}
+
+        static func readme(
+            owner: String,
+            repo: String,
+            completionHandler: @escaping (String?) -> Void
+        ) {
+            readme(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
+        }
     }
 }
 
