@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00B877BA275E71EB00F91872 /* Github_Teste.md in Resources */ = {isa = PBXBuildFile; fileRef = 00B877B9275E71EB00F91872 /* Github_Teste.md */; };
+		00B877C1275E782400F91872 /* GitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B877BF275E782400F91872 /* GitCollectionViewCell.swift */; };
+		00B877C2275E782400F91872 /* GitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B877C0275E782400F91872 /* GitCollectionViewCell.xib */; };
 		0E12AF4B275E2DC900B67984 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E12AF4A275E2DC800B67984 /* ViewController.xib */; };
 		0EF776CB275E296C00F0B742 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CA275E296C00F0B742 /* AppDelegate.swift */; };
 		0EF776CD275E296C00F0B742 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CC275E296C00F0B742 /* SceneDelegate.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00B877B9275E71EB00F91872 /* Github_Teste.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Github_Teste.md; sourceTree = "<group>"; };
+		00B877BF275E782400F91872 /* GitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCollectionViewCell.swift; sourceTree = "<group>"; };
+		00B877C0275E782400F91872 /* GitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E12AF4A275E2DC800B67984 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		0EF776C7275E296C00F0B742 /* desafio-modal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-modal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF776CA275E296C00F0B742 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,7 @@
 		0E12AF4C275E2DD400B67984 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				00B877C0275E782400F91872 /* GitCollectionViewCell.xib */,
 				0EF776D5275E296E00F0B742 /* LaunchScreen.storyboard */,
 				0E12AF4A275E2DC800B67984 /* ViewController.xib */,
 			);
@@ -89,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				0EF776CE275E296C00F0B742 /* ViewController.swift */,
+				00B877BF275E782400F91872 /* GitCollectionViewCell.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -138,6 +146,7 @@
 				0E675A57275E29970026C69E /* src */,
 				0EF776D3275E296E00F0B742 /* Assets.xcassets */,
 				0EF776D8275E296E00F0B742 /* Info.plist */,
+				00B877B9275E71EB00F91872 /* Github_Teste.md */,
 			);
 			path = "desafio-modal";
 			sourceTree = "<group>";
@@ -265,6 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EF776D7275E296E00F0B742 /* LaunchScreen.storyboard in Resources */,
+				00B877BA275E71EB00F91872 /* Github_Teste.md in Resources */,
+				00B877C2275E782400F91872 /* GitCollectionViewCell.xib in Resources */,
 				0E12AF4B275E2DC900B67984 /* ViewController.xib in Resources */,
 				0EF776D4275E296E00F0B742 /* Assets.xcassets in Resources */,
 			);
@@ -313,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EF776CF275E296C00F0B742 /* ViewController.swift in Sources */,
+				00B877C1275E782400F91872 /* GitCollectionViewCell.swift in Sources */,
 				0EF776CB275E296C00F0B742 /* AppDelegate.swift in Sources */,
 				0EF776CD275E296C00F0B742 /* SceneDelegate.swift in Sources */,
 			);
