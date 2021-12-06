@@ -167,7 +167,7 @@
 			buildConfigurationList = 0EF776F1275E296E00F0B742 /* Build configuration list for PBXNativeTarget "desafio-modal" */;
 			buildPhases = (
 				0EF776C3275E296C00F0B742 /* Sources */,
-				0E675A58275E2A0A0026C69E /* ShellScript */,
+				0E675A58275E2A0A0026C69E /* Run linter */,
 				0EF776C4275E296C00F0B742 /* Frameworks */,
 				0EF776C5275E296C00F0B742 /* Resources */,
 			);
@@ -287,7 +287,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E675A58275E2A0A0026C69E /* ShellScript */ = {
+		0E675A58275E2A0A0026C69E /* Run linter */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -296,6 +296,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run linter";
 			outputFileListPaths = (
 			);
 			outputPaths = (
