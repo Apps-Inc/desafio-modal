@@ -1,0 +1,13 @@
+reporter: "xcode"
+
+# Caminhos para excluir do lint
+excluded:
+  - Carthage
+  - Pods
+  - SwiftLint/Common/3rdPartyLib
+
+line_length:
+    warning: 120
+    error: 150
+    ignores_function_declarations: true
+    ignores_urls: true
