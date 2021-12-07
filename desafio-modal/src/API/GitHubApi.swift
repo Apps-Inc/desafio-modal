@@ -19,6 +19,7 @@ struct GitHubApi {
 
     struct Get {
         static func repositories(
+            lastId: Int = 0,
             completionHandler: @escaping (Repositories) -> Void
         ) { if useMockedResponses {
             completionHandler(Repositories(decode(
@@ -26,7 +27,12 @@ struct GitHubApi {
                 data: RepositoriesResponseDto.dataMock
             )!))
         } else {
-            getDecoded(as: RepositoriesResponseDto.self, from: baseUrl + "repositories") { dto in
+            let url = baseUrl + String(
+                format: "repositories?since=%d",
+                lastId
+            )
+
+            getDecoded(as: RepositoriesResponseDto.self, from: url) { dto in
                 completionHandler(Repositories(dto))
             }
         }}

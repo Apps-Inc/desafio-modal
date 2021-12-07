@@ -12,6 +12,10 @@ class ViewController: UIViewController {
             print("repositories: \(res[0 ... 3])")
         }
 
+        GitHubApi.Get.repositories(lastId: 92348) { res in
+            print("repositories since 92348: \(res[0 ... 3])")
+        }
+
         GitHubApi.Get.repositoryDetails(owner: "Apps-Inc", repo: "desafio-modal") { res in
             print("details: \(res)")
         }
