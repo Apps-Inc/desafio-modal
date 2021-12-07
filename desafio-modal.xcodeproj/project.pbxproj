@@ -122,6 +122,7 @@
 				0EF776D5275E296E00F0B742 /* LaunchScreen.storyboard */,
 				0E12AF4A275E2DC800B67984 /* ViewController.xib */,
 				1298DCCEE9FE575BDBE3D875 /* GitCollectionViewCell.xib */,
+				D54B00D2F21E52996E083D87 /* Components */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -257,6 +258,13 @@
 				0EF776ED275E296E00F0B742 /* DesafioModalUITestsLaunchTests.swift */,
 			);
 			path = "desafio-modalUITests";
+			sourceTree = "<group>";
+		};
+		D54B00D2F21E52996E083D87 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
