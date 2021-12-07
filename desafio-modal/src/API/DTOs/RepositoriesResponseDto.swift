@@ -2,7 +2,7 @@ import Foundation
 
 typealias RepositoriesResponseDto = [RepositoryResponseDto]
 
-extension RepositoriesResponseDto: DataMockable {
+extension DataMockable where Self == [RepositoryResponseDto] {
     static var dataMock: Data {
         (try? Data(contentsOf: Bundle.main.url(
             forResource: "repositories-response-mock",

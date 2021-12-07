@@ -21,7 +21,10 @@ struct GitHubApi {
         static func repositories(
             completionHandler: @escaping (Repositories) -> Void
         ) { if useMockedResponses {
-            completionHandler(Repositories(decodeMock(for: RepositoriesResponseDto.self)!))
+            completionHandler(Repositories(decode(
+                as: RepositoriesResponseDto.self,
+                data: RepositoriesResponseDto.dataMock
+            )!))
         } else {
             getDecoded(as: RepositoriesResponseDto.self, from: baseUrl + "repositories") { dto in
                 completionHandler(Repositories(dto))
@@ -85,6 +88,59 @@ struct GitHubApi {
             completionHandler: @escaping (String?) -> Void
         ) {
             readme(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
+        }
+
+        static let maxBranchesPerRequest = 100 // API restriction
+
+        private static func countPagedBranches(
+            fullName: String,
+            itensPerPage: Int = maxBranchesPerRequest,
+            pageNum: Int = 1,
+            previousCount: Int = 0,
+            completionHandler: @escaping (Int?) -> Void
+        ) {
+            let url = baseUrl + String(
+                format: "repos/%@/branches?per_page=%d&page=%d",
+                fullName,
+                itensPerPage,
+                pageNum
+            )
+
+            getDecoded(as: RepositoryBranchesResponseDto.self, from: url) { dto in
+                let currentCount = previousCount + dto.count
+
+                if dto.count == itensPerPage {
+                    countPagedBranches(
+                        fullName: fullName,
+                        itensPerPage: itensPerPage,
+                        pageNum: pageNum + 1,
+                        previousCount: currentCount,
+                        completionHandler: completionHandler
+                    )
+                } else {
+                    completionHandler(currentCount)
+                }
+            }
+        }
+
+        static func countBranches(
+            fullName: String,
+            completionHandler: @escaping (Int?) -> Void
+        ) { if useMockedResponses {
+            completionHandler(decode(
+                as: RepositoryBranchesResponseDto.self,
+                data: RepositoryBranchesResponseDto.dataMock
+            )?.count)
+        } else {
+            countPagedBranches(fullName: fullName, completionHandler: completionHandler)
+        }}
+
+        static func countBranches(
+            owner: String,
+            repo: String,
+            completionHandler: @escaping (Int?) -> Void
+        ) {
+            countBranches(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
         }
     }
 }

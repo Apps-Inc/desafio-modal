@@ -19,5 +19,9 @@ class ViewController: UIViewController {
         GitHubApi.Get.readme(fullName: "Apps-Inc/criptoview") { contents in
             print("readme: \(contents ?? "nil")")
         }
+
+        GitHubApi.Get.countBranches(fullName: "Apps-Inc/flygondex") { count in
+            print("branch count: \(count ?? -1)")
+        }
     }
 }
