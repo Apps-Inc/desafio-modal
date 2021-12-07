@@ -10,6 +10,9 @@
 		0E0A290C275F82C3008AA72E /* RepositoryBranchesResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A290B275F82C3008AA72E /* RepositoryBranchesResponseDto.swift */; };
 		0E0A290E275F83EF008AA72E /* repository-branches-response-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0A290D275F83EF008AA72E /* repository-branches-response-mock.json */; };
 		0E0A2910275F84F5008AA72E /* RepositoryBranchResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A290F275F84F5008AA72E /* RepositoryBranchResponseDto.swift */; };
+		0E0A2918275FF196008AA72E /* RepositoryContributorsResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A2917275FF196008AA72E /* RepositoryContributorsResponseDto.swift */; };
+		0E0A291A275FF414008AA72E /* repository-contributors-response-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0A2919275FF414008AA72E /* repository-contributors-response-mock.json */; };
+		0E0A291C275FF4D5008AA72E /* RepositoryContributorResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A291B275FF4D5008AA72E /* RepositoryContributorResponseDto.swift */; };
 		0E12AF4B275E2DC900B67984 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E12AF4A275E2DC800B67984 /* ViewController.xib */; };
 		0E12AF50275E4CBB00B67984 /* GitHubApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12AF4F275E4CBB00B67984 /* GitHubApi.swift */; };
 		0E12AF54275E535C00B67984 /* repositories-response-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E12AF53275E535C00B67984 /* repositories-response-mock.json */; };
@@ -53,6 +56,9 @@
 		0E0A290B275F82C3008AA72E /* RepositoryBranchesResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBranchesResponseDto.swift; sourceTree = "<group>"; };
 		0E0A290D275F83EF008AA72E /* repository-branches-response-mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "repository-branches-response-mock.json"; sourceTree = "<group>"; };
 		0E0A290F275F84F5008AA72E /* RepositoryBranchResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBranchResponseDto.swift; sourceTree = "<group>"; };
+		0E0A2917275FF196008AA72E /* RepositoryContributorsResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryContributorsResponseDto.swift; sourceTree = "<group>"; };
+		0E0A2919275FF414008AA72E /* repository-contributors-response-mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "repository-contributors-response-mock.json"; sourceTree = "<group>"; };
+		0E0A291B275FF4D5008AA72E /* RepositoryContributorResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryContributorResponseDto.swift; sourceTree = "<group>"; };
 		0E12AF4A275E2DC800B67984 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		0E12AF4F275E4CBB00B67984 /* GitHubApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApi.swift; sourceTree = "<group>"; };
 		0E12AF53275E535C00B67984 /* repositories-response-mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "repositories-response-mock.json"; path = "mocks/repositories-response-mock.json"; sourceTree = SOURCE_ROOT; };
@@ -146,6 +152,7 @@
 			children = (
 				0E12AF5F275E93FD00B67984 /* repository-details-response-mock.json */,
 				0E0A290D275F83EF008AA72E /* repository-branches-response-mock.json */,
+				0E0A2919275FF414008AA72E /* repository-contributors-response-mock.json */,
 				0E12AF53275E535C00B67984 /* repositories-response-mock.json */,
 				0E12AF66275EACA400B67984 /* repository-readme-mock.md */,
 			);
@@ -169,6 +176,8 @@
 				0E12AF68275EAEB900B67984 /* RepositoryReadmeResponseDto.swift */,
 				0E0A290B275F82C3008AA72E /* RepositoryBranchesResponseDto.swift */,
 				0E0A290F275F84F5008AA72E /* RepositoryBranchResponseDto.swift */,
+				0E0A2917275FF196008AA72E /* RepositoryContributorsResponseDto.swift */,
+				0E0A291B275FF4D5008AA72E /* RepositoryContributorResponseDto.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E0A291A275FF414008AA72E /* repository-contributors-response-mock.json in Resources */,
 				0EF776D7275E296E00F0B742 /* LaunchScreen.storyboard in Resources */,
 				0E12AF4B275E2DC900B67984 /* ViewController.xib in Resources */,
 				0E12AF67275EACA400B67984 /* repository-readme-mock.md in Resources */,
@@ -402,6 +412,8 @@
 				0E12AF65275EA64A00B67984 /* Repositories.swift in Sources */,
 				0EF776CB275E296C00F0B742 /* AppDelegate.swift in Sources */,
 				0E12AF63275EA33B00B67984 /* RepositoryDetails.swift in Sources */,
+				0E0A2918275FF196008AA72E /* RepositoryContributorsResponseDto.swift in Sources */,
+				0E0A291C275FF4D5008AA72E /* RepositoryContributorResponseDto.swift in Sources */,
 				0E0A2910275F84F5008AA72E /* RepositoryBranchResponseDto.swift in Sources */,
 				0EF776CD275E296C00F0B742 /* SceneDelegate.swift in Sources */,
 				0E12AF69275EAEB900B67984 /* RepositoryReadmeResponseDto.swift in Sources */,

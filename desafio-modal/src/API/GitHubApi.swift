@@ -20,7 +20,7 @@ struct GitHubApi {
     struct Get {
         static func repositories(
             lastId: Int = 0,
-            completionHandler: @escaping (Repositories) -> Void
+            completionHandler: @escaping (Repositories?) -> Void
         ) { if useMockedResponses {
             completionHandler(Repositories(decode(
                 as: RepositoriesResponseDto.self,
@@ -33,16 +33,16 @@ struct GitHubApi {
             )
 
             getDecoded(as: RepositoriesResponseDto.self, from: url) { dto in
-                completionHandler(Repositories(dto))
+                completionHandler(dto == nil ? nil : Repositories(dto!))
             }
         }}
 
         static func repositoryDetails(
             fullName: String,
-            completionHandler: @escaping (RepositoryDetails) -> Void
+            completionHandler: @escaping (RepositoryDetails?) -> Void
         ) { if useMockedResponses {
             let dto = decodeMock(for: RepositoryDetailsResponseDto.self)!
-            completionHandler(RepositoryDetails(dto)!)
+            completionHandler(RepositoryDetails(dto))
         } else {
             let url = baseUrl + String(
                 format: "repos/%@",
@@ -50,14 +50,17 @@ struct GitHubApi {
             )
 
             getDecoded(as: RepositoryDetailsResponseDto.self, from: url) { dto in
-                completionHandler(RepositoryDetails(dto)!)
+                completionHandler(dto == nil
+                    ? nil
+                    : RepositoryDetails(dto!)
+                )
             }
         }}
 
         static func repositoryDetails(
             owner: String,
             repo: String,
-            completionHandler: @escaping (RepositoryDetails) -> Void
+            completionHandler: @escaping (RepositoryDetails?) -> Void
         ) {
             repositoryDetails(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
         }
@@ -77,12 +80,15 @@ struct GitHubApi {
             )
 
             getDecoded(as: RepositoryReadmeResponseDto.self, from: url) { dto in
-                guard let downloadUrl = URL(string: dto.downloadUrl) else {
+                guard
+                    let downloadUrl = dto?.downloadUrl,
+                    let downloadUrl = URL(string: downloadUrl)
+                else {
                     completionHandler(nil)
                     return
                 }
 
-                get(from: downloadUrl) { data in
+                get(from: downloadUrl) { data, _ in
                     completionHandler(String(data: data, encoding: .utf8))
                 }
             }
@@ -113,9 +119,14 @@ struct GitHubApi {
             )
 
             getDecoded(as: RepositoryBranchesResponseDto.self, from: url) { dto in
-                let currentCount = previousCount + dto.count
+                guard let count = dto?.count else {
+                    completionHandler(nil)
+                    return
+                }
 
-                if dto.count == itensPerPage {
+                let currentCount = previousCount + count
+
+                if count == itensPerPage {
                     countPagedBranches(
                         fullName: fullName,
                         itensPerPage: itensPerPage,
@@ -148,6 +159,37 @@ struct GitHubApi {
         ) {
             countBranches(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
         }
+
+        static func countCommits(
+            fullName: String,
+            completionHandler: @escaping (Int?) -> Void
+        ) { if useMockedResponses {
+            completionHandler(decode(
+                as: RepositoryContributorsResponseDto.self,
+                data: RepositoryContributorsResponseDto.dataMock
+            )?.reduce(0, { partialResult, next in
+                partialResult + next.total
+            }))
+        } else {
+            let url = baseUrl + String(
+                format: "repos/%@/stats/contributors",
+                fullName
+            )
+
+            getDecoded(as: RepositoryContributorsResponseDto.self, from: url) { decoded in
+                completionHandler(decoded?.reduce(0, { partialResult, next in
+                    partialResult + next.total
+                }))
+            }
+        }}
+
+        static func countCommits(
+            owner: String,
+            repo: String,
+            completionHandler: @escaping (Int?) -> Void
+        ) {
+            countCommits(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
+        }
     }
 }
 
@@ -163,11 +205,12 @@ private func decodeMock<T: DataMockable>(for type: T.Type) -> T? {
 private func getDecoded<T: Decodable>(
     as type: T.Type,
     from url: String,
-    onComplete: @escaping (T) -> Void
+    onComplete: @escaping (T?) -> Void
 ) {
-    get(from: URL(string: url)!) { data in
+    get(from: URL(string: url)!) { data, _ in
         guard let decodedData = decode(as: T.self, data: data) else {
             print("Got null decoded data when decoding type \(T.self)")
+            onComplete(nil)
             return
         }
 
@@ -175,7 +218,7 @@ private func getDecoded<T: Decodable>(
     }
 }
 
-private func get(from url: URL, onComplete: @escaping (Data) -> Void) {
+private func get(from url: URL, onComplete: @escaping (Data, URLResponse?) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
     request.addValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
@@ -203,7 +246,7 @@ private func get(from url: URL, onComplete: @escaping (Data) -> Void) {
             return
         }
 
-        onComplete(data)
+        onComplete(data, response)
     }
 
     requestTask.resume()
