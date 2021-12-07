@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02CE3E05275E8DC900D5DC6C /* SetFilterButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE3E04275E8DC900D5DC6C /* SetFilterButtons.swift */; };
+		02CE3E07275E8DD900D5DC6C /* SetFilterButtons.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CE3E06275E8DD900D5DC6C /* SetFilterButtons.xib */; };
 		0E12AF4B275E2DC900B67984 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E12AF4A275E2DC800B67984 /* ViewController.xib */; };
 		0EF776CB275E296C00F0B742 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CA275E296C00F0B742 /* AppDelegate.swift */; };
 		0EF776CD275E296C00F0B742 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CC275E296C00F0B742 /* SceneDelegate.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02CE3E04275E8DC900D5DC6C /* SetFilterButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFilterButtons.swift; sourceTree = "<group>"; };
+		02CE3E06275E8DD900D5DC6C /* SetFilterButtons.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetFilterButtons.xib; sourceTree = "<group>"; };
 		0E12AF4A275E2DC800B67984 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		0EF776C7275E296C00F0B742 /* desafio-modal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-modal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF776CA275E296C00F0B742 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02CE3DFF275E85F700D5DC6C /* components */ = {
+			isa = PBXGroup;
+			children = (
+				02CE3E04275E8DC900D5DC6C /* SetFilterButtons.swift */,
+				02CE3E06275E8DD900D5DC6C /* SetFilterButtons.xib */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		0E12AF4C275E2DD400B67984 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +118,7 @@
 		0E675A57275E29970026C69E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				02CE3DFF275E85F700D5DC6C /* components */,
 				0E12AF4C275E2DD400B67984 /* views */,
 				0E12AF4D275E2E2000B67984 /* controllers */,
 				0E12AF4E275E2E2800B67984 /* delegates */,
@@ -266,6 +280,7 @@
 			files = (
 				0EF776D7275E296E00F0B742 /* LaunchScreen.storyboard in Resources */,
 				0E12AF4B275E2DC900B67984 /* ViewController.xib in Resources */,
+				02CE3E07275E8DD900D5DC6C /* SetFilterButtons.xib in Resources */,
 				0EF776D4275E296E00F0B742 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +329,7 @@
 			files = (
 				0EF776CF275E296C00F0B742 /* ViewController.swift in Sources */,
 				0EF776CB275E296C00F0B742 /* AppDelegate.swift in Sources */,
+				02CE3E05275E8DC900D5DC6C /* SetFilterButtons.swift in Sources */,
 				0EF776CD275E296C00F0B742 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
