@@ -93,11 +93,17 @@
 				02CE3E06275E8DD900D5DC6C /* SetFilterButtons.xib */,
 			);
 			path = components;
+		00E2DBDB275EB72B00BF2A6F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		0E12AF4C275E2DD400B67984 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				00E2DBDB275EB72B00BF2A6F /* Components */,
 				00B877C0275E782400F91872 /* GitCollectionViewCell.xib */,
 				0EF776D5275E296E00F0B742 /* LaunchScreen.storyboard */,
 				0E12AF4A275E2DC800B67984 /* ViewController.xib */,
