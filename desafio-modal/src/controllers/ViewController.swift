@@ -12,9 +12,8 @@ class ViewController: UIViewController {
 
         addFiltro(name: "Estrela")
         addFiltro(name: "Seguidores")
-        addFiltro(name: "data")
+        addFiltro(name: "Data")
         addFiltro(name: "decrescente")
-
     }
 
     func addFiltro(name: String) {
@@ -22,8 +21,9 @@ class ViewController: UIViewController {
         container.font = UIFont.systemFont(ofSize: 10)
 
         var configuration = UIButton.Configuration.plain()
-        configuration.attributedTitle = AttributedString(name, attributes: container)
-        configuration.image = UIImage(systemName: "trash")
+        configuration.attributedTitle = AttributedString(name, attributes: container )
+        configuration.image = UIImage(systemName: "multiply",
+                                      withConfiguration: UIImage.SymbolConfiguration(scale: .small))
         configuration.imagePlacement = .trailing
 
         let newFilter = UIButton(configuration: configuration, primaryAction: nil)
@@ -33,7 +33,17 @@ class ViewController: UIViewController {
         newFilter.layer.borderWidth = 1
         newFilter.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
         newFilter.layer.cornerRadius = 2
+        newFilter.addTarget(self, action: #selector(removeFilter(sender:)), for: .touchUpInside)
         filtrosStackView.addArrangedSubview(newFilter)
+    }
+
+    @objc func removeFilter(sender: UIButton) {
+//        sender.isHidden = true
+        print("clicou")
+        filtrosStackView.removeArrangedSubview(sender)
+        filtrosStackView.addArrangedSubview(sender)
+        sender.alpha = 0
+        sender.isEnabled = false
     }
 }
 
