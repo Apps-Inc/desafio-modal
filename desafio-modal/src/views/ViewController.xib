@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="desafio_modal" customModuleProvider="target">
             <connections>
+                <outlet property="gitCollectionView" destination="pac-ag-IEs" id="IGO-OS-s5k"/>
                 <outlet property="view" destination="iN0-l3-epB" id="3Hz-qB-oTz"/>
             </connections>
         </placeholder>
@@ -17,8 +18,26 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pac-ag-IEs">
+                    <rect key="frame" x="20" y="332" width="374" height="465"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bic-Vi-7wh">
+                        <size key="itemSize" width="350" height="150"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pac-ag-IEs" secondAttribute="trailing" constant="20" id="CF4-2z-YPO"/>
+                <constraint firstItem="pac-ag-IEs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="R4F-5n-JaA"/>
+                <constraint firstItem="pac-ag-IEs" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="288" id="hkl-oa-hjs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="pac-ag-IEs" secondAttribute="bottom" constant="65" id="x5t-TV-Xkh"/>
+            </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="119.86607142857142"/>
         </view>
     </objects>
