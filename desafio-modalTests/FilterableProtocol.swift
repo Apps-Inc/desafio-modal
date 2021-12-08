@@ -50,4 +50,21 @@ class FilterableProtocol: XCTestCase {
         // assert
         XCTAssertEqual(filtered, ["123"])
     }
+
+    func testMultipleFilters() throws {
+        // arrange
+        let filters = [
+            IntGreaterThanFilter.init(param: 1),
+            IntGreaterThanFilter.init(param: 2),
+            IntGreaterThanFilter.init(param: 3),
+            IntGreaterThanFilter.init(param: 4),
+            IntGreaterThanFilter.init(param: 5)
+        ]
+
+        // act
+        let reduced = filters.apply(lst: [1, 2, 3, 4, 5, 6])
+
+        // assert
+        XCTAssertEqual(reduced, [6])
+    }
 }
