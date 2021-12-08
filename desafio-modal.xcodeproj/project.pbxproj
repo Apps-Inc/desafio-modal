@@ -25,6 +25,7 @@
 		0E12AF65275EA64A00B67984 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12AF64275EA64A00B67984 /* Repositories.swift */; };
 		0E12AF67275EACA400B67984 /* repository-readme-mock.md in Resources */ = {isa = PBXBuildFile; fileRef = 0E12AF66275EACA400B67984 /* repository-readme-mock.md */; };
 		0E12AF69275EAEB900B67984 /* RepositoryReadmeResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12AF68275EAEB900B67984 /* RepositoryReadmeResponseDto.swift */; };
+		0EE289ED2760D649009CEAA4 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE289EC2760D649009CEAA4 /* FilterButton.swift */; };
 		0EF776CB275E296C00F0B742 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CA275E296C00F0B742 /* AppDelegate.swift */; };
 		0EF776CD275E296C00F0B742 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CC275E296C00F0B742 /* SceneDelegate.swift */; };
 		0EF776CF275E296C00F0B742 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CE275E296C00F0B742 /* ViewController.swift */; };
@@ -74,6 +75,7 @@
 		0E12AF64275EA64A00B67984 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		0E12AF66275EACA400B67984 /* repository-readme-mock.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "repository-readme-mock.md"; sourceTree = "<group>"; };
 		0E12AF68275EAEB900B67984 /* RepositoryReadmeResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryReadmeResponseDto.swift; sourceTree = "<group>"; };
+		0EE289EC2760D649009CEAA4 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		0EF776C7275E296C00F0B742 /* desafio-modal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-modal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF776CA275E296C00F0B742 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EF776CC275E296C00F0B742 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				0EF776CE275E296C00F0B742 /* ViewController.swift */,
 				EF4CF2E30A290EA55B22CB7E /* GitCollectionViewCell.swift */,
+				0EE289EC2760D649009CEAA4 /* FilterButton.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				0E0A291C275FF4D5008AA72E /* RepositoryContributorResponseDto.swift in Sources */,
 				0E0A2910275F84F5008AA72E /* RepositoryBranchResponseDto.swift in Sources */,
 				0EF776CD275E296C00F0B742 /* SceneDelegate.swift in Sources */,
+				0EE289ED2760D649009CEAA4 /* FilterButton.swift in Sources */,
 				0E12AF69275EAEB900B67984 /* RepositoryReadmeResponseDto.swift in Sources */,
 				0E0A290C275F82C3008AA72E /* RepositoryBranchesResponseDto.swift in Sources */,
 				0E12AF57275E647600B67984 /* DataMockable.swift in Sources */,
