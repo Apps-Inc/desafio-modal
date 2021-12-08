@@ -4,53 +4,54 @@ import RxCocoa
 
 class ViewController: UIViewController {
     static let indentifier = "ViewController"
+    private let disposeBag = DisposeBag()
+    var viewModel: GitRepositoryViewModel?
 
     @IBOutlet weak var gitTableView: UITableView!
     @IBOutlet weak var filtrosStackView: UIStackView!
-    @IBOutlet weak var gitCollectionView: UICollectionView!
-    @IBOutlet weak var botao: UIButton!
-    private let disposeBag = DisposeBag()
-
-    var viewModel: GitRepositoryViewModel?
+    var activeButtons = Set<FilterButton>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         gitTableView.register(UINib(nibName: GitTableViewCell.identifier, bundle: nil),
                               forCellReuseIdentifier: GitTableViewCell.identifier)
 
-        addFiltro(name: "Estrela")
-        addFiltro(name: "Seguidores")
-        addFiltro(name: "Data")
-        addFiltro(name: "decrescente")
-
-        view.addSubview(UIButton())
+        FilterButton.allCases.forEach { button in
+            activeButtons.insert(button)
+            createFilterButton(name: button.name, enabled: true)
+        }
 
         setUpView()
     }
 
-    func addFiltro(name: String) {
+    func createFilterButton(name: String, enabled: Bool = false) {
         var container = AttributeContainer()
         container.font = UIFont.systemFont(ofSize: 10)
 
         var configuration = UIButton.Configuration.plain()
-        configuration.attributedTitle = AttributedString(name, attributes: container )
+        configuration.attributedTitle = AttributedString(name, attributes: container)
         configuration.image = UIImage(systemName: "multiply",
                                       withConfiguration: UIImage.SymbolConfiguration(scale: .small))
         configuration.imagePlacement = .trailing
 
-        let newFilter = UIButton(configuration: configuration, primaryAction: nil)
-        newFilter.tintColor = .black
-        newFilter.setTitleColor(.black, for: .normal)
-        newFilter.backgroundColor = .clear
-        newFilter.layer.borderWidth = 1
-        newFilter.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
-        newFilter.layer.cornerRadius = 2
-        newFilter.addTarget(self, action: #selector(removeFilter(sender:)), for: .touchUpInside)
-        filtrosStackView.addArrangedSubview(newFilter)
+        let newButton = UIButton(configuration: configuration, primaryAction: nil)
+        newButton.tintColor = .black
+        newButton.setTitleColor(.black, for: .normal)
+        newButton.backgroundColor = .clear
+        newButton.layer.borderWidth = 1
+        newButton.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
+        newButton.layer.cornerRadius = 2
+        newButton.addTarget(self, action: #selector(disableFilterButton(sender:)), for: .touchUpInside)
+        newButton.titleLabel?.numberOfLines = 1
+
+        filtrosStackView.addArrangedSubview(newButton)
+
+        if !enabled {
+            disableFilterButton(sender: newButton)
+        }
     }
 
-    @objc func removeFilter(sender: UIButton) {
-
+    @objc func disableFilterButton(sender: UIButton) {
         filtrosStackView.removeArrangedSubview(sender)
         filtrosStackView.addArrangedSubview(sender)
         sender.alpha = 0
