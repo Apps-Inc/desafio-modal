@@ -1,0 +1,66 @@
+[
+  {
+    "name": "marvim/api-doc-update/master",
+    "commit": {
+      "sha": "4b85e12d2c5e81021b1a4bebec44a37c4e01405f",
+      "url": "https://api.github.com/repos/neovim/neovim/commits/4b85e12d2c5e81021b1a4bebec44a37c4e01405f"
+    },
+    "protected": false
+  },
+  {
+    "name": "marvim/api-doc-update/release-0.5",
+    "commit": {
+      "sha": "1d3d2440788ff5480e25694f106f1d15abfec54b",
+      "url": "https://api.github.com/repos/neovim/neovim/commits/1d3d2440788ff5480e25694f106f1d15abfec54b"
+    },
+    "protected": false
+  },
+  {
+    "name": "marvim/api-doc-update/release-0.6",
+    "commit": {
+      "sha": "9b46e1716b202a181db7443b7b39ce65adcf595d",
+      "url": "https://api.github.com/repos/neovim/neovim/commits/9b46e1716b202a181db7443b7b39ce65adcf595d"
+    },
+    "protected": false
+  },
+  {
+    "name": "master",
+    "commit": {
+      "sha": "afaad8b54ebd2ad4ba2145f4069f5017cace3c8f",
+      "url": "https://api.github.com/repos/neovim/neovim/commits/afaad8b54ebd2ad4ba2145f4069f5017cace3c8f"
+    },
+    "protected": true
+  },
+  {
+    "name": "release-0.3",
+    "commit": {
+      "sha": "dc1a11dbe1172cfdcfa156ed0cae6f616547c459",
+      "url": "https://api.github.com/repos/neovim/neovim/commits/dc1a11dbe1172cfdcfa156ed0cae6f616547c459"
+    },
+    "protected": true
+  },
+  {
+    "name": "release-0.4",
+    "commit": {
+      "sha": "d9dd30a955073d602741481d48e1c56d1fcae420",
+      "url": "https://api.github.com/repos/neovim/neovim/commits/d9dd30a955073d602741481d48e1c56d1fcae420"
+    },
+    "protected": true
+  },
+  {
+    "name": "release-0.5",
+    "commit": {
+      "sha": "1e1fd71fea739f6a39581e46679f8439ef98430f",
+      "url": "https://api.github.com/repos/neovim/neovim/commits/1e1fd71fea739f6a39581e46679f8439ef98430f"
+    },
+    "protected": true
+  },
+  {
+    "name": "release-0.6",
+    "commit": {
+      "sha": "bd057d4b4022a0737f3976a2b4a6cc3943d4a633",
+      "url": "https://api.github.com/repos/neovim/neovim/commits/bd057d4b4022a0737f3976a2b4a6cc3943d4a633"
+    },
+    "protected": true
+  }
+]
