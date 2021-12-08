@@ -20,8 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="VTf-LT-PsC" userLabel="Filtrando Stack View">
-                    <rect key="frame" x="10" y="277" width="374" height="64"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VTf-LT-PsC" userLabel="Filtrando Stack View">
+                    <rect key="frame" x="10" y="257" width="374" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtrando:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="386-GX-H5e">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="16"/>
@@ -30,48 +30,62 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="5" id="xLE-Lx-oA7">
-                            <rect key="frame" x="0.0" y="25" width="374" height="39"/>
+                            <rect key="frame" x="0.0" y="26" width="374" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <viewLayoutGuide key="safeArea" id="Wak-Wi-zIp"/>
                         </stackView>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="xZO-yF-P6N"/>
+                    <constraints>
+                        <constraint firstItem="386-GX-H5e" firstAttribute="height" secondItem="xLE-Lx-oA7" secondAttribute="height" multiplier="0.551724" id="dlZ-zi-pc9"/>
+                    </constraints>
                 </stackView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="172" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAT-Wg-VIz">
-                    <rect key="frame" x="10" y="334" width="394" height="476"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="172" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAT-Wg-VIz">
+                    <rect key="frame" x="10" y="322" width="394" height="456"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="476" id="jrC-ed-CAZ"/>
+                        <constraint firstAttribute="height" constant="456" id="jrC-ed-CAZ"/>
                     </constraints>
                 </tableView>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DHW-tP-vyf" userLabel="Botton View">
-                    <rect key="frame" x="0.0" y="837" width="414" height="59"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHW-tP-vyf" userLabel="Botton View">
+                    <rect key="frame" x="0.0" y="788" width="414" height="108"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVc-pb-i0p">
-                            <rect key="frame" x="111" y="8" width="153" height="31"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" id="ROs-hU-Q6U">
+                            <rect key="frame" x="86" y="-4" width="214" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            <color key="tintColor" systemColor="systemGreenColor"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="multiply" catalog="system" title="Limpar Filtros" imagePadding="26">
-                                <color key="baseForegroundColor" red="0.56862747670000002" green="0.98823523520000001" blue="0.86274516580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </buttonConfiguration>
+                            <buttonConfiguration key="configuration" style="plain" image="multiply" catalog="system" title="Limpar Filtros" imagePadding="20" buttonSize="small"/>
                             <connections>
-                                <action selector="cleanFilters:" destination="-1" eventType="touchUpInside" id="dWZ-5T-f6J"/>
+                                <action selector="cleanFilters:" destination="-1" eventType="touchUpInside" id="sI8-C4-opi"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="ROs-hU-Q6U" secondAttribute="bottom" constant="43" id="7QG-N6-42f"/>
+                        <constraint firstItem="ROs-hU-Q6U" firstAttribute="leading" secondItem="DHW-tP-vyf" secondAttribute="leading" constant="80" id="Szl-SQ-xim"/>
+                        <constraint firstAttribute="trailing" secondItem="ROs-hU-Q6U" secondAttribute="trailing" constant="120" id="xF6-4E-cpG"/>
+                        <constraint firstItem="ROs-hU-Q6U" firstAttribute="top" secondItem="DHW-tP-vyf" secondAttribute="top" constant="15" id="y8F-ae-tz0"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="VTf-LT-PsC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="2ae-JX-lKw"/>
-                <constraint firstItem="DHW-tP-vyf" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="5b0-mR-Kuw"/>
+                <constraint firstItem="lAT-Wg-VIz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="322" id="6W0-AM-ebn"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DHW-tP-vyf" secondAttribute="trailing" id="B9m-Wj-zh6"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lAT-Wg-VIz" secondAttribute="trailing" constant="10" id="DTP-Jp-Je9"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VTf-LT-PsC" secondAttribute="trailing" constant="10" id="dYE-mF-98j"/>
+                <constraint firstItem="DHW-tP-vyf" firstAttribute="top" secondItem="lAT-Wg-VIz" secondAttribute="bottom" constant="10" id="FH9-v9-kSQ"/>
+                <constraint firstAttribute="bottom" secondItem="DHW-tP-vyf" secondAttribute="bottom" id="GFu-8T-cbB"/>
+                <constraint firstItem="DHW-tP-vyf" firstAttribute="top" secondItem="lAT-Wg-VIz" secondAttribute="bottom" constant="10" id="H0x-cc-pSH"/>
+                <constraint firstItem="DHW-tP-vyf" firstAttribute="top" secondItem="lAT-Wg-VIz" secondAttribute="bottom" constant="10" id="OgI-sm-tTx"/>
+                <constraint firstItem="VTf-LT-PsC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="200" id="bcc-4Z-E4l"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VTf-LT-PsC" secondAttribute="trailing" constant="10" id="dYE-mF-98j"/>
                 <constraint firstItem="DHW-tP-vyf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="igw-8S-qhg"/>
-                <constraint firstItem="DHW-tP-vyf" firstAttribute="top" secondItem="lAT-Wg-VIz" secondAttribute="bottom" constant="27" id="qhk-xK-nnc"/>
+                <constraint firstItem="VTf-LT-PsC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="213" id="oaI-Xs-vm3"/>
                 <constraint firstItem="DHW-tP-vyf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="umJ-Vc-z0f"/>
                 <constraint firstItem="DHW-tP-vyf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="vIK-vD-Bqb"/>
                 <constraint firstItem="lAT-Wg-VIz" firstAttribute="top" secondItem="VTf-LT-PsC" secondAttribute="bottom" constant="10" id="wfI-Be-hPn"/>
@@ -84,6 +98,9 @@
         <image name="multiply" catalog="system" width="128" height="111"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
