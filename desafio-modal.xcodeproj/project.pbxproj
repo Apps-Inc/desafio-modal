@@ -25,6 +25,8 @@
 		0E12AF65275EA64A00B67984 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12AF64275EA64A00B67984 /* Repositories.swift */; };
 		0E12AF67275EACA400B67984 /* repository-readme-mock.md in Resources */ = {isa = PBXBuildFile; fileRef = 0E12AF66275EACA400B67984 /* repository-readme-mock.md */; };
 		0E12AF69275EAEB900B67984 /* RepositoryReadmeResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12AF68275EAEB900B67984 /* RepositoryReadmeResponseDto.swift */; };
+		0ED3883E2761331500074EBA /* Filterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED3883D2761331500074EBA /* Filterable.swift */; };
+		0ED388402761337000074EBA /* FilterableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED3883F2761337000074EBA /* FilterableProtocol.swift */; };
 		0EE289ED2760D649009CEAA4 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE289EC2760D649009CEAA4 /* FilterButton.swift */; };
 		0EF776CB275E296C00F0B742 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CA275E296C00F0B742 /* AppDelegate.swift */; };
 		0EF776CD275E296C00F0B742 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CC275E296C00F0B742 /* SceneDelegate.swift */; };
@@ -77,6 +79,8 @@
 		0E12AF64275EA64A00B67984 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		0E12AF66275EACA400B67984 /* repository-readme-mock.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "repository-readme-mock.md"; sourceTree = "<group>"; };
 		0E12AF68275EAEB900B67984 /* RepositoryReadmeResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryReadmeResponseDto.swift; sourceTree = "<group>"; };
+		0ED3883D2761331500074EBA /* Filterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filterable.swift; sourceTree = "<group>"; };
+		0ED3883F2761337000074EBA /* FilterableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterableProtocol.swift; sourceTree = "<group>"; };
 		0EE289EC2760D649009CEAA4 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		0EF776C7275E296C00F0B742 /* desafio-modal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-modal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF776CA275E296C00F0B742 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,7 +161,6 @@
 			children = (
 				0E12AF61275EA32600B67984 /* models */,
 				0E12AF58275E649F00B67984 /* DTOs */,
-				0E12AF55275E646600B67984 /* protocols */,
 				0E12AF4F275E4CBB00B67984 /* GitHubApi.swift */,
 			);
 			path = API;
@@ -179,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				0E12AF56275E647600B67984 /* DataMockable.swift */,
+				0ED3883D2761331500074EBA /* Filterable.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -210,6 +214,7 @@
 		0E675A57275E29970026C69E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				0E12AF55275E646600B67984 /* protocols */,
 				0E12AF51275E4E8B00B67984 /* API */,
 				0E12AF4C275E2DD400B67984 /* views */,
 				0E12AF4D275E2E2000B67984 /* controllers */,
@@ -255,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				0EF776E1275E296E00F0B742 /* DesafioModalTests.swift */,
+				0ED3883F2761337000074EBA /* FilterableProtocol.swift */,
 			);
 			path = "desafio-modalTests";
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 				0E0A2918275FF196008AA72E /* RepositoryContributorsResponseDto.swift in Sources */,
 				0E0A291C275FF4D5008AA72E /* RepositoryContributorResponseDto.swift in Sources */,
 				0E0A2910275F84F5008AA72E /* RepositoryBranchResponseDto.swift in Sources */,
+				0ED3883E2761331500074EBA /* Filterable.swift in Sources */,
 				0EF776CD275E296C00F0B742 /* SceneDelegate.swift in Sources */,
 				0EE289ED2760D649009CEAA4 /* FilterButton.swift in Sources */,
 				0E12AF69275EAEB900B67984 /* RepositoryReadmeResponseDto.swift in Sources */,
@@ -471,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EF776E2275E296E00F0B742 /* DesafioModalTests.swift in Sources */,
+				0ED388402761337000074EBA /* FilterableProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
