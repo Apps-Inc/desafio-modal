@@ -45,6 +45,12 @@ class ViewController: UIViewController {
             disableFilterButton(sender: newButton)
         }
     }
+    @IBAction func cleanFilters(_ sender: Any) {
+        filtrosStackView.arrangedSubviews.forEach { item in
+            guard let item = item as? UIButton else {return}
+            item.sendActions(for: .touchUpInside)
+        }
+    }
 
     @objc func disableFilterButton(sender: UIButton) {
         filtrosStackView.removeArrangedSubview(sender)
