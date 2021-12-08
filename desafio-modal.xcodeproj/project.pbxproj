@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		02CE3E05275E8DC900D5DC6C /* SetFilterButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE3E04275E8DC900D5DC6C /* SetFilterButtons.swift */; };
 		02CE3E07275E8DD900D5DC6C /* SetFilterButtons.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CE3E06275E8DD900D5DC6C /* SetFilterButtons.xib */; };
-		00B877BA275E71EB00F91872 /* Github_Teste.md in Resources */ = {isa = PBXBuildFile; fileRef = 00B877B9275E71EB00F91872 /* Github_Teste.md */; };
-		00B877C1275E782400F91872 /* GitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B877BF275E782400F91872 /* GitCollectionViewCell.swift */; };
-		00B877C2275E782400F91872 /* GitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B877C0275E782400F91872 /* GitCollectionViewCell.xib */; };
 		0E0A290C275F82C3008AA72E /* RepositoryBranchesResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A290B275F82C3008AA72E /* RepositoryBranchesResponseDto.swift */; };
 		0E0A290E275F83EF008AA72E /* repository-branches-response-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0A290D275F83EF008AA72E /* repository-branches-response-mock.json */; };
 		0E0A2910275F84F5008AA72E /* RepositoryBranchResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A290F275F84F5008AA72E /* RepositoryBranchResponseDto.swift */; };
@@ -40,6 +37,8 @@
 		0EF776EE275E296E00F0B742 /* DesafioModalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776ED275E296E00F0B742 /* DesafioModalUITestsLaunchTests.swift */; };
 		2B0BCB6F0B85534D45DE8CC4 /* Github_Teste.md in Resources */ = {isa = PBXBuildFile; fileRef = D82A843AE6246870E40A0015 /* Github_Teste.md */; };
 		2FA737CD2BA380EE16C95DDE /* GitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1298DCCEE9FE575BDBE3D875 /* GitTableViewCell.xib */; };
+		81297CD92760F379006F418F /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81297CD82760F379006F418F /* DetailView.xib */; };
+		81297CDB2760F39E006F418F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81297CDA2760F39E006F418F /* DetailView.swift */; };
 		8F3A012B447D920B83E0CE61 /* GitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CF2E30A290EA55B22CB7E /* GitTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,9 +62,6 @@
 /* Begin PBXFileReference section */
 		02CE3E04275E8DC900D5DC6C /* SetFilterButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFilterButtons.swift; sourceTree = "<group>"; };
 		02CE3E06275E8DD900D5DC6C /* SetFilterButtons.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetFilterButtons.xib; sourceTree = "<group>"; };
-		00B877B9275E71EB00F91872 /* Github_Teste.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Github_Teste.md; sourceTree = "<group>"; };
-		00B877BF275E782400F91872 /* GitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCollectionViewCell.swift; sourceTree = "<group>"; };
-		00B877C0275E782400F91872 /* GitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E0A290B275F82C3008AA72E /* RepositoryBranchesResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBranchesResponseDto.swift; sourceTree = "<group>"; };
 		0E0A290D275F83EF008AA72E /* repository-branches-response-mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "repository-branches-response-mock.json"; sourceTree = "<group>"; };
 		0E0A290F275F84F5008AA72E /* RepositoryBranchResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBranchResponseDto.swift; sourceTree = "<group>"; };
@@ -97,6 +93,8 @@
 		0EF776EB275E296E00F0B742 /* DesafioModalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioModalUITests.swift; sourceTree = "<group>"; };
 		0EF776ED275E296E00F0B742 /* DesafioModalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioModalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1298DCCEE9FE575BDBE3D875 /* GitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitTableViewCell.xib; sourceTree = "<group>"; };
+		81297CD82760F379006F418F /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		81297CDA2760F39E006F418F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		D82A843AE6246870E40A0015 /* Github_Teste.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Github_Teste.md; sourceTree = "<group>"; };
 		EF4CF2E30A290EA55B22CB7E /* GitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +129,8 @@
 			children = (
 				02CE3E04275E8DC900D5DC6C /* SetFilterButtons.swift */,
 				02CE3E06275E8DD900D5DC6C /* SetFilterButtons.xib */,
+				81297CD82760F379006F418F /* DetailView.xib */,
+				81297CDA2760F39E006F418F /* DetailView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -401,6 +401,7 @@
 				0E12AF54275E535C00B67984 /* repositories-response-mock.json in Resources */,
 				0EF776D4275E296E00F0B742 /* Assets.xcassets in Resources */,
 				0E0A290E275F83EF008AA72E /* repository-branches-response-mock.json in Resources */,
+				81297CD92760F379006F418F /* DetailView.xib in Resources */,
 				2B0BCB6F0B85534D45DE8CC4 /* Github_Teste.md in Resources */,
 				2FA737CD2BA380EE16C95DDE /* GitTableViewCell.xib in Resources */,
 			);
@@ -449,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EF776CF275E296C00F0B742 /* ViewController.swift in Sources */,
+				81297CDB2760F39E006F418F /* DetailView.swift in Sources */,
 				0E12AF65275EA64A00B67984 /* Repositories.swift in Sources */,
 				0EF776CB275E296C00F0B742 /* AppDelegate.swift in Sources */,
 				02CE3E05275E8DC900D5DC6C /* SetFilterButtons.swift in Sources */,
