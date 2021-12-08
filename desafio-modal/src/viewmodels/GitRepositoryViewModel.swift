@@ -16,8 +16,8 @@ class GitRepositoryViewModel {
 
     private let disposeBag = DisposeBag()
     private let gitService: GitService
-    private let repositories = BehaviorSubject<[GitRepositorySummary]>(value: [])
-    let allRepositories: Observable<[GitRepositorySummary]>
+    private let repositories = BehaviorSubject<Repositories>(value: [])
+    let allRepositories: Observable<Repositories>
 //    weak var delegate: GitRepositoryDelegate?
 
     var openFilterView: (() -> Void)?
@@ -34,7 +34,7 @@ class GitRepositoryViewModel {
     }
 
     func updateRepositoryList() {
-        gitService.listAllRepository()
+        gitService.repositories()
             .subscribe {[weak self] res in
                 if let list = try? res.get() {
                     self?.repositories.onNext(list)

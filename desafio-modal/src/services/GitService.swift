@@ -8,17 +8,17 @@
 import Foundation
 import RxSwift
 
-protocol GitServiceProtocol {
-    func listAllRepository() -> Single<[GitRepositorySummary]>
-    func getRepositoryDetail() -> Single<GitRepositoryDetail>
-}
+class GitService {
+    func repositories(lastId: Int = 0) -> Single<Repositories> {
 
-class GitService: GitServiceProtocol {
-    func listAllRepository() -> Single<[GitRepositorySummary]> {
-        return Single.just([
-            GitRepositorySummary(name: "Flygondex"),
-            GitRepositorySummary(name: "Criptoview")
-        ])
+        return Observable.create { observer in
+            GitHubApi.Get.repositories(lastId: lastId) { repositories in
+                observer.onNext(repositories ?? [])
+                observer.onCompleted()
+            }
+            return Disposables.create()
+        }
+        .asSingle()
     }
 
     func getRepositoryDetail() -> Single<GitRepositoryDetail> {
