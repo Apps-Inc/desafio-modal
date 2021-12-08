@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 
 class FilterViewController: UIViewController {
+    @IBOutlet var lowerButton: LowerButton!
     static let identifier = "FilterViewController"
     private let disposeBag = DisposeBag()
 
@@ -17,6 +18,7 @@ class FilterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        lowerButton.changeButtonTitle(title: "APLICAR FILTRO")
     }
+
 }

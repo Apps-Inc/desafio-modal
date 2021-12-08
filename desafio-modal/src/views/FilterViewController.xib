@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController" customModule="desafio_modal" customModuleProvider="target">
             <connections>
+                <outlet property="lowerButton" destination="yu3-FX-JaH" id="Fi9-mv-9vA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +20,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yET-8J-cWq" customClass="SetFilterButtons" customModule="desafio_modal" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="115" width="414" height="781"/>
+                    <rect key="frame" x="0.0" y="115" width="414" height="560"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yu3-FX-JaH" customClass="LowerButton" customModule="desafio_modal" customModuleProvider="target">
+                    <rect key="frame" x="67" y="683" width="280" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>

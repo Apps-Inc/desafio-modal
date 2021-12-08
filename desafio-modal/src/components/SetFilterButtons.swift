@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SetFilterButtons: UIView {
+@IBDesignable class SetFilterButtons: UIView {
     var view: UIView!
     var filtros = [String]()
     @IBOutlet var seguidores: UIButton!
