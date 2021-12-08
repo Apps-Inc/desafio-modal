@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="desafio_modal" customModuleProvider="target">
             <connections>
-                <outlet property="botao" destination="8Fb-Vt-wQ6" id="0EF-Tp-Pso"/>
+                <outlet property="filtrosStackView" destination="xLE-Lx-oA7" id="E9q-na-cJI"/>
                 <outlet property="gitCollectionView" destination="pac-ag-IEs" id="IGO-OS-s5k"/>
                 <outlet property="view" destination="iN0-l3-epB" id="3Hz-qB-oTz"/>
             </connections>
@@ -20,29 +20,44 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VTf-LT-PsC" userLabel="Filtrando Stack View">
+                    <rect key="frame" x="10" y="271" width="374" height="53"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtrando:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="386-GX-H5e">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.63529413940000001" green="0.65098041299999998" blue="0.68627452850000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="5" id="xLE-Lx-oA7">
+                            <rect key="frame" x="0.0" y="24.5" width="374" height="28.5"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <viewLayoutGuide key="safeArea" id="Wak-Wi-zIp"/>
+                        </stackView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="xZO-yF-P6N"/>
+                </stackView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pac-ag-IEs">
-                    <rect key="frame" x="20" y="332" width="374" height="465"/>
+                    <rect key="frame" x="10" y="332" width="394" height="465"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bic-Vi-7wh">
+                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="0.0" sectionInsetReference="layoutMargins" id="Bic-Vi-7wh">
                         <size key="itemSize" width="350" height="150"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fb-Vt-wQ6">
-                    <rect key="frame" x="174" y="218" width="67" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pac-ag-IEs" secondAttribute="trailing" constant="20" id="CF4-2z-YPO"/>
-                <constraint firstItem="pac-ag-IEs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="R4F-5n-JaA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pac-ag-IEs" secondAttribute="trailing" constant="10" id="CF4-2z-YPO"/>
+                <constraint firstItem="VTf-LT-PsC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="CPt-ow-vzr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VTf-LT-PsC" secondAttribute="trailing" constant="10" id="GSD-5J-4eU"/>
+                <constraint firstItem="VTf-LT-PsC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="227" id="PqB-k2-jyU"/>
+                <constraint firstItem="pac-ag-IEs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="R4F-5n-JaA"/>
                 <constraint firstItem="pac-ag-IEs" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="288" id="hkl-oa-hjs"/>
+                <constraint firstItem="pac-ag-IEs" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="pwh-QX-qPy"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="pac-ag-IEs" secondAttribute="bottom" constant="65" id="x5t-TV-Xkh"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="119.86607142857142"/>
