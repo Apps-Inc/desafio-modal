@@ -22,9 +22,24 @@ class AppCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let gitRepositoryCoordinator = ListCoordinator(navigationController: navigationController,
-                                                                gitService: gitService,
-                                                                filterService: filterService)
-        start(coordinator: gitRepositoryCoordinator)
+        let viewModel = GitRepositoryViewModel(gitService: gitService)
+        let gitCollectionViewController = ViewController(nibName: ViewController.identifier, bundle: nil)
+        gitCollectionViewController.viewModel = viewModel
+        gitCollectionViewController.coordinator = self
+
+        self.navigationController.viewControllers = [gitCollectionViewController]
+    }
+
+    func openFilter() {
+        let viewModel = FilterViewModel(filterService: filterService)
+        let filterViewController = FilterViewController(nibName: FilterViewController.identifier, bundle: nil)
+        filterViewController.viewModel = viewModel
+        filterViewController.coordinator = self
+
+        self.navigationController.pushViewController(filterViewController, animated: true)
+    }
+
+    func openDetails() {
+
     }
 }

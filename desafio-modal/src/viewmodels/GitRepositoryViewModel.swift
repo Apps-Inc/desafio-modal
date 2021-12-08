@@ -18,19 +18,15 @@ class GitRepositoryViewModel {
     private let gitService: GitService
     private let repositories = BehaviorSubject<Repositories>(value: [])
     let allRepositories: Observable<Repositories>
-//    weak var delegate: GitRepositoryDelegate?
 
     var openFilterView: (() -> Void)?
-
-//    var allRepositories: Observable<[GitRepositorySummary]> {
-//        get {
-//            repositories.asObservable()
-//        }
-//    }
 
     init(gitService: GitService) {
         self.gitService = gitService
         self.allRepositories = repositories.asObservable()
+
+        gitService.test()
+            .subscribe { print($0) }
     }
 
     func updateRepositoryList() {

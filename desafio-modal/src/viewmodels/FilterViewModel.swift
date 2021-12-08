@@ -13,15 +13,10 @@ protocol FilterDelegate: AnyObject {
 }
 
 class FilterViewModel {
-
     private let filterService: FilterService
 
-    weak var delegate: FilterDelegate?
-
-//    weak var delegate: FilterDelegate?
-
-    let filterA: BehaviorSubject<Bool>// (value: false)
-    let filterB: BehaviorSubject<Bool>// (value: false)
+    let filterA: BehaviorSubject<Bool>
+    let filterB: BehaviorSubject<Bool>
 
     init(filterService: FilterService) {
         self.filterService = filterService
@@ -54,6 +49,5 @@ class FilterViewModel {
 
         let filter = Filter(filtroA: filtroA, filtroB: filtroB)
         filterService.filter.onNext(filter)
-        delegate?.onFilterApply()
     }
 }

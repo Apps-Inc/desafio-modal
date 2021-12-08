@@ -9,6 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: scene)
         let navigationController = UINavigationController()
+        navigationController.isNavigationBarHidden = false
 
         window.frame = UIScreen.main.bounds
         window.rootViewController = navigationController

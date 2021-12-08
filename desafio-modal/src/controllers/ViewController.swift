@@ -3,9 +3,12 @@ import RxSwift
 import RxCocoa
 
 class ViewController: UIViewController {
-    static let indentifier = "ViewController"
+
+    static let identifier = "ViewController"
     private let disposeBag = DisposeBag()
+
     var viewModel: GitRepositoryViewModel?
+    weak var coordinator: AppCoordinator?
 
     @IBOutlet weak var gitTableView: UITableView!
     @IBOutlet weak var filtrosStackView: UIStackView!
@@ -21,7 +24,14 @@ class ViewController: UIViewController {
             createFilterButton(name: button.name, enabled: true)
         }
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self,
+                                                            action: #selector(openFilter))
+
         setUpView()
+    }
+
+    @objc func openFilter() {
+        coordinator?.openFilter()
     }
 
     func createFilterButton(name: String, enabled: Bool = false) {
