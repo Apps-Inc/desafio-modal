@@ -1,15 +1,21 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
+
+    static let identifier = "ViewController"
+    private let disposeBag = DisposeBag()
+
+    var viewModel: GitRepositoryViewModel?
+    weak var coordinator: AppCoordinator?
+
     @IBOutlet weak var gitTableView: UITableView!
     @IBOutlet weak var filtrosStackView: UIStackView!
-
     var activeButtons = Set<FilterButton>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        gitTableView.delegate = self
-        gitTableView.dataSource = self
         gitTableView.register(UINib(nibName: GitTableViewCell.identifier, bundle: nil),
                               forCellReuseIdentifier: GitTableViewCell.identifier)
 
@@ -17,6 +23,15 @@ class ViewController: UIViewController {
             activeButtons.insert(button)
             createFilterButton(name: button.name, enabled: true)
         }
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self,
+                                                            action: #selector(openFilter))
+
+        setUpView()
+    }
+
+    @objc func openFilter() {
+        coordinator?.openFilter()
     }
 
     func createFilterButton(name: String, enabled: Bool = false) {
@@ -58,19 +73,22 @@ class ViewController: UIViewController {
         sender.alpha = 0
         sender.isEnabled = false
     }
+
+    private func setUpView() {
+        guard let viewModel = viewModel else { return }
+
+        viewModel.updateRepositoryList()
+        viewModel.allRepositories
+            .bind(to: gitTableView.rx.items(
+                cellIdentifier: GitTableViewCell.identifier, cellType: GitTableViewCell.self)) { _, _, _ in
+                // TODO: bind
+            }
+            .disposed(by: disposeBag)
+    }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+extension ViewController: FilterDelegate {
+    func onFilterApply() {
+        navigationController?.dismiss(animated: true)
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView
-                .dequeueReusableCell(withIdentifier: GitTableViewCell.identifier, for: indexPath)
-                as? GitTableViewCell else {fatalError()}
-
-        return cell
-    }
-
 }
