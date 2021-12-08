@@ -5,6 +5,7 @@ import RxCocoa
 class ViewController: UIViewController {
     static let indentifier = "ViewController"
 
+    @IBOutlet weak var gitTableView: UITableView!
     @IBOutlet weak var filtrosStackView: UIStackView!
     @IBOutlet weak var gitCollectionView: UICollectionView!
     @IBOutlet weak var botao: UIButton!
@@ -14,10 +15,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = "teste"
-        gitCollectionView.register(UINib(nibName: GitCollectionViewCell.identifier, bundle: nil),
-                                   forCellWithReuseIdentifier: GitCollectionViewCell.identifier)
+        gitTableView.register(UINib(nibName: GitTableViewCell.identifier, bundle: nil),
+                              forCellReuseIdentifier: GitTableViewCell.identifier)
 
         addFiltro(name: "Estrela")
         addFiltro(name: "Seguidores")
@@ -51,8 +50,7 @@ class ViewController: UIViewController {
     }
 
     @objc func removeFilter(sender: UIButton) {
-//        sender.isHidden = true
-        print("clicou")
+
         filtrosStackView.removeArrangedSubview(sender)
         filtrosStackView.addArrangedSubview(sender)
         sender.alpha = 0
@@ -64,15 +62,11 @@ class ViewController: UIViewController {
 
         viewModel.updateRepositoryList()
         viewModel.allRepositories
-            .bind(to: gitCollectionView.rx.items(
-                cellIdentifier: GitCollectionViewCell.identifier, cellType: GitCollectionViewCell.self)) { _, _, _ in
+            .bind(to: gitTableView.rx.items(
+                cellIdentifier: GitTableViewCell.identifier, cellType: GitTableViewCell.self)) { _, _, _ in
                 // TODO: bind
             }
             .disposed(by: disposeBag)
-
-//        botao.rx.tap
-//            .bind {[weak self] in self?.viewModel?.openFilterView?()}
-//            .disposed(by: disposeBag)
     }
 }
 
