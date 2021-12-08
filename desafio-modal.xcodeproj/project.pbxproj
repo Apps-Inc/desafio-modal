@@ -37,6 +37,7 @@
 		0EF776EE275E296E00F0B742 /* DesafioModalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776ED275E296E00F0B742 /* DesafioModalUITestsLaunchTests.swift */; };
 		2B0BCB6F0B85534D45DE8CC4 /* Github_Teste.md in Resources */ = {isa = PBXBuildFile; fileRef = D82A843AE6246870E40A0015 /* Github_Teste.md */; };
 		2FA737CD2BA380EE16C95DDE /* GitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1298DCCEE9FE575BDBE3D875 /* GitTableViewCell.xib */; };
+		8102A32B2761541100EAC79F /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102A32A2761541100EAC79F /* RoundedCornerView.swift */; };
 		81297CD92760F379006F418F /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81297CD82760F379006F418F /* DetailView.xib */; };
 		81297CDB2760F39E006F418F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81297CDA2760F39E006F418F /* DetailView.swift */; };
 		8F3A012B447D920B83E0CE61 /* GitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CF2E30A290EA55B22CB7E /* GitTableViewCell.swift */; };
@@ -93,6 +94,7 @@
 		0EF776EB275E296E00F0B742 /* DesafioModalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioModalUITests.swift; sourceTree = "<group>"; };
 		0EF776ED275E296E00F0B742 /* DesafioModalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioModalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1298DCCEE9FE575BDBE3D875 /* GitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitTableViewCell.xib; sourceTree = "<group>"; };
+		8102A32A2761541100EAC79F /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		81297CD82760F379006F418F /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		81297CDA2760F39E006F418F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		D82A843AE6246870E40A0015 /* Github_Teste.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Github_Teste.md; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				02CE3E06275E8DD900D5DC6C /* SetFilterButtons.xib */,
 				81297CD82760F379006F418F /* DetailView.xib */,
 				81297CDA2760F39E006F418F /* DetailView.swift */,
+				8102A32A2761541100EAC79F /* RoundedCornerView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				81297CDB2760F39E006F418F /* DetailView.swift in Sources */,
 				0E12AF65275EA64A00B67984 /* Repositories.swift in Sources */,
 				0EF776CB275E296C00F0B742 /* AppDelegate.swift in Sources */,
+				8102A32B2761541100EAC79F /* RoundedCornerView.swift in Sources */,
 				02CE3E05275E8DC900D5DC6C /* SetFilterButtons.swift in Sources */,
 				0E12AF63275EA33B00B67984 /* RepositoryDetails.swift in Sources */,
 				0E0A2918275FF196008AA72E /* RepositoryContributorsResponseDto.swift in Sources */,
