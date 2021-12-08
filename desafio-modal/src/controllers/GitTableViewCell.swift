@@ -7,8 +7,8 @@
 
 import UIKit
 
-class GitCollectionViewCell: UICollectionViewCell {
-    static let identifier = "GitCollectionViewCell"
+class GitTableViewCell: UITableViewCell {
+    static let identifier = "GitTableViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
