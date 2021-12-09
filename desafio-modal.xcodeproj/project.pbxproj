@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0092836D276150E000C7E13E /* LowerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0092836C276150E000C7E13E /* LowerButton.swift */; };
+		0092836F276150EB00C7E13E /* LowerButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0092836E276150EB00C7E13E /* LowerButton.xib */; };
 		00B877BA275E71EB00F91872 /* Github_Teste.md in Resources */ = {isa = PBXBuildFile; fileRef = 00B877B9275E71EB00F91872 /* Github_Teste.md */; };
 		02CE3E13276154CE00D5DC6C /* LowerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE3E12276154CE00D5DC6C /* LowerButton.swift */; };
 		02CE3E15276154E600D5DC6C /* LowerButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CE3E14276154E600D5DC6C /* LowerButton.xib */; };
@@ -77,6 +79,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0092836C276150E000C7E13E /* LowerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerButton.swift; sourceTree = "<group>"; };
+		0092836E276150EB00C7E13E /* LowerButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LowerButton.xib; sourceTree = "<group>"; };
 		00B877B9275E71EB00F91872 /* Github_Teste.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Github_Teste.md; sourceTree = "<group>"; };
 		01277B111A088C499168FCBC /* FilterableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterableProtocol.swift; sourceTree = "<group>"; };
 		02CE3E12276154CE00D5DC6C /* LowerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerButton.swift; sourceTree = "<group>"; };
@@ -164,6 +168,13 @@
 				02CE3E12276154CE00D5DC6C /* LowerButton.swift */,
 			);
 			path = lowerButton;
+		009283702761513E00C7E13E /* LowerButtonXib */ = {
+			isa = PBXGroup;
+			children = (
+				0092836C276150E000C7E13E /* LowerButton.swift */,
+				0092836E276150EB00C7E13E /* LowerButton.xib */,
+			);
+			path = LowerButtonXib;
 			sourceTree = "<group>";
 		};
 		0E12AF4C275E2DD400B67984 /* views */ = {
@@ -174,6 +185,7 @@
 				0E12AF4A275E2DC800B67984 /* ViewController.xib */,
 				94D075E1B0F044E2C0DC34DD /* GitTableViewCell.xib */,
 				4CD5810B2761205400D8BC3C /* FilterViewController.xib */,
+				009283702761513E00C7E13E /* LowerButtonXib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -492,6 +504,7 @@
 				0E12AF4B275E2DC900B67984 /* ViewController.xib in Resources */,
 				0EF776D4275E296E00F0B742 /* Assets.xcassets in Resources */,
 				2917261CEECBCFB2664FD599 /* repository-contributors-response-mock.json in Resources */,
+				0092836F276150EB00C7E13E /* LowerButton.xib in Resources */,
 				BB770405C38C29995E8A6649 /* repository-readme-mock.md in Resources */,
 				E7DE068B66E0A026BD7DC122 /* repository-details-response-mock.json in Resources */,
 				2305C34DB26CDF203DF9A9C6 /* repositories-response-mock.json in Resources */,

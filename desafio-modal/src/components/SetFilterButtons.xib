@@ -39,7 +39,7 @@
                         <attributedString key="attributedTitle">
                             <fragment content="ESTRELAS">
                                 <attributes>
-                                    <font key="NSFont" metaFont="system" size="12"/>
+                                    <font key="NSFont" metaFont="cellTitle"/>
                                 </attributes>
                             </fragment>
                         </attributedString>

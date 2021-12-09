@@ -6,15 +6,23 @@ protocol Filterable {
 
     var param: ParamT { get }
 
-    func apply(lst: [ListItemT]) -> [ListItemT]
+    func keep(item: ListItemT) -> Bool
+}
+
+extension Filterable {
+    func apply(to list: [ListItemT]) -> [ListItemT] {
+        list.filter { self.keep(item: $0) }
+    }
 }
 
 extension Array where Element: Filterable {
     typealias ListItemT = Element.ListItemT
 
-    func apply(lst: [ListItemT]) -> [ListItemT] {
-        self.reduce(lst) { partial, nextFilter in
-            nextFilter.apply(lst: partial)
+    func applyAll(to list: [ListItemT]) -> [ListItemT] {
+        list.filter { element in
+            self.allSatisfy { filter in
+                filter.keep(item: element)
+            }
         }
     }
 }
