@@ -37,6 +37,9 @@
 		4C54C542275F039F007F7436 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 4C54C541275F039F007F7436 /* RxCocoa */; };
 		4C54C544275F039F007F7436 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4C54C543275F039F007F7436 /* RxSwift */; };
 		4CBE4DDE276149A500EBE9D0 /* DataMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135D83E4F32EDE38B950C884 /* DataMockable.swift */; };
+		4CBE4DE52762486D00EBE9D0 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CBE4DE22762486C00EBE9D0 /* DetailView.xib */; };
+		4CBE4DE62762486D00EBE9D0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBE4DE32762486C00EBE9D0 /* DetailView.swift */; };
+		4CBE4DE72762486D00EBE9D0 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBE4DE42762486D00EBE9D0 /* RoundedCornerView.swift */; };
 		4CD5810C2761205400D8BC3C /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5810A2761205400D8BC3C /* FilterViewController.swift */; };
 		4CD5810D2761205400D8BC3C /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD5810B2761205400D8BC3C /* FilterViewController.xib */; };
 		4CD6F2DE275FD67D003F1850 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6F2DD275FD67D003F1850 /* FilterViewModel.swift */; };
@@ -108,6 +111,9 @@
 		4C54C538275EEEFB007F7436 /* GitRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryViewModel.swift; sourceTree = "<group>"; };
 		4C54C53C275EFBCE007F7436 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		4C54C53E275EFBE9007F7436 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		4CBE4DE22762486C00EBE9D0 /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		4CBE4DE32762486C00EBE9D0 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		4CBE4DE42762486D00EBE9D0 /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		4CD5810A2761205400D8BC3C /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		4CD5810B2761205400D8BC3C /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 		4CD6F2DD275FD67D003F1850 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
@@ -332,6 +338,9 @@
 		7186F7E561BF9E37E23E34FF /* components */ = {
 			isa = PBXGroup;
 			children = (
+				4CBE4DE32762486C00EBE9D0 /* DetailView.swift */,
+				4CBE4DE22762486C00EBE9D0 /* DetailView.xib */,
+				4CBE4DE42762486D00EBE9D0 /* RoundedCornerView.swift */,
 				A36A4D4B4C20C242FA6BBD66 /* SetFilterButtons.swift */,
 				4B60662B740C3C2F8E9088A7 /* SetFilterButtons.xib */,
 			);
@@ -499,6 +508,7 @@
 				32A263964B6EE5E1CDAD832B /* SetFilterButtons.xib in Resources */,
 				4CD5810D2761205400D8BC3C /* FilterViewController.xib in Resources */,
 				C2A9A4F65AABB25F22108E3F /* GitTableViewCell.xib in Resources */,
+				4CBE4DE52762486D00EBE9D0 /* DetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +571,7 @@
 				3983C0C058808957916CDFA0 /* RepositoryDetails.swift in Sources */,
 				20029A79D4D2AE6315ECA802 /* RepositoryContributorsResponseDto.swift in Sources */,
 				826858D02B8DE620DC4D8D02 /* RepositoryContributorResponseDto.swift in Sources */,
+				4CBE4DE72762486D00EBE9D0 /* RoundedCornerView.swift in Sources */,
 				AF8C84EA268EAB5424E3A89A /* RepositoryBranchResponseDto.swift in Sources */,
 				4DEE13888DF1D3B66C698E7C /* RepositoryReadmeResponseDto.swift in Sources */,
 				E0E08A52AB323CB1D4A78766 /* RepositoryBranchesResponseDto.swift in Sources */,
@@ -569,6 +580,7 @@
 				40FB74695C7A655FE7A23039 /* RepositoryDetailsResponseDto.swift in Sources */,
 				4CD5810C2761205400D8BC3C /* FilterViewController.swift in Sources */,
 				519015D2033D43B8A58ADD78 /* RepositoriesResponseDto.swift in Sources */,
+				4CBE4DE62762486D00EBE9D0 /* DetailView.swift in Sources */,
 				9B1AB93247348FAE3FA8981A /* GitHubApi.swift in Sources */,
 				7A6D2BC70905AEAD14B0D5D4 /* SetFilterButtons.swift in Sources */,
 				0092836D276150E000C7E13E /* LowerButton.swift in Sources */,
