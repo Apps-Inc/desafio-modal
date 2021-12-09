@@ -10,8 +10,8 @@ class FilterableProtocol: XCTestCase {
 
         var param: ParamT
 
-        func apply(lst: [ListItemT]) -> [ListItemT] {
-            lst.filter { $0 > param }
+        func keep(item: Int) -> Bool {
+            item > param
         }
     }
     // swiftlint:enable nesting
@@ -21,7 +21,7 @@ class FilterableProtocol: XCTestCase {
         let filter = IntGreaterThanFilter.init(param: 3)
 
         // act
-        let filtered = filter.apply(lst: [1, 2, 3, 4, 5, 6])
+        let filtered = filter.apply(to: [1, 2, 3, 4, 5, 6])
 
         // assert
         XCTAssertEqual(filtered, [4, 5, 6])
@@ -34,8 +34,8 @@ class FilterableProtocol: XCTestCase {
 
         var param: ParamT
 
-        func apply(lst: [ListItemT]) -> [ListItemT] {
-            lst.filter { $0.count > param }
+        func keep(item: String) -> Bool {
+            item.count > param
         }
     }
     // swiftlint:enable nesting
@@ -45,7 +45,7 @@ class FilterableProtocol: XCTestCase {
         let filter = StringLenGreaterThanFilter.init(param: 2)
 
         // act
-        let filtered = filter.apply(lst: ["1", "12", "123"])
+        let filtered = filter.apply(to: ["1", "12", "123"])
 
         // assert
         XCTAssertEqual(filtered, ["123"])
@@ -62,7 +62,7 @@ class FilterableProtocol: XCTestCase {
         ]
 
         // act
-        let reduced = filters.apply(lst: [1, 2, 3, 4, 5, 6])
+        let reduced = filters.applyAll(to: [1, 2, 3, 4, 5, 6])
 
         // assert
         XCTAssertEqual(reduced, [6])
