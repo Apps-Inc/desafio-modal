@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="desafio_modal" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFN-Ad-EHv" userLabel="TopBarView">
+                    <rect key="frame" x="-4" y="0.0" width="422" height="191"/>
+                    <color key="backgroundColor" systemColor="labelColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPp-MY-IUA" customClass="DetailView" customModule="desafio_modal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="54" width="374" height="758"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggg-4v-Kz6">
+                    <rect key="frame" x="67" y="812" width="280" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="uHp-GJ-T7z"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Compartilhar">
+                        <backgroundConfiguration key="background" cornerRadius="6">
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </backgroundConfiguration>
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.92156863209999995" green="0.92549026010000002" blue="0.93333339689999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="IFN-Ad-EHv" firstAttribute="centerX" secondItem="GPp-MY-IUA" secondAttribute="centerX" id="2xG-8A-kRO"/>
+                <constraint firstItem="ggg-4v-Kz6" firstAttribute="centerX" secondItem="GPp-MY-IUA" secondAttribute="centerX" id="5gV-Vr-X2a"/>
+                <constraint firstItem="GPp-MY-IUA" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="L2g-mR-aI2"/>
+                <constraint firstItem="ggg-4v-Kz6" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ZW3-j0-JBN"/>
+                <constraint firstItem="GPp-MY-IUA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="ccn-Cd-qHJ"/>
+                <constraint firstItem="GPp-MY-IUA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="fP2-Z9-avW"/>
+                <constraint firstItem="IFN-Ad-EHv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hPu-ml-JpI"/>
+                <constraint firstAttribute="bottom" secondItem="IFN-Ad-EHv" secondAttribute="bottom" constant="705" id="leB-jb-fLb"/>
+                <constraint firstItem="ggg-4v-Kz6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="67" id="sIl-MK-KnV"/>
+                <constraint firstItem="IFN-Ad-EHv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-4" id="umD-lq-GhA"/>
+                <constraint firstItem="ggg-4v-Kz6" firstAttribute="top" secondItem="GPp-MY-IUA" secondAttribute="bottom" id="wIL-ZQ-cTA"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="67.633928571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

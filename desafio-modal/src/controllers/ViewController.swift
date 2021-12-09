@@ -24,23 +24,46 @@ class ViewController: UIViewController {
             createFilterButton(name: label, enabled: false)
         }
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self,
+        setupNavigationBar()
+        setUpView()
+    }
+
+    func setupNavigationBar() {
+        if let navigationBar = self.navigationController?.navigationBar {
+            let firstFrame = CGRect(x: navigationBar.frame.width/6, y: 0, width: navigationBar.frame.width/2, height: navigationBar.frame.height)
+            let firstLabel = UILabel(frame: firstFrame)
+            firstLabel.text = "Github"
+            firstLabel.textColor = .white
+            navigationBar.addSubview(firstLabel)
+        }
+
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self,
+                                                            action: #selector(search))
+        let filterButton = UIBarButtonItem(barButtonSystemItem: .add, target: self,
                                                             action: #selector(openFilter))
+        searchButton.tintColor = .white
+        filterButton.tintColor = .white
 
         setUpTableView()
         setUpFilterView()
+        navigationItem.rightBarButtonItems = [filterButton, searchButton]
     }
 
     @objc func openFilter() {
         coordinator?.openFilter()
     }
 
+    @objc func search() {
+
+    }
+
+
     func createFilterButton(name: FilterButton, enabled: Bool = false) {
         if let button = buttons[name] {
             enableFilterButton(button: button)
             return
         }
-
+    
         var container = AttributeContainer()
         container.font = UIFont.systemFont(ofSize: 10)
 
@@ -57,7 +80,6 @@ class ViewController: UIViewController {
         newButton.layer.borderWidth = 1
         newButton.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
         newButton.layer.cornerRadius = 2
-//        newButton.addTarget(self, action: #selector(disableFilterButton(sender:)), for: .touchUpInside)
         newButton.titleLabel?.numberOfLines = 1
         newButton.rx.tap.map { name }.subscribe {[weak viewModel] buttonType  in
             if let buttonType = buttonType.element {
