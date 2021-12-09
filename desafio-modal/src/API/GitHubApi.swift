@@ -5,8 +5,9 @@ struct GitHubApi {
     //
     // 1. clicar em desafio-modal à esquerda
     // 2. selecionem o target "desafio-modal"
-    // 3. pesquisar por "other swift flags"
-    // 4. em Debug, adicione "-D MOCK_API_RESPONSES"
+    // 3. selecionar "Build Settings"
+    // 4. pesquisar por "other swift flags"
+    // 5. em Debug, adicione "-D MOCK_API_RESPONSES"
     static var useMockedResponses: Bool = {
         #if MOCK_API_RESPONSES
         return true
