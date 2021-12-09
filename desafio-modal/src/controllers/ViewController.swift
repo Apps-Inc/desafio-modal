@@ -28,20 +28,7 @@ class ViewController: UIViewController {
                                                             action: #selector(openFilter))
 
         setUpTableView()
-
-        viewModel?.filters
-            .subscribe { [weak self] res in
-                let filters = res.element?.filters ?? []
-
-                self?.buttons.forEach {(key, value) in
-                    if filters.contains(key) {
-                        self?.enableFilterButton(button: value)
-                    } else {
-                        self?.disableFilterButton(button: value)
-                    }
-                }
-            }
-            .disposed(by: disposeBag)
+        setUpFilterView()
     }
 
     @objc func openFilter() {
@@ -116,6 +103,22 @@ class ViewController: UIViewController {
                 cellIdentifier: GitTableViewCell.identifier, cellType: GitTableViewCell.self)) { _, repo, cel in
                     cel.name.text = repo.name
                 // TODO: bind
+            }
+            .disposed(by: disposeBag)
+    }
+
+    private func setUpFilterView() {
+        viewModel?.filters
+            .subscribe { [weak self] res in
+                let filters = res.element?.filters ?? []
+
+                self?.buttons.forEach {(key, value) in
+                    if filters.contains(key) {
+                        self?.enableFilterButton(button: value)
+                    } else {
+                        self?.disableFilterButton(button: value)
+                    }
+                }
             }
             .disposed(by: disposeBag)
     }
