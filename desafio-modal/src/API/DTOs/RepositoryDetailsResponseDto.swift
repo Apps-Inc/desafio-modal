@@ -1,12 +1,12 @@
 import Foundation
 
+// Usar os dados retornados por /search/repositories ao invés dos que o /repo
+// retorna, pois parece ser o denominador comum entre eles.
 struct RepositoryDetailsResponseDto {
     let id: Int
     let createdAt: String
 
     let stargazersCount: Int
-    let watchersCount: Int
-    let subscribersCount: Int
 }
 
 extension RepositoryDetailsResponseDto: DataMockable {

@@ -5,8 +5,6 @@ struct RepositoryDetails {
     let createdAt: Date
 
     let stargazersCount: Int
-    let watchersCount: Int
-    let subscribersCount: Int
 
     init?(_ dto: RepositoryDetailsResponseDto) {
         let dateFormatter = ISO8601DateFormatter()
@@ -18,7 +16,5 @@ struct RepositoryDetails {
         createdAt = createdDate
 
         stargazersCount = dto.stargazersCount
-        watchersCount = dto.watchersCount
-        subscribersCount = dto.subscribersCount
     }
 }

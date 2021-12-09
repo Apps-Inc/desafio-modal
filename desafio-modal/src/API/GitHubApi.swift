@@ -191,6 +191,37 @@ struct GitHubApi {
         ) {
             countCommits(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
         }
+
+        // API limit
+        static let maxItemsPerPage = 100
+
+        static func search(
+            query: String,
+            sort: ApiSort? = nil,
+            order: ApiOrder? = nil,
+            perPage: Int = maxItemsPerPage,
+            page: Int = 1,
+            completionHandler: @escaping (GitHubSearchResults?) -> Void
+        ) { if useMockedResponses {
+            let dto = decodeMock(for: GitHubSearchResposeDto.self)!
+            completionHandler(GitHubSearchResults(dto, page: page))
+        } else {
+            let url = baseUrl + "search/repositories" +
+                "?q=\(query)" +
+                (sort == nil ? "" : "&sort=\(sort!.queryParam)") +
+                (order == nil ? "" : "&order=\(order!.queryParam)") +
+                "&per_page=\(perPage)" +
+                "&page=\(page)"
+
+            getDecoded(as: GitHubSearchResposeDto.self, from: url) { decoded in
+                guard let decoded = decoded else {
+                    completionHandler(nil)
+                    return
+                }
+
+                completionHandler(GitHubSearchResults(decoded, page: page))
+            }
+        }}
     }
 }
 
