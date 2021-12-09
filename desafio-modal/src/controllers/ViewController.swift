@@ -24,14 +24,35 @@ class ViewController: UIViewController {
             createFilterButton(name: button.name, enabled: true)
         }
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self,
-                                                            action: #selector(openFilter))
-
+        setupNavigationBar()
         setUpView()
+    }
+
+    func setupNavigationBar() {
+        if let navigationBar = self.navigationController?.navigationBar {
+            let firstFrame = CGRect(x: navigationBar.frame.width/6, y: 0, width: navigationBar.frame.width/2, height: navigationBar.frame.height)
+            let firstLabel = UILabel(frame: firstFrame)
+            firstLabel.text = "GitHub"
+            firstLabel.textColor = .white
+            navigationBar.addSubview(firstLabel)
+        }
+
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self,
+                                                            action: #selector(search))
+        let filterButton = UIBarButtonItem(barButtonSystemItem: .add, target: self,
+                                                            action: #selector(openFilter))
+        searchButton.tintColor = .white
+        filterButton.tintColor = .white
+
+        navigationItem.rightBarButtonItems = [filterButton, searchButton]
     }
 
     @objc func openFilter() {
         coordinator?.openFilter()
+    }
+
+    @objc func search() {
+
     }
 
     func createFilterButton(name: String, enabled: Bool = false) {

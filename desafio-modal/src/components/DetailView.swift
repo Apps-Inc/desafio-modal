@@ -17,11 +17,7 @@ class DetailView: UIView {
     }
     */
 
-
-
     var view: UIView!
-    
-
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,6 +44,4 @@ class DetailView: UIView {
         return view
     }
 
-
 }
-
