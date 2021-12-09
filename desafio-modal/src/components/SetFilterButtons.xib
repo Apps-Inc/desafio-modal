@@ -104,6 +104,9 @@
                         </backgroundConfiguration>
                         <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="applicar:" destination="-1" eventType="touchUpInside" id="A83-CG-Fp0"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMV-Ad-3Jh">
                     <rect key="frame" x="287" y="204" width="66" height="40"/>

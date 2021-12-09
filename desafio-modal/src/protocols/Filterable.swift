@@ -26,3 +26,54 @@ extension Array where Element: Filterable {
         }
     }
 }
+//
+// struct StargazersGreaterThanFilter: Filterable {
+//    typealias ListItemT = RepositoryDetails
+//    typealias ParamT = Int
+//
+////    var title: String {
+////        get {
+////            "ESTRELAS"
+////        }
+////    }
+//
+//    var param: ParamT
+//
+//    func apply(lst: [ListItemT]) -> [ListItemT] {
+//        lst.filter { $0.stargazersCount > param }
+//    }
+// }
+//
+// struct WatchersGreaterThanFilter: Filterable {
+//    typealias ListItemT = RepositoryDetails
+//    typealias ParamT = Int
+//
+////    var title: String {
+////        get {
+////            "SEGUIDORES"
+////        }
+////    }
+//
+//    var param: ParamT
+//
+//    func apply(lst: [ListItemT]) -> [ListItemT] {
+//        lst.filter { $0.stargazersCount > param }
+//    }
+// }
+//
+// private struct DateGreaterThanFilter: Filterable {
+//    typealias ListItemT = RepositoryDetails
+//    typealias ParamT = Date
+//
+////    var title: String {
+////        get {
+////            "DATA"
+////        }
+////    }
+//
+//    var param: ParamT
+//
+//    func apply(lst: [ListItemT]) -> [ListItemT] {
+//        lst.filter { $0.createdAt > param }
+//    }
+// }

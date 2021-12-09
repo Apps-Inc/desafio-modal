@@ -16,17 +16,20 @@ class GitRepositoryViewModel {
 
     private let disposeBag = DisposeBag()
     private let gitService: GitService
+    private let filterService: FilterService
     private let repositories = BehaviorSubject<Repositories>(value: [])
+
     let allRepositories: Observable<Repositories>
+    let filters: Observable<Filter>
 
     var openFilterView: (() -> Void)?
 
-    init(gitService: GitService) {
+    init(gitService: GitService, filterService: FilterService) {
         self.gitService = gitService
-        self.allRepositories = repositories.asObservable()
+        self.filterService = filterService
 
-        gitService.test()
-            .subscribe { print($0) }
+        self.allRepositories = repositories.asObservable()
+        self.filters = filterService.filter.asObservable()
     }
 
     func updateRepositoryList() {

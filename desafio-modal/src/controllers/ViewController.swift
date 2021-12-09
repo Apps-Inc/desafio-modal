@@ -27,7 +27,19 @@ class ViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self,
                                                             action: #selector(openFilter))
 
+        createFilterButton(name: "tes", enabled: true)
         setUpView()
+
+        viewModel?.filters
+            .subscribe { [weak self] res in
+                let filters = res.element?.filters ?? []
+//                self?.activeButtons = []
+                filters.forEach {
+                    self?.createFilterButton(name: $0.rawValue, enabled: true)
+                    self?.activeButtons.insert($0)
+                }
+            }
+            .disposed(by: disposeBag)
     }
 
     @objc func openFilter() {
@@ -80,7 +92,8 @@ class ViewController: UIViewController {
         viewModel.updateRepositoryList()
         viewModel.allRepositories
             .bind(to: gitTableView.rx.items(
-                cellIdentifier: GitTableViewCell.identifier, cellType: GitTableViewCell.self)) { _, _, _ in
+                cellIdentifier: GitTableViewCell.identifier, cellType: GitTableViewCell.self)) { _, _, cell in
+//                    cell.
                 // TODO: bind
             }
             .disposed(by: disposeBag)
