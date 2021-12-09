@@ -40,6 +40,11 @@ class AppCoordinator: BaseCoordinator {
     }
 
     func openDetails() {
+        let viewModel = DetailViewModel(filterService: filterService)
+        let detailViewController = DetailViewController(nibName: DetailViewController.identifier, bundle: nil)
+        detailViewController.viewModel = viewModel
+        detailViewController.coordinator = self
 
+        self.navigationController.pushViewController(detailViewController, animated: true)
     }
 }
