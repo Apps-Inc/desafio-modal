@@ -15,10 +15,10 @@ class RoundedCornerView: UIView {
             layer.masksToBounds = true
             layer.cornerRadius = cornerRadius
             layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-            
+
         }
     }
-    
+
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
