@@ -160,6 +160,9 @@
                     <constraint firstAttribute="bottomMargin" secondItem="2AG-eG-YiP" secondAttribute="bottom" constant="-1" id="o4G-J5-A3F"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="name" destination="Bl6-MX-zcg" id="zCu-5X-zLq"/>
+            </connections>
             <point key="canvasLocation" x="263.768115942029" y="-49.553571428571423"/>
         </tableViewCell>
     </objects>

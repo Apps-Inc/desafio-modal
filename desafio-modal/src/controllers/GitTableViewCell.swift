@@ -8,6 +8,7 @@
 import UIKit
 
 class GitTableViewCell: UITableViewCell {
+    @IBOutlet weak var name: UILabel!
     static let identifier = "GitTableViewCell"
 
     override func awakeFromNib() {

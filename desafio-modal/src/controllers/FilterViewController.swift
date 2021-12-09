@@ -22,18 +22,20 @@ class FilterViewController: UIViewController {
         filterUI.delegate = self
 
         guard let filter = viewModel?.filter else { return }
-//        if filter.filters.contains(.followers) { filterUI.seguidores.isEnabled }
+        filterUI.estrelas.isSelected = filter.filters.contains(.star)
+        filterUI.formatButton(button: filterUI.estrelas)
 
-//        filterUI.seguidores.rx.isSelected.
-
-        filterUI.estrelas.isSelected = filter.filters.contains(.date)
         filterUI.seguidores.isSelected = filter.filters.contains(.followers)
+        filterUI.formatButton(button: filterUI.seguidores)
+
         filterUI.data.isSelected = filter.filters.contains(.date)
+        filterUI.formatButton(button: filterUI.data)
 
         filterUI.crescente.isSelected = filter.order == .ASCENDING
-        filterUI.decrescente.isSelected = filter.order == .DESCENDING
+        filterUI.formatButton(button: filterUI.crescente)
 
-        print(filter)
+        filterUI.decrescente.isSelected = filter.order == .DESCENDING
+        filterUI.formatButton(button: filterUI.decrescente)
     }
 
 }

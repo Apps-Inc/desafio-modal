@@ -56,14 +56,15 @@ class SetFilterButtons: UIView {
         guard let button = sender as? UIButton else { return }
         button.isSelected = button.isSelected ? false : true
 
-        if button.isSelected {
-//            filtros.append(button.currentTitle!)
-            formatButtonSelected(button: button)
-        } else {
-//            let index = filtros.firstIndex(of: button.currentTitle!)
-//            filtros.remove(at: index!)
-            formatButtonUnSelected(button: button)
-        }
+        formatButton(button: button)
+//        if button.isSelected {
+////            filtros.append(button.currentTitle!)
+//            formatButtonSelected(button: button)
+//        } else {
+////            let index = filtros.firstIndex(of: button.currentTitle!)
+////            filtros.remove(at: index!)
+//            formatButtonUnSelected(button: button)
+//        }
     }
 
     @IBAction func orderFilter(_ sender: Any) {
@@ -91,6 +92,14 @@ class SetFilterButtons: UIView {
 //            filtros.append(button.currentTitle!)
             formatButtonSelected(button: decrescente)
             removeBotaoOrdenacao(item: "CRESCENTE", button: crescente)
+        }
+    }
+
+    func formatButton(button: UIButton) {
+        if button.isSelected {
+            formatButtonSelected(button: button)
+        } else {
+            formatButtonUnSelected(button: button)
         }
     }
 

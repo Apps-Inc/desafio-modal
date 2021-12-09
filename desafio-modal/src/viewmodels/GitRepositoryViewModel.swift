@@ -20,7 +20,8 @@ class GitRepositoryViewModel {
     private let repositories = BehaviorSubject<Repositories>(value: [])
 
     let allRepositories: Observable<Repositories>
-    let filters: Observable<Filter>
+    let filters: BehaviorSubject<Filter>
+    let filterName = BehaviorSubject<String>(value: "")
 
     var openFilterView: (() -> Void)?
 
@@ -29,7 +30,7 @@ class GitRepositoryViewModel {
         self.filterService = filterService
 
         self.allRepositories = repositories.asObservable()
-        self.filters = filterService.filter.asObservable()
+        self.filters = filterService.filter// .asObservable()
     }
 
     func updateRepositoryList() {
@@ -45,5 +46,14 @@ class GitRepositoryViewModel {
     }
 
     func fetchNextPage() {
+    }
+
+    func removeFilterItem(item: FilterButton) {
+//        filters.onNext()
+        guard let filterOptions = try? filters.value() else { return }
+
+        let selected = filterOptions.filters.filter { $0 != item }
+        let newFilter = Filter(filters: selected, order: filterOptions.order)
+        filters.onNext(newFilter)
     }
 }
