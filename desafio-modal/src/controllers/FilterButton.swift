@@ -10,10 +10,14 @@ enum FilterButton: CaseIterable, Hashable {
 
     var name: String {
         switch self {
-            case .star: return "Estrelas"
-            case .followers: return "Seguidores"
-            case .date: return  "Data"
-            case .order(let label): return label
+        case .star:
+            return "Estrelas"
+        case .followers:
+            return "Seguidores"
+        case .date:
+            return  "Data"
+        case .order(let label):
+            return label
         }
     }
 }

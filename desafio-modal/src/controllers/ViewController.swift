@@ -25,12 +25,15 @@ class ViewController: UIViewController {
         }
 
         setupNavigationBar()
-        setUpView()
+        setUpTableView()
+        setUpFilterView()
     }
 
     func setupNavigationBar() {
         if let navigationBar = self.navigationController?.navigationBar {
-            let firstFrame = CGRect(x: navigationBar.frame.width/6, y: 0, width: navigationBar.frame.width/2, height: navigationBar.frame.height)
+            let firstFrame = CGRect(x: navigationBar.frame.width/6, y: 0,
+                                    width: navigationBar.frame.width/2,
+                                    height: navigationBar.frame.height)
             let firstLabel = UILabel(frame: firstFrame)
             firstLabel.text = "Github"
             firstLabel.textColor = .white
@@ -44,8 +47,6 @@ class ViewController: UIViewController {
         searchButton.tintColor = .white
         filterButton.tintColor = .white
 
-        setUpTableView()
-        setUpFilterView()
         navigationItem.rightBarButtonItems = [filterButton, searchButton]
     }
 
@@ -57,13 +58,12 @@ class ViewController: UIViewController {
 
     }
 
-
     func createFilterButton(name: FilterButton, enabled: Bool = false) {
         if let button = buttons[name] {
             enableFilterButton(button: button)
             return
         }
-    
+
         var container = AttributeContainer()
         container.font = UIFont.systemFont(ofSize: 10)
 

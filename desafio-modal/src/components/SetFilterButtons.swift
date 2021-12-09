@@ -57,14 +57,6 @@ class SetFilterButtons: UIView {
         button.isSelected = button.isSelected ? false : true
 
         formatButton(button: button)
-//        if button.isSelected {
-////            filtros.append(button.currentTitle!)
-//            formatButtonSelected(button: button)
-//        } else {
-////            let index = filtros.firstIndex(of: button.currentTitle!)
-////            filtros.remove(at: index!)
-//            formatButtonUnSelected(button: button)
-//        }
     }
 
     @IBAction func orderFilter(_ sender: Any) {
