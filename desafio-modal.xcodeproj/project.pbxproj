@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0092836D276150E000C7E13E /* LowerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0092836C276150E000C7E13E /* LowerButton.swift */; };
+		0092836F276150EB00C7E13E /* LowerButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0092836E276150EB00C7E13E /* LowerButton.xib */; };
+		00A7632127624D3400ECC998 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A7631F27624D3400ECC998 /* DetailViewController.swift */; };
+		00A7632227624D3400ECC998 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00A7632027624D3400ECC998 /* DetailViewController.xib */; };
+		00A7632427624F8200ECC998 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A7632327624F8200ECC998 /* DetailViewModel.swift */; };
 		00B877BA275E71EB00F91872 /* Github_Teste.md in Resources */ = {isa = PBXBuildFile; fileRef = 00B877B9275E71EB00F91872 /* Github_Teste.md */; };
 		05CE3ACC1809DFFAA57D02F3 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53656B3D61D7C24A3CE02F1 /* DetailView.xib */; };
 		0E12AF4B275E2DC900B67984 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E12AF4A275E2DC800B67984 /* ViewController.xib */; };
@@ -86,6 +91,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0092836C276150E000C7E13E /* LowerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerButton.swift; sourceTree = "<group>"; };
+		0092836E276150EB00C7E13E /* LowerButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LowerButton.xib; sourceTree = "<group>"; };
+		00A7631F27624D3400ECC998 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		00A7632027624D3400ECC998 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		00A7632327624F8200ECC998 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		00B877B9275E71EB00F91872 /* Github_Teste.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Github_Teste.md; sourceTree = "<group>"; };
 		01277B111A088C499168FCBC /* FilterableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterableProtocol.swift; sourceTree = "<group>"; };
 		03912BEB5C46BAD1A15B0131 /* RepositoryBranchResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBranchResponseDto.swift; sourceTree = "<group>"; };
@@ -175,9 +185,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		009283702761513E00C7E13E /* LowerButtonXib */ = {
+			isa = PBXGroup;
+			children = (
+				0092836C276150E000C7E13E /* LowerButton.swift */,
+				0092836E276150EB00C7E13E /* LowerButton.xib */,
+			);
+			path = LowerButtonXib;
+			sourceTree = "<group>";
+		};
+		00A7631E27624CC800ECC998 /* DetailviewXib */ = {
+			isa = PBXGroup;
+			children = (
+				00A7631F27624D3400ECC998 /* DetailViewController.swift */,
+				00A7632027624D3400ECC998 /* DetailViewController.xib */,
+			);
+			path = DetailviewXib;
+			sourceTree = "<group>";
+		};
 		0E12AF4C275E2DD400B67984 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				00A7631E27624CC800ECC998 /* DetailviewXib */,
 				0EF776D5275E296E00F0B742 /* LaunchScreen.storyboard */,
 				0E12AF4A275E2DC800B67984 /* ViewController.xib */,
 				94D075E1B0F044E2C0DC34DD /* GitTableViewCell.xib */,
@@ -328,6 +357,7 @@
 			children = (
 				4C54C538275EEEFB007F7436 /* GitRepositoryViewModel.swift */,
 				4CD6F2DD275FD67D003F1850 /* FilterViewModel.swift */,
+				00A7632327624F8200ECC998 /* DetailViewModel.swift */,
 			);
 			path = viewmodels;
 			sourceTree = "<group>";
@@ -519,6 +549,7 @@
 				0EF776D4275E296E00F0B742 /* Assets.xcassets in Resources */,
 				2917261CEECBCFB2664FD599 /* repository-contributors-response-mock.json in Resources */,
 				BB770405C38C29995E8A6649 /* repository-readme-mock.md in Resources */,
+				00A7632227624D3400ECC998 /* DetailViewController.xib in Resources */,
 				E7DE068B66E0A026BD7DC122 /* repository-details-response-mock.json in Resources */,
 				2305C34DB26CDF203DF9A9C6 /* repositories-response-mock.json in Resources */,
 				0E9D5CE9276248B800764743 /* github-search-response-mock.json in Resources */,
@@ -574,6 +605,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C54C53F275EFBE9007F7436 /* AppCoordinator.swift in Sources */,
+				00A7632127624D3400ECC998 /* DetailViewController.swift in Sources */,
 				4CD6F2E2275FD913003F1850 /* Filter.swift in Sources */,
 				0EF776CF275E296C00F0B742 /* ViewController.swift in Sources */,
 				0E9D5CF127625CC800764743 /* ApiOrder.swift in Sources */,
@@ -597,6 +629,7 @@
 				AF8C84EA268EAB5424E3A89A /* RepositoryBranchResponseDto.swift in Sources */,
 				4DEE13888DF1D3B66C698E7C /* RepositoryReadmeResponseDto.swift in Sources */,
 				E0E08A52AB323CB1D4A78766 /* RepositoryBranchesResponseDto.swift in Sources */,
+				00A7632427624F8200ECC998 /* DetailViewModel.swift in Sources */,
 				F7697E3AC035E6F7BB76E11F /* BuildFile in Sources */,
 				4393DCBC8892800377A9A7B4 /* RepositoryResponseDto.swift in Sources */,
 				40FB74695C7A655FE7A23039 /* RepositoryDetailsResponseDto.swift in Sources */,
