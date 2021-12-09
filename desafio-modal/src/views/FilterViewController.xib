@@ -18,8 +18,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yET-8J-cWq" customClass="SetFilterButtons" customModule="desafio_modal" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="179" width="414" height="717"/>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yET-8J-cWq" customClass="SetFilterButtons" customModule="desafio_modal" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="179" width="414" height="365"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Whu-aR-5AW" userLabel="TopBarView">
@@ -33,7 +33,6 @@
             <constraints>
                 <constraint firstItem="yET-8J-cWq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MFs-Ys-xzu"/>
                 <constraint firstAttribute="bottom" secondItem="yET-8J-cWq" secondAttribute="bottom" id="Ogn-2V-Fjd"/>
-                <constraint firstItem="yET-8J-cWq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="135" id="kAd-qq-BbS"/>
                 <constraint firstItem="yET-8J-cWq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vf6-wh-hKC"/>
             </constraints>
             <point key="canvasLocation" x="140.57971014492756" y="91.741071428571431"/>
