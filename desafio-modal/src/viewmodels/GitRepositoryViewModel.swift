@@ -24,9 +24,6 @@ class GitRepositoryViewModel {
     init(gitService: GitService) {
         self.gitService = gitService
         self.allRepositories = repositories.asObservable()
-
-        gitService.test()
-            .subscribe { print($0) }
     }
 
     func updateRepositoryList() {
