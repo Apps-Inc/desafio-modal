@@ -35,7 +35,6 @@ class AppCoordinator: BaseCoordinator {
         let filterViewController = FilterViewController(nibName: FilterViewController.identifier, bundle: nil)
         filterViewController.viewModel = viewModel
         filterViewController.coordinator = self
-
         self.navigationController.pushViewController(filterViewController, animated: true)
     }
 
