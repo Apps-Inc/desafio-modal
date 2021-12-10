@@ -22,7 +22,7 @@ class AppCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let viewModel = GitRepositoryViewModel(gitService: gitService)
+        let viewModel = GitRepositoryViewModel(gitService: gitService, filterService: filterService)
         let gitCollectionViewController = ViewController(nibName: ViewController.identifier, bundle: nil)
         gitCollectionViewController.viewModel = viewModel
         gitCollectionViewController.coordinator = self

@@ -7,14 +7,19 @@
 
 import UIKit
 
+protocol SetFilterDelegate: AnyObject {
+    func aplicar(filtros: [FilterButton], ordem: Order?)
+}
+
 class SetFilterButtons: UIView {
     var view: UIView!
-    var filtros = [String]()
     @IBOutlet var seguidores: UIButton!
     @IBOutlet var decrescente: UIButton!
     @IBOutlet var data: UIButton!
     @IBOutlet var estrelas: UIButton!
     @IBOutlet var crescente: UIButton!
+
+    weak var delegate: SetFilterDelegate?
 
     override func awakeFromNib() {
         initialButtonFormat(buttons: [decrescente, crescente, estrelas, seguidores, data])
@@ -35,6 +40,7 @@ class SetFilterButtons: UIView {
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)
+
     }
 
     func loadViewFromNib() -> UIView {
@@ -49,21 +55,13 @@ class SetFilterButtons: UIView {
         guard let button = sender as? UIButton else { return }
         button.isSelected = button.isSelected ? false : true
 
-        if button.isSelected {
-            filtros.append(button.currentTitle!)
-            formatButtonSelected(button: button)
-        } else {
-            let index = filtros.firstIndex(of: button.currentTitle!)
-            filtros.remove(at: index!)
-            formatButtonUnSelected(button: button)
-        }
+        formatButton(button: button)
     }
 
     @IBAction func orderFilter(_ sender: Any) {
         guard let button = sender as? UIButton else { return }
 
         if !decrescente.isSelected && !crescente.isSelected {
-            filtros.append(button.currentTitle!)
             formatButtonSelected(button: button)
             button.isSelected = true
             return
@@ -77,13 +75,19 @@ class SetFilterButtons: UIView {
         button.isSelected = true
 
         if button.currentTitle! == "CRESCENTE" {
-            filtros.append(button.currentTitle!)
             formatButtonSelected(button: crescente)
             removeBotaoOrdenacao(item: "DECRESCENTE", button: decrescente)
         } else {
-            filtros.append(button.currentTitle!)
             formatButtonSelected(button: decrescente)
             removeBotaoOrdenacao(item: "CRESCENTE", button: crescente)
+        }
+    }
+
+    func formatButton(button: UIButton) {
+        if button.isSelected {
+            formatButtonSelected(button: button)
+        } else {
+            formatButtonUnSelected(button: button)
         }
     }
 
@@ -108,10 +112,25 @@ class SetFilterButtons: UIView {
     }
 
     func removeBotaoOrdenacao(item: String, button: UIButton) {
-        let index = filtros.firstIndex(of: item)
-        filtros.remove(at: index!)
         formatButtonUnSelected(button: button)
         button.isSelected = false
     }
 
+    @IBAction func applicar(_ sender: Any) {
+
+        var ordem: Order?
+        var filtros: [FilterButton] = []
+
+        if estrelas.isSelected { filtros.append(.star) }
+        if seguidores.isSelected { filtros.append(.followers) }
+        if data.isSelected { filtros.append(.date) }
+
+        if crescente.isSelected {
+            ordem = .ASCENDING
+        } else if decrescente.isSelected {
+            ordem = .DESCENDING
+        }
+
+        delegate?.aplicar(filtros: filtros, ordem: ordem)
+    }
 }

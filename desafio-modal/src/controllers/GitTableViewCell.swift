@@ -15,7 +15,7 @@ class GitTableViewCell: UITableViewCell {
     @IBOutlet weak var followersLabel: UILabel!
     @IBOutlet weak var labelExtra: UILabel!
     @IBOutlet weak var dataLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
