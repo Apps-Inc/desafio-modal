@@ -5,12 +5,14 @@ import RxCocoa
 class ViewController: UIViewController {
 
     @IBOutlet var searchBar: UIStackView!
+    @IBOutlet weak var viewBackgroundRadius: UIView!
     static let identifier = "ViewController"
     private let disposeBag = DisposeBag()
 
     var viewModel: GitRepositoryViewModel?
     weak var coordinator: AppCoordinator?
 
+    @IBOutlet weak var viewRadius: UIView!
     @IBOutlet weak var gitTableView: UITableView!
     @IBOutlet weak var filtrosStackView: UIStackView!
     var activeButtons = Set<FilterButton>()
@@ -18,6 +20,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewRadius?.roundTop(viewName: searchBar)
+
         gitTableView.register(UINib(nibName: GitTableViewCell.identifier, bundle: nil),
                               forCellReuseIdentifier: GitTableViewCell.identifier)
 
