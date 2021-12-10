@@ -161,7 +161,12 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="name" destination="Bl6-MX-zcg" id="zCu-5X-zLq"/>
+                <outlet property="dataLabel" destination="tNZ-TK-lcM" id="hMm-tF-G1F"/>
+                <outlet property="followersLabel" destination="ZU2-nn-p4C" id="lLD-YY-Wl0"/>
+                <outlet property="gitImage" destination="3fW-Ia-Lvk" id="X6I-sq-A2E"/>
+                <outlet property="labelExtra" destination="H5g-af-XKh" id="Ctn-mD-QXm"/>
+                <outlet property="repositoryLabel" destination="Bl6-MX-zcg" id="JoS-AO-DMN"/>
+                <outlet property="starCountLabel" destination="dD5-8y-lA6" id="h7R-J6-qfZ"/>
             </connections>
             <point key="canvasLocation" x="263.768115942029" y="-49.553571428571423"/>
         </tableViewCell>

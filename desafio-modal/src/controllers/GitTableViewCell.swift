@@ -8,8 +8,13 @@
 import UIKit
 
 class GitTableViewCell: UITableViewCell {
-    @IBOutlet weak var name: UILabel!
     static let identifier = "GitTableViewCell"
+    @IBOutlet weak var repositoryLabel: UILabel!
+    @IBOutlet weak var gitImage: UIImageView!
+    @IBOutlet weak var starCountLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var labelExtra: UILabel!
+    @IBOutlet weak var dataLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

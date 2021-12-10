@@ -125,8 +125,7 @@ class ViewController: UIViewController {
         viewModel.updateRepositoryList()
         viewModel.allRepositories
             .bind(to: gitTableView.rx.items(
-                cellIdentifier: GitTableViewCell.identifier, cellType: GitTableViewCell.self)) { _, repo, cel in
-                    cel.name.text = repo.name
+                cellIdentifier: GitTableViewCell.identifier, cellType: GitTableViewCell.self)) { _, _, _ in
                 // TODO: bind
             }
             .disposed(by: disposeBag)

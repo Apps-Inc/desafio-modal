@@ -30,7 +30,7 @@ class GitRepositoryViewModel {
         self.filterService = filterService
 
         self.allRepositories = repositories.asObservable()
-        self.filters = filterService.filter// .asObservable()
+        self.filters = filterService.filter
     }
 
     func updateRepositoryList() {
