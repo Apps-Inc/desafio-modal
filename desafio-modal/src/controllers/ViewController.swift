@@ -44,10 +44,14 @@ class ViewController: UIViewController {
                                                             action: #selector(search))
         let filterButton = UIBarButtonItem(barButtonSystemItem: .add, target: self,
                                                             action: #selector(openFilter))
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
         searchButton.tintColor = .white
         filterButton.tintColor = .white
+        backButton.tintColor = .white
 
         navigationItem.rightBarButtonItems = [filterButton, searchButton]
+        navigationItem.backBarButtonItem = backButton
     }
 
     @objc func openFilter() {
