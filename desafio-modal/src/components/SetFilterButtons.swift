@@ -13,7 +13,6 @@ protocol SetFilterDelegate: AnyObject {
 
 class SetFilterButtons: UIView {
     var view: UIView!
-//    var filtros = [String]()
     @IBOutlet var seguidores: UIButton!
     @IBOutlet var decrescente: UIButton!
     @IBOutlet var data: UIButton!
@@ -63,7 +62,6 @@ class SetFilterButtons: UIView {
         guard let button = sender as? UIButton else { return }
 
         if !decrescente.isSelected && !crescente.isSelected {
-//            filtros.append(button.currentTitle!)
             formatButtonSelected(button: button)
             button.isSelected = true
             return
@@ -77,11 +75,9 @@ class SetFilterButtons: UIView {
         button.isSelected = true
 
         if button.currentTitle! == "CRESCENTE" {
-//            filtros.append(button.currentTitle!)
             formatButtonSelected(button: crescente)
             removeBotaoOrdenacao(item: "DECRESCENTE", button: decrescente)
         } else {
-//            filtros.append(button.currentTitle!)
             formatButtonSelected(button: decrescente)
             removeBotaoOrdenacao(item: "CRESCENTE", button: crescente)
         }
@@ -116,8 +112,6 @@ class SetFilterButtons: UIView {
     }
 
     func removeBotaoOrdenacao(item: String, button: UIButton) {
-//        let index = filtros.firstIndex(of: item)
-//        filtros.remove(at: index!)
         formatButtonUnSelected(button: button)
         button.isSelected = false
     }

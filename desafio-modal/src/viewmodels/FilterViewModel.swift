@@ -12,18 +12,14 @@ protocol FilterDelegate: AnyObject {
     func onFilterApply()
 }
 
-enum Order {
-    case DESCENDING
-    case ASCENDING
+enum Order: String {
+    case DESCENDING = "Decrescente"
+    case ASCENDING = "Crescente"
 }
 
 class FilterViewModel {
     private let filterService: FilterService
 
-//    let startsSelected: Bool
-//    let followersSelected: Bool
-//    let dateSelected: Bool
-//    let orderSelected: Order?
     var filter: Filter
 
     init(filterService: FilterService) {
@@ -31,18 +27,8 @@ class FilterViewModel {
 
         if let filterValue = try? filterService.filter.value() {
             filter = filterValue
-
-//            startsSelected = filterValue.filters.contains(.star)
-//            followersSelected = filterValue.filters.contains(.followers)
-//            dateSelected = filterValue.filters.contains(.date)
-//
-//            orderSelected = filterValue.order
         } else {
             filter = Filter()
-//            startsSelected = false
-//            followersSelected = false
-//            dateSelected = false
-//            orderSelected = nil
         }
     }
 

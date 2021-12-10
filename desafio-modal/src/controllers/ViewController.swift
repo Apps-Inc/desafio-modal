@@ -102,11 +102,14 @@ class ViewController: UIViewController {
         }
     }
 
-    func enableFilterButton(button: UIButton) {
+    func enableFilterButton(button: UIButton, label: String? = nil, atIndex: Int = 0) {
         filtrosStackView.removeArrangedSubview(button)
-        filtrosStackView.insertArrangedSubview(button, at: 0)
+        filtrosStackView.insertArrangedSubview(button, at: atIndex)
         button.alpha = 1
         button.isEnabled = true
+        if let label = label {
+            button.setTitle(label, for: .normal)
+        }
     }
 
     func disableFilterButton(button: UIButton) {
@@ -132,7 +135,9 @@ class ViewController: UIViewController {
     private func setUpFilterView() {
         viewModel?.filters
             .subscribe { [weak self] res in
-                let filters = res.element?.filters ?? []
+                guard let filterOptions = res.element else { return }
+                let filters = filterOptions.filters
+                let order = filterOptions.order
 
                 self?.buttons.forEach {(key, value) in
                     if filters.contains(key) {
@@ -140,6 +145,11 @@ class ViewController: UIViewController {
                     } else {
                         self?.disableFilterButton(button: value)
                     }
+                }
+
+                if let order = order,
+                   let button = self?.buttons[.order] {
+                    self?.enableFilterButton(button: button, label: order.rawValue, atIndex: filters.count)
                 }
             }
             .disposed(by: disposeBag)
