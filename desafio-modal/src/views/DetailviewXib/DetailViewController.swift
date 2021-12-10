@@ -32,7 +32,10 @@ class DetailViewController: UIViewController {
 
         viewModel.readmeScrollText.bind(to: detailUI.readmeTextArea.rx.text)
             .disposed(by: disposeBag)
-
+        viewModel.commitsText.bind(to: detailUI.commitsLabel.rx.text)
+            .disposed(by: disposeBag)
+        viewModel.branchsText.bind(to: detailUI.branchsLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 
 }
