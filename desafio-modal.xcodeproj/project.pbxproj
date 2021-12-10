@@ -53,6 +53,8 @@
 		674436217199839B6EC8671A /* github-search-response-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 59E177A6140EFEC33EE567F4 /* github-search-response-mock.json */; };
 		76501F2D0EAE85F2E8D2559F /* ApiSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974C859E4FE87BE653F5786 /* ApiSort.swift */; };
 		7A6D2BC70905AEAD14B0D5D4 /* SetFilterButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A4D4B4C20C242FA6BBD66 /* SetFilterButtons.swift */; };
+		815FBD9C2762774D00596F2A /* SearchInputButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 815FBD9B2762774D00596F2A /* SearchInputButton.xib */; };
+		815FBD9E2762E78800596F2A /* SearchInputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815FBD9D2762E78800596F2A /* SearchInputButton.swift */; };
 		826858D02B8DE620DC4D8D02 /* RepositoryContributorResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F182FC04943582695B287FD /* RepositoryContributorResponseDto.swift */; };
 		83ADE68A217C43D3965EB2D6 /* GitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711931E4683C57CB74552BD8 /* GitTableViewCell.swift */; };
 		8868E23AFDEB178BFECE0896 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33083B15A2565A250CC53E1 /* DetailViewModel.swift */; };
@@ -139,6 +141,8 @@
 		711931E4683C57CB74552BD8 /* GitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTableViewCell.swift; sourceTree = "<group>"; };
 		7974C859E4FE87BE653F5786 /* ApiSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSort.swift; sourceTree = "<group>"; };
 		813C08B5F03E63AD9DB5334A /* RepositoryDetailsResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsResponseDto.swift; sourceTree = "<group>"; };
+		815FBD9B2762774D00596F2A /* SearchInputButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchInputButton.xib; sourceTree = "<group>"; };
+		815FBD9D2762E78800596F2A /* SearchInputButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInputButton.swift; sourceTree = "<group>"; };
 		84E0077C9FB49FE6F01A08A4 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		94D075E1B0F044E2C0DC34DD /* GitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitTableViewCell.xib; sourceTree = "<group>"; };
 		952E99196DC01FD041E3FD1C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -369,6 +373,8 @@
 				4CBE4DE42762486D00EBE9D0 /* RoundedCornerView.swift */,
 				A36A4D4B4C20C242FA6BBD66 /* SetFilterButtons.swift */,
 				4B60662B740C3C2F8E9088A7 /* SetFilterButtons.xib */,
+				815FBD9B2762774D00596F2A /* SearchInputButton.xib */,
+				815FBD9D2762E78800596F2A /* SearchInputButton.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 				0092836F276150EB00C7E13E /* LowerButton.xib in Resources */,
 				BB770405C38C29995E8A6649 /* repository-readme-mock.md in Resources */,
 				E7DE068B66E0A026BD7DC122 /* repository-details-response-mock.json in Resources */,
+				815FBD9C2762774D00596F2A /* SearchInputButton.xib in Resources */,
 				2305C34DB26CDF203DF9A9C6 /* repositories-response-mock.json in Resources */,
 				3D48590ADB4196D2753AC119 /* repository-branches-response-mock.json in Resources */,
 				32A263964B6EE5E1CDAD832B /* SetFilterButtons.xib in Resources */,
@@ -598,6 +605,7 @@
 				4CD6F2E2275FD913003F1850 /* Filter.swift in Sources */,
 				0EF776CF275E296C00F0B742 /* ViewController.swift in Sources */,
 				4CBE4DDE276149A500EBE9D0 /* DataMockable.swift in Sources */,
+				815FBD9E2762E78800596F2A /* SearchInputButton.swift in Sources */,
 				4CD6F2DE275FD67D003F1850 /* FilterViewModel.swift in Sources */,
 				4CD6F2E627604CDD003F1850 /* FilterService.swift in Sources */,
 				4C54C533275EE902007F7436 /* GitService.swift in Sources */,
