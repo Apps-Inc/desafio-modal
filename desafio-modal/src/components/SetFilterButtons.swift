@@ -116,21 +116,4 @@ class SetFilterButtons: UIView {
         button.isSelected = false
     }
 
-    @IBAction func applicar(_ sender: Any) {
-
-        var ordem: Order?
-        var filtros: [FilterButton] = []
-
-        if estrelas.isSelected { filtros.append(.star) }
-        if seguidores.isSelected { filtros.append(.followers) }
-        if data.isSelected { filtros.append(.date) }
-
-        if crescente.isSelected {
-            ordem = .ASCENDING
-        } else if decrescente.isSelected {
-            ordem = .DESCENDING
-        }
-
-        delegate?.aplicar(filtros: filtros, ordem: ordem)
-    }
 }

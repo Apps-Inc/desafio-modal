@@ -11,7 +11,6 @@ import RxSwift
 class FilterViewController: UIViewController {
     static let identifier = "FilterViewController"
     private let disposeBag = DisposeBag()
-//    @IBOutlet weak var filterUI: SetFilterButtons!
     @IBOutlet weak var filterUI: SetFilterButtons!
 
     var viewModel: FilterViewModel?
@@ -19,7 +18,6 @@ class FilterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        filterUI.delegate = self
 
         guard let filter = viewModel?.filter else { return }
         filterUI.estrelas.isSelected = filter.filters.contains(.star)
@@ -38,12 +36,24 @@ class FilterViewController: UIViewController {
         filterUI.formatButton(button: filterUI.decrescente)
     }
 
-}
+    @IBAction func applyFilters(_ sender: Any) {
+        var ordem: Order?
+        var filtros: [FilterButton] = []
 
-extension FilterViewController: SetFilterDelegate {
-    func aplicar(filtros: [FilterButton], ordem: Order?) {
-        viewModel?.apply(filters: filtros, order: ordem)
-        navigationController?.dismiss(animated: true)
+        if filterUI.estrelas.isSelected { filtros.append(.star) }
+        if filterUI.seguidores.isSelected { filtros.append(.followers) }
+        if filterUI.data.isSelected { filtros.append(.date) }
+
+        if filterUI.crescente.isSelected {
+            ordem = .ASCENDING
+        } else if filterUI.decrescente.isSelected {
+            ordem = .DESCENDING
+        }
+
+        aplicar(filtros: filtros, ordem: ordem)
     }
 
+    func aplicar(filtros: [FilterButton], ordem: Order?) {
+        viewModel?.apply(filters: filtros, order: ordem)
+    }
 }

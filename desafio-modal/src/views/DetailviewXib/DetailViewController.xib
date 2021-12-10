@@ -32,7 +32,7 @@
                         <constraint firstAttribute="height" constant="50" id="uHp-GJ-T7z"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Compartilhar">
+                    <buttonConfiguration key="configuration" style="filled" title="COMPARTILHAR">
                         <backgroundConfiguration key="background" cornerRadius="6">
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </backgroundConfiguration>
