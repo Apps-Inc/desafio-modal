@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController" customModule="desafio_modal" customModuleProvider="target">
             <connections>
-                <outlet property="filterUI" destination="yET-8J-cWq" id="27X-Lu-Lk0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,23 +18,22 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yET-8J-cWq" customClass="SetFilterButtons" customModule="desafio_modal" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="179" width="414" height="717"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Whu-aR-5AW" userLabel="TopBarView">
-                    <rect key="frame" x="-6" y="-8" width="423" height="200"/>
+                <view contentMode="scaleToFill" id="Whu-aR-5AW" userLabel="TopBarView">
+                    <rect key="frame" x="-6" y="-8" width="423" height="140"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="labelColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yET-8J-cWq" customClass="SetFilterButtons" customModule="desafio_modal" customModuleProvider="target">
+                    <rect key="frame" x="-6" y="161" width="420" height="250"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="yET-8J-cWq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MFs-Ys-xzu"/>
-                <constraint firstAttribute="bottom" secondItem="yET-8J-cWq" secondAttribute="bottom" id="Ogn-2V-Fjd"/>
-                <constraint firstItem="yET-8J-cWq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="135" id="kAd-qq-BbS"/>
-                <constraint firstItem="yET-8J-cWq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vf6-wh-hKC"/>
+                <constraint firstAttribute="trailing" secondItem="yET-8J-cWq" secondAttribute="trailing" id="18T-9O-TsG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yET-8J-cWq" secondAttribute="bottom" constant="451" id="ONy-Oc-yDB"/>
+                <constraint firstItem="yET-8J-cWq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="117" id="YoT-OG-0dh"/>
+                <constraint firstItem="yET-8J-cWq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-6" id="cIg-CZ-1Kd"/>
             </constraints>
             <point key="canvasLocation" x="140.57971014492756" y="91.741071428571431"/>
         </view>

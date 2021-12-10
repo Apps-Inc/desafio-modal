@@ -20,30 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VTf-LT-PsC" userLabel="Filtrando Stack View">
-                    <rect key="frame" x="10" y="257" width="374" height="55"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtrando:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="386-GX-H5e">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="16"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" red="0.63529413940000001" green="0.65098041299999998" blue="0.68627452850000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="5" id="xLE-Lx-oA7">
-                            <rect key="frame" x="0.0" y="26" width="374" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <viewLayoutGuide key="safeArea" id="Wak-Wi-zIp"/>
-                        </stackView>
-                    </subviews>
-                    <viewLayoutGuide key="safeArea" id="xZO-yF-P6N"/>
-                    <constraints>
-                        <constraint firstItem="386-GX-H5e" firstAttribute="height" secondItem="xLE-Lx-oA7" secondAttribute="height" multiplier="0.551724" id="dlZ-zi-pc9"/>
-                    </constraints>
-                </stackView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="172" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAT-Wg-VIz">
-                    <rect key="frame" x="10" y="322" width="394" height="456"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHW-tP-vyf" userLabel="Botton View">
                     <rect key="frame" x="0.0" y="788" width="414" height="108"/>
                     <subviews>
@@ -61,30 +37,50 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLw-rX-jmy" userLabel="TopBarView">
-                    <rect key="frame" x="0.0" y="0.0" width="423" height="191"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CcH-0y-WxF" userLabel="TopBarView">
+                    <rect key="frame" x="-9" y="-16" width="423" height="140"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="labelColor"/>
                 </view>
+                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VTf-LT-PsC" userLabel="Filtrando Stack View">
+                    <rect key="frame" x="10" y="188" width="374" height="26"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtrando:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="386-GX-H5e">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.63529413940000001" green="0.65098041299999998" blue="0.68627452850000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" distribution="fillProportionally" spacing="5" id="xLE-Lx-oA7">
+                            <rect key="frame" x="0.0" y="26" width="374" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <viewLayoutGuide key="safeArea" id="Wak-Wi-zIp"/>
+                        </stackView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="xZO-yF-P6N"/>
+                    <constraints>
+                        <constraint firstItem="386-GX-H5e" firstAttribute="height" secondItem="xLE-Lx-oA7" secondAttribute="height" multiplier="0.551724" id="dlZ-zi-pc9"/>
+                    </constraints>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="172" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAT-Wg-VIz">
+                    <rect key="frame" x="10" y="238" width="394" height="530"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="530" id="MHi-xd-tOc"/>
+                    </constraints>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="VTf-LT-PsC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="2ae-JX-lKw"/>
                 <constraint firstAttribute="bottom" secondItem="DHW-tP-vyf" secondAttribute="bottom" id="4L1-Xu-qMg"/>
-                <constraint firstItem="lAT-Wg-VIz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="322" id="6W0-AM-ebn"/>
-                <constraint firstItem="vLw-rX-jmy" firstAttribute="leading" secondItem="DHW-tP-vyf" secondAttribute="leading" id="8vX-q7-7C0"/>
-                <constraint firstItem="DHW-tP-vyf" firstAttribute="top" secondItem="lAT-Wg-VIz" secondAttribute="bottom" constant="10" id="97a-Na-WHK"/>
-                <constraint firstAttribute="trailing" secondItem="vLw-rX-jmy" secondAttribute="trailing" constant="-9" id="B7S-xW-kWn"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lAT-Wg-VIz" secondAttribute="trailing" constant="10" id="DTP-Jp-Je9"/>
-                <constraint firstItem="VTf-LT-PsC" firstAttribute="top" secondItem="vLw-rX-jmy" secondAttribute="bottom" constant="66" id="PCx-sC-xlv"/>
-                <constraint firstItem="VTf-LT-PsC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="55" id="bcc-4Z-E4l"/>
-                <constraint firstItem="vLw-rX-jmy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bkr-ND-tjq"/>
+                <constraint firstItem="DHW-tP-vyf" firstAttribute="top" secondItem="lAT-Wg-VIz" secondAttribute="bottom" constant="20" id="J0P-Yp-iHY"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VTf-LT-PsC" secondAttribute="trailing" constant="10" id="dYE-mF-98j"/>
                 <constraint firstItem="DHW-tP-vyf" firstAttribute="centerX" secondItem="lAT-Wg-VIz" secondAttribute="centerX" id="gIl-5B-zhA"/>
                 <constraint firstItem="DHW-tP-vyf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="788" id="jZy-PW-8OT"/>
-                <constraint firstItem="VTf-LT-PsC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="257" id="kq4-zr-aG6"/>
-                <constraint firstItem="lAT-Wg-VIz" firstAttribute="top" secondItem="VTf-LT-PsC" secondAttribute="bottom" constant="10" id="wfI-Be-hPn"/>
+                <constraint firstItem="lAT-Wg-VIz" firstAttribute="top" secondItem="VTf-LT-PsC" secondAttribute="bottom" constant="20" id="m7O-B3-IAL"/>
                 <constraint firstItem="lAT-Wg-VIz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="xLC-Em-eOg"/>
                 <constraint firstItem="DHW-tP-vyf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ytV-YO-gh9"/>
             </constraints>
