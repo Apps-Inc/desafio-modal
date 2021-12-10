@@ -17,9 +17,9 @@ class GitRepositoryViewModel {
     private let disposeBag = DisposeBag()
     private let gitService: GitService
     private let filterService: FilterService
-    private let repositories = BehaviorSubject<Repositories>(value: [])
+    private let repositories = BehaviorSubject<[RepositoryDetails]>(value: [])
 
-    let allRepositories: Observable<Repositories>
+    let allRepositories: Observable<[RepositoryDetails]>
     let filters: BehaviorSubject<Filter>
     let filterName = BehaviorSubject<String>(value: "")
 
@@ -34,12 +34,13 @@ class GitRepositoryViewModel {
     }
 
     func updateRepositoryList() {
-        gitService.repositories()
+        gitService.getRepositoriesDetailList()
             .subscribe {[weak self] res in
-                if let list = try? res.get() {
+                guard !res.isCompleted else { return }
+                if let list = res.element {
                     self?.repositories.onNext(list)
                 } else {
-                    self?.repositories.onNext([])
+                   self?.repositories.onNext([])
                 }
             }
             .disposed(by: disposeBag)
