@@ -86,6 +86,27 @@
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="119.86607142857142"/>
         </view>
+        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="7Ca-BC-CJE">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FILTRAR POR NOME?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO0-Mj-zU0">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="14.5"/>
+                    <color key="backgroundColor" red="0.3921568627" green="1" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l3W-y9-uFt">
+                    <rect key="frame" x="0.0" y="14.5" width="250" height="45.5"/>
+                    <color key="backgroundColor" red="0.3921568627" green="1" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="ZEC-dl-eDw"/>
+            <point key="canvasLocation" x="707" y="19"/>
+        </stackView>
     </objects>
     <resources>
         <image name="multiply" catalog="system" width="128" height="111"/>
