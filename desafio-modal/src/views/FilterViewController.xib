@@ -47,12 +47,12 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="yET-8J-cWq" secondAttribute="trailing" id="18T-9O-TsG"/>
-                <constraint firstAttribute="bottom" secondItem="yET-8J-cWq" secondAttribute="bottom" constant="485" id="Bzz-ft-0kA"/>
+                <constraint firstItem="yET-8J-cWq" firstAttribute="top" secondItem="Whu-aR-5AW" secondAttribute="bottom" constant="29" id="0iQ-WF-wvC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yET-8J-cWq" secondAttribute="trailing" id="1a8-4J-xHM"/>
                 <constraint firstItem="35q-pU-22z" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Gjr-UG-861"/>
-                <constraint firstItem="yET-8J-cWq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="117" id="YoT-OG-0dh"/>
-                <constraint firstItem="yET-8J-cWq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-6" id="cIg-CZ-1Kd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="yET-8J-cWq" secondAttribute="leading" constant="6" id="e2t-ir-JMG"/>
                 <constraint firstItem="35q-pU-22z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="67" id="q5a-x7-WiG"/>
+                <constraint firstAttribute="bottom" secondItem="yET-8J-cWq" secondAttribute="bottom" constant="485" id="uEE-yw-fDO"/>
                 <constraint firstItem="35q-pU-22z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="veL-w8-rST"/>
             </constraints>
             <point key="canvasLocation" x="140.57971014492756" y="91.741071428571431"/>
