@@ -34,6 +34,8 @@ class FilterViewController: UIViewController {
 
         filterUI.decrescente.isSelected = filter.order == .DESCENDING
         filterUI.formatButton(button: filterUI.decrescente)
+
+        navigationItem.title = "Filtrar"
     }
 
     @IBAction func applyFilters(_ sender: Any) {
