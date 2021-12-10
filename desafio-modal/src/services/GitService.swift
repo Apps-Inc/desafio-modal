@@ -12,13 +12,18 @@ class GitService {
     private let lastId = 0
     let repositoriesCache = BehaviorSubject<Repositories>(value: [])
 
-    func repositories(lastId: Int = 0) -> Single<Repositories> {
+    func getRepositoriesDetailList(lastId: Int = 0) -> Observable<[RepositoryDetails]> {
+        return getRepositoriesList(lastId: lastId)
+            .asObservable()
+            .flatMap { [weak self] (repos: [Repository]) in
+                return Observable.zip(repos[0..<5].map { (repo: Repository) in
+                        self!.getRepositoryDetail(repository: repo).asObservable()
 
-        return getRepositories(lastId: lastId)
+                })
+            }
     }
 
-    private func getRepositories(lastId: Int = 0) -> Single<Repositories> {
-
+    private func getRepositoriesList(lastId: Int = 0) -> Single<Repositories> {
         return Observable.create { observer in
             GitHubApi.Get.repositories(lastId: lastId) { repositories in
                 observer.onNext(repositories ?? [])
@@ -29,9 +34,19 @@ class GitService {
         .asSingle()
     }
 
-    func getRepositoryDetail() -> Single<GitRepositoryDetail> {
-        return Single.just(
-            GitRepositoryDetail(name: "Flygondex")
-        )
+    private func getRepositoryDetail(repository: Repository) -> Single<RepositoryDetails> {
+        return Observable.create { observer in
+            GitHubApi.Get.repositoryDetails(fullName: repository.fullName) { detail in
+                if let detail = detail {
+                    observer.onNext(detail)
+                    observer.onCompleted()
+                } else {
+                    observer.onCompleted()
+                }
+            }
+            return Disposables.create()
+        }
+        .asSingle()
     }
+
 }

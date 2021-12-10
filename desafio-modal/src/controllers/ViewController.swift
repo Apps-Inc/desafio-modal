@@ -126,10 +126,24 @@ class ViewController: UIViewController {
         viewModel.allRepositories
             .bind(to: gitTableView.rx.items(
                 cellIdentifier: GitTableViewCell.identifier, cellType: GitTableViewCell.self)) { _, repo, cel in
-                    // TODO: bind
                     cel.repositoryLabel.text = repo.name
+                    cel.followersLabel.text = String(repo.watchers)
+                    cel.followersLabel.text = String(repo.watchers)
+                    cel.starCountLabel.text = String(repo.stargazersCount)
+                    cel.dataLabel.text =
+                            """
+                                \(Calendar.current.dateComponents([.day],
+                                from: repo.createdAt,
+                                to: Date()).day!) dias
+                            """
             }
             .disposed(by: disposeBag)
+
+        gitTableView.rx.modelSelected(RepositoryDetails.self)
+            .subscribe { repo in
+                print("oi", repo)
+            }
+          .disposed(by: disposeBag)
     }
 
     private func setUpFilterView() {
