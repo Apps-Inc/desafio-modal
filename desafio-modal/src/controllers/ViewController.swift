@@ -125,8 +125,9 @@ class ViewController: UIViewController {
         viewModel.updateRepositoryList()
         viewModel.allRepositories
             .bind(to: gitTableView.rx.items(
-                cellIdentifier: GitTableViewCell.identifier, cellType: GitTableViewCell.self)) { _, repo, cel in
+                cellIdentifier: GitTableViewCell.identifier, cellType: GitTableViewCell.self)) { idx, repo, cel in
                     // TODO: bind
+                    cel.updateColor(type: idx % 2 == 0 ? .black : .white)
                     cel.repositoryLabel.text = repo.name
             }
             .disposed(by: disposeBag)
