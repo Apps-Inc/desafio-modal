@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController" customModule="desafio_modal" customModuleProvider="target">
             <connections>
+                <outlet property="filterUI" destination="yET-8J-cWq" id="d2x-Es-vWu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,14 +27,33 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yET-8J-cWq" customClass="SetFilterButtons" customModule="desafio_modal" customModuleProvider="target">
                     <rect key="frame" x="-6" y="161" width="420" height="250"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35q-pU-22z">
+                    <rect key="frame" x="67" y="812" width="280" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="3cb-AL-4WZ"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="APLICAR FILTRO">
+                        <backgroundConfiguration key="background" cornerRadius="6">
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </backgroundConfiguration>
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="applyFilters:" destination="-1" eventType="touchUpInside" id="G53-mt-AVU"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="yET-8J-cWq" secondAttribute="trailing" id="18T-9O-TsG"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yET-8J-cWq" secondAttribute="bottom" constant="451" id="ONy-Oc-yDB"/>
+                <constraint firstAttribute="bottom" secondItem="yET-8J-cWq" secondAttribute="bottom" constant="485" id="Bzz-ft-0kA"/>
+                <constraint firstItem="35q-pU-22z" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Gjr-UG-861"/>
                 <constraint firstItem="yET-8J-cWq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="117" id="YoT-OG-0dh"/>
                 <constraint firstItem="yET-8J-cWq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-6" id="cIg-CZ-1Kd"/>
+                <constraint firstItem="35q-pU-22z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="67" id="q5a-x7-WiG"/>
+                <constraint firstItem="35q-pU-22z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="veL-w8-rST"/>
             </constraints>
             <point key="canvasLocation" x="140.57971014492756" y="91.741071428571431"/>
         </view>
