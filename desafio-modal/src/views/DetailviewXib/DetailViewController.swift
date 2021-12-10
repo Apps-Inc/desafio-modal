@@ -12,12 +12,27 @@ class DetailViewController: UIViewController {
     static let identifier = "DetailViewController"
     private let disposeBag = DisposeBag()
 
+    @IBOutlet weak var detailUI: DetailView!
+
     var viewModel: DetailViewModel?
     weak var coordinator: AppCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Detalhe"
+
+        loadData()
+    }
+
+    func loadData() {
+        guard let viewModel = viewModel else { return }
+
+        detailUI.repoNameLabel.text = viewModel.repoNameText
+        detailUI.starCountLabel.text = viewModel.starCountText
+
+        viewModel.readmeScrollText.bind(to: detailUI.readmeTextArea.rx.text)
+            .disposed(by: disposeBag)
+
     }
 
 }

@@ -49,4 +49,18 @@ class GitService {
         .asSingle()
     }
 
+    func getReadme(fullName: String) -> Single<String> {
+        return Observable.create { observer in
+            GitHubApi.Get.readme(fullName: fullName) { result in
+                if let readme = result {
+                    observer.onNext(readme)
+                }
+                observer.onCompleted()
+            }
+            return Disposables.create()
+        }
+        .asSingle()
+
+    }
+
 }

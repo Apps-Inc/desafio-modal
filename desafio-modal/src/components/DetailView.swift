@@ -17,6 +17,7 @@ class DetailView: UIView {
     @IBOutlet weak var branchsLabel: UILabel!
     @IBOutlet weak var colaboratorLabel: UILabel!
     @IBOutlet weak var readmeScrollView: UIScrollView!
+    @IBOutlet weak var readmeTextArea: UITextView!
     static let identifier = "DetailView"
 
     var view: UIView!

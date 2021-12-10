@@ -38,8 +38,8 @@ class AppCoordinator: BaseCoordinator {
         self.navigationController.pushViewController(filterViewController, animated: true)
     }
 
-    func openDetails() {
-        let viewModel = DetailViewModel(filterService: filterService)
+    func openDetails(repository: RepositoryDetails) {
+        let viewModel = DetailViewModel(gitService: gitService, repository: repository)
         let detailViewController = DetailViewController(nibName: DetailViewController.identifier, bundle: nil)
         detailViewController.viewModel = viewModel
         detailViewController.coordinator = self

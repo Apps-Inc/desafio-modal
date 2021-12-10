@@ -134,7 +134,6 @@ class ViewController: UIViewController {
         viewModel.allRepositories
             .bind(to: gitTableView.rx.items(
                 cellIdentifier: GitTableViewCell.identifier, cellType: GitTableViewCell.self)) { idx, repo, cel in
-                    // TODO: bind
                     cel.updateColor(type: idx % 2 == 0 ? .black : .white)
                     cel.repositoryLabel.text = repo.name
                     cel.followersLabel.text = String(repo.watchers)
@@ -150,8 +149,8 @@ class ViewController: UIViewController {
             .disposed(by: disposeBag)
 
         gitTableView.rx.modelSelected(RepositoryDetails.self)
-            .subscribe { repo in
-                print("oi", repo)
+            .subscribe { [weak coordinator] repo in
+                coordinator?.openDetails(repository: repo)
             }
           .disposed(by: disposeBag)
     }

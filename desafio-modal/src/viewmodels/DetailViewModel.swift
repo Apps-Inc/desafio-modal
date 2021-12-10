@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import RxSwift
 
 struct DetailViewModel {
+    private let disposeBag = DisposeBag()
     var repoImagePath: String!
     var repoNameText: String!
     var starCountText: String!
@@ -15,9 +17,21 @@ struct DetailViewModel {
     var realeasesText: String!
     var branchsText: String!
     var colaboratorText: String!
-    var readmeScrollText: String!
+    var readmeScrollText = BehaviorSubject<String>(value: "")
 
-    init(filterService: FilterService) {
+    init(gitService: GitService, repository: RepositoryDetails) {
+        repoNameText = repository.name
+        starCountText = String(repository.stargazersCount)
+        commitsText = ""
+        realeasesText = ""
+        branchsText = ""
+        colaboratorText = ""
+
+        gitService.getReadme(fullName: repository.fullName).subscribe { [weak readmeScrollText] result in
+            guard let readmeText = try? result.get() else { return }
+            readmeScrollText?.onNext(readmeText)
+        }
+        .disposed(by: disposeBag)
 
     }
 }
