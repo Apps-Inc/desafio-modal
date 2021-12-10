@@ -53,6 +53,7 @@ class FilterViewController: UIViewController {
         }
 
         aplicar(filtros: filtros, ordem: ordem)
+        navigationController?.popViewController(animated: true)
     }
 
     func aplicar(filtros: [FilterButton], ordem: Order?) {
