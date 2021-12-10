@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; normalTitle = "SEGUIDORES"; ObjectID = "AQM-zW-R1F"; */
+"AQM-zW-R1F.normalTitle" = "FOLLOWERS";
+
+/* Class = "UILabel"; text = "FILTROS"; ObjectID = "BXE-oB-HUE"; */
+"BXE-oB-HUE.text" = "FILTERS";
+
+/* Class = "UIButton"; normalTitle = "CRESCENTE"; ObjectID = "MBZ-WJ-jQr"; */
+"MBZ-WJ-jQr.normalTitle" = "ASCENDING";
+
+/* Class = "UIButton"; normalTitle = "ESTRELAS"; ObjectID = "O5I-9B-QVc"; */
+"O5I-9B-QVc.normalTitle" = "DESCENDING";
+
+/* Class = "UILabel"; text = "ORDEM"; ObjectID = "cIf-FG-74f"; */
+"cIf-FG-74f.text" = "ORDER BY";
+
+/* Class = "UIButton"; normalTitle = "DECRESCENTE"; ObjectID = "iap-X6-ZoQ"; */
+"iap-X6-ZoQ.normalTitle" = "DESCENDING";
+
+/* Class = "UIButton"; normalTitle = "DATA"; ObjectID = "qMV-Ad-3Jh"; */
+"qMV-Ad-3Jh.normalTitle" = "DATE";

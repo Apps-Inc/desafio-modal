@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Filtrando:"; ObjectID = "386-GX-H5e"; */
+"386-GX-H5e.text" = "Filtrando:";
+
+/* Class = "UIButton"; configuration.title = "Limpar Filtros"; ObjectID = "ROs-hU-Q6U"; */
+"ROs-hU-Q6U.configuration.title" = "Limpar Filtros";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ROs-hU-Q6U"; */
+"ROs-hU-Q6U.normalTitle" = "Button";

@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Colaborator"; ObjectID = "DA9-Ex-3La"; */
+"DA9-Ex-3La.text" = "Colaborator";
+
+/* Class = "UILabel"; text = "Branchs"; ObjectID = "Fdd-O3-fdf"; */
+"Fdd-O3-fdf.text" = "Branchs";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MGF-M6-kyn"; */
+"MGF-M6-kyn.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NBo-5z-Gil"; */
+"NBo-5z-Gil.text" = "Label";
+
+/* Class = "UILabel"; text = "Commits"; ObjectID = "dxZ-3P-oKw"; */
+"dxZ-3P-oKw.text" = "Commits";
+
+/* Class = "UILabel"; text = "Repo"; ObjectID = "huv-4W-aQw"; */
+"huv-4W-aQw.text" = "Repo";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kkP-Np-ngc"; */
+"kkP-Np-ngc.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nua-JD-cUG"; */
+"nua-JD-cUG.text" = "Label";
+
+/* Class = "UILabel"; text = "Carregar README.md"; ObjectID = "oPG-ia-pcd"; */
+"oPG-ia-pcd.text" = "Carregar README.md";
+
+/* Class = "UILabel"; text = "Total de estrelas"; ObjectID = "omG-Pv-Zu3"; */
+"omG-Pv-Zu3.text" = "Total de estrelas";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pij-E3-0C6"; */
+"pij-E3-0C6.text" = "Label";
+
+/* Class = "UILabel"; text = "Realeases"; ObjectID = "xC1-th-XdQ"; */
+"xC1-th-XdQ.text" = "Realeases";
