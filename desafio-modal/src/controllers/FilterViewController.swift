@@ -36,6 +36,25 @@ class FilterViewController: UIViewController {
         filterUI.formatButton(button: filterUI.decrescente)
 
         navigationItem.title = "Filtrar"
+        let cleanFilterButton = UIBarButtonItem(title: "Limpar", style: .plain, target: self, action: #selector(cleanFilters))
+        cleanFilterButton.tintColor = UIColor(red: 100.0, green: 255.0, blue: 218.0, alpha: 1.0)
+        navigationItem.rightBarButtonItem = cleanFilterButton
+    }
+
+    @objc func cleanFilters() {
+        let buttons = [filterUI.estrelas, filterUI.seguidores, filterUI.data, filterUI.crescente, filterUI.decrescente]
+        for button in buttons {
+            button?.isSelected = false
+            formatButtonUnSelected(button!)
+        }
+        aplicar(filtros: [], ordem: nil)
+        navigationController?.popViewController(animated: true)
+    }
+
+    func formatButtonUnSelected(_ button: UIButton) {
+        button.backgroundColor = .white
+        button.titleLabel?.textColor = .black
+        button.setImage(UIImage(named: ""), for: .normal)
     }
 
     @IBAction func applyFilters(_ sender: Any) {

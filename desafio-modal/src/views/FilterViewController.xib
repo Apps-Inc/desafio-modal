@@ -25,7 +25,7 @@
                     <color key="backgroundColor" systemColor="labelColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yET-8J-cWq" customClass="SetFilterButtons" customModule="desafio_modal" customModuleProvider="target">
-                    <rect key="frame" x="-6" y="161" width="420" height="250"/>
+                    <rect key="frame" x="-6" y="161" width="420" height="350"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35q-pU-22z">
                     <rect key="frame" x="67" y="812" width="280" height="50"/>
@@ -37,7 +37,7 @@
                         <backgroundConfiguration key="background" cornerRadius="6">
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </backgroundConfiguration>
-                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="13"/>
                     </buttonConfiguration>
                     <connections>
                         <action selector="applyFilters:" destination="-1" eventType="touchUpInside" id="G53-mt-AVU"/>
@@ -51,8 +51,9 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yET-8J-cWq" secondAttribute="trailing" id="1a8-4J-xHM"/>
                 <constraint firstItem="35q-pU-22z" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Gjr-UG-861"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="yET-8J-cWq" secondAttribute="leading" constant="6" id="e2t-ir-JMG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="35q-pU-22z" secondAttribute="bottom" id="jTY-OQ-zkV"/>
                 <constraint firstItem="35q-pU-22z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="67" id="q5a-x7-WiG"/>
-                <constraint firstAttribute="bottom" secondItem="yET-8J-cWq" secondAttribute="bottom" constant="485" id="uEE-yw-fDO"/>
+                <constraint firstAttribute="bottom" secondItem="yET-8J-cWq" secondAttribute="bottom" constant="385" id="uEE-yw-fDO"/>
                 <constraint firstItem="35q-pU-22z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="veL-w8-rST"/>
             </constraints>
             <point key="canvasLocation" x="140.57971014492756" y="91.741071428571431"/>
