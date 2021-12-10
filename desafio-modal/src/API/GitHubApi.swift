@@ -1,20 +1,14 @@
 import Foundation
 
 struct GitHubApi {
-    // Para os que estiverem com problemas em acessar a API:
+    // Para os que estiverem com problemas em acessar a API, basta setar isso
+    // para true por padrão, mas lembre de não comitar essa mudança.
     //
-    // 1. clicar em desafio-modal à esquerda
-    // 2. selecionem o target "desafio-modal"
-    // 3. selecionar "Build Settings"
-    // 4. pesquisar por "other swift flags"
-    // 5. em Debug, adicione "-D MOCK_API_RESPONSES"
-    static var useMockedResponses: Bool = {
-        #if MOCK_API_RESPONSES
-        return true
-        #else
-        return false
-        #endif
-    }()
+    // A forma antiga (usando a flag MOCK_API_RESPONSES) afeta todos de qualquer
+    // forma, então e mais facil manter esse setting nesse arquivo.
+    //
+    // Precisa continuar como static var por causa dos testes.
+    static var useMockedResponses = false
 
     static let baseUrl = "https://api.github.com/"
 

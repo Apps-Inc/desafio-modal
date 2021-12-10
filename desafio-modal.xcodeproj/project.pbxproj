@@ -70,7 +70,7 @@
 		C6B1C39AC215541B533F09C9 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127D62E4286C040E2745E6B4 /* FilterButton.swift */; };
 		E0E08A52AB323CB1D4A78766 /* RepositoryBranchesResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E3A50CD86CDD5660F50DB /* RepositoryBranchesResponseDto.swift */; };
 		E7DE068B66E0A026BD7DC122 /* repository-details-response-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = E533576A4269E1D63A117BD3 /* repository-details-response-mock.json */; };
-		F7697E3AC035E6F7BB76E11F /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		F7697E3AC035E6F7BB76E11F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		F7BF620766D5B625AA7A2151 /* Queriable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C217A56F4EEB60EF47CF61 /* Queriable.swift */; };
 /* End PBXBuildFile section */
 
@@ -623,7 +623,7 @@
 				AF8C84EA268EAB5424E3A89A /* RepositoryBranchResponseDto.swift in Sources */,
 				4DEE13888DF1D3B66C698E7C /* RepositoryReadmeResponseDto.swift in Sources */,
 				E0E08A52AB323CB1D4A78766 /* RepositoryBranchesResponseDto.swift in Sources */,
-				F7697E3AC035E6F7BB76E11F /* BuildFile in Sources */,
+				F7697E3AC035E6F7BB76E11F /* (null) in Sources */,
 				4393DCBC8892800377A9A7B4 /* RepositoryResponseDto.swift in Sources */,
 				40FB74695C7A655FE7A23039 /* RepositoryDetailsResponseDto.swift in Sources */,
 				4CD5810C2761205400D8BC3C /* FilterViewController.swift in Sources */,
@@ -825,7 +825,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				OTHER_SWIFT_FLAGS = "-D MOCK_API_RESPONSES";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.desafio-modal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -852,7 +852,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				OTHER_SWIFT_FLAGS = "-D MOCK_API_RESPONSES";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.desafio-modal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
