@@ -1,12 +1,13 @@
 import Foundation
 
-enum FilterButton: String, CaseIterable {
+enum FilterButton: String, CaseIterable, Hashable {
+
     case star = "Estrelas"
     case followers = "Seguidores"
     case date = "Data"
-    case descending = "Decrescente"
+    case order = "ordem"
 
     var name: String {
-        self.rawValue
+        return self.rawValue
     }
 }

@@ -8,16 +8,16 @@
 import Foundation
 
 struct Filter {
-    let filtroA: Bool
-    let filtroB: Bool
+    let filters: [FilterButton]
+    let order: Order?
 
     init() {
-        filtroA = false
-        filtroB = false
+        filters = []
+        order = nil
     }
 
-    init(filtroA: Bool, filtroB: Bool) {
-        self.filtroA = filtroA
-        self.filtroB = filtroB
+    init(filters: [FilterButton], order: Order?) {
+        self.filters = filters
+        self.order = order
     }
 }

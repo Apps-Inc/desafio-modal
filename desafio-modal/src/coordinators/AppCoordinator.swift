@@ -22,7 +22,7 @@ class AppCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let viewModel = GitRepositoryViewModel(gitService: gitService)
+        let viewModel = GitRepositoryViewModel(gitService: gitService, filterService: filterService)
         let gitCollectionViewController = ViewController(nibName: ViewController.identifier, bundle: nil)
         gitCollectionViewController.viewModel = viewModel
         gitCollectionViewController.coordinator = self
@@ -40,6 +40,11 @@ class AppCoordinator: BaseCoordinator {
     }
 
     func openDetails() {
+        let viewModel = DetailViewModel(filterService: filterService)
+        let detailViewController = DetailViewController(nibName: DetailViewController.identifier, bundle: nil)
+        detailViewController.viewModel = viewModel
+        detailViewController.coordinator = self
 
+        self.navigationController.pushViewController(detailViewController, animated: true)
     }
 }
