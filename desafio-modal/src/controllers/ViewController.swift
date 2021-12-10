@@ -4,6 +4,7 @@ import RxCocoa
 
 class ViewController: UIViewController {
 
+    @IBOutlet var searchBar: UIStackView!
     static let identifier = "ViewController"
     private let disposeBag = DisposeBag()
 
@@ -62,7 +63,7 @@ class ViewController: UIViewController {
     }
 
     @objc func search() {
-
+        searchBar.isHidden = searchBar.isHidden ? false : true
     }
 
     func createFilterButton(name: FilterButton, enabled: Bool = false) {
