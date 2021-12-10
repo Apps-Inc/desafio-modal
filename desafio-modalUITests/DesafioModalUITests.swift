@@ -1,19 +1,23 @@
 import XCTest
 
+
 class DesafioModalUITests: XCTestCase {
     var app: XCUIApplication!
-
+    
     override func setUp() {
         super.setUp()
+        XCUIDevice.shared.orientation = .portrait
+        
         // Since UI tests are more expensive to run, it's usually a good idea
         // to exit if a failure was encountered
-        continueAfterFailure = false
+        continueAfterFailure = true
 
         app = XCUIApplication()
 
         // We send a command line argument to our app,
         // to enable it to reset its state
-        app.launchArguments.append("--uitesting")
+
+  
     }
     
     override func setUpWithError() throws {
@@ -22,27 +26,30 @@ class DesafioModalUITests: XCTestCase {
 
         // In UI tests it is usually best to stop immediately when a failure
         // occurs.
-        continueAfterFailure = false
+        continueAfterFailure = true
 
         // In UI tests it’s important to set the initial state - such as
         // interface orientation - required for your tests before they run. The
         // setUp method is a good place to do this.
+        
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of
         // each test method in the class.
-        try super.setUpWithError()
-        continueAfterFailure = false
+   
 
-        app.launch()
+        try super.tearDownWithError()
     }
 
     func testFilterAdditionAndRemoval() throws {
-                
+           
+        app = XCUIApplication()
+        app.launchArguments.append("--uitesting")
+        
         app.launch()
 
-        let app = XCUIApplication()
+
 
         app.navigationBars["desafio_modal.View"].buttons["Add"].tap()
         app.buttons["SEGUIDORES"].tap()
@@ -59,11 +66,13 @@ class DesafioModalUITests: XCTestCase {
 
     }
     
-    func testExample() throws {
+    func testNavigationToFilterSection() throws {
         // UI tests must launch the application that they test.
+        app = XCUIApplication()
+        app.launchArguments.append("--uitesting")
         
+        app.launch()
         
-        let app = XCUIApplication()
         let toFiltersButton = app.navigationBars["desafio_modal.View"].buttons["Add"]
         toFiltersButton.tap()
         
