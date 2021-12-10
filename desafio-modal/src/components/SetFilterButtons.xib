@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="ERa-UT-nlG" userLabel="Filtros Stack">
-                    <rect key="frame" x="20" y="30" width="267" height="69.5"/>
+                    <rect key="frame" x="30" y="20.5" width="331" height="79.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FILTROS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXE-oB-HUE">
                             <rect key="frame" x="0.0" y="0.0" width="45" height="13.5"/>
@@ -31,12 +31,14 @@
                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Cik-cH-BNL">
-                            <rect key="frame" x="0.0" y="39.5" width="267" height="30"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Cik-cH-BNL">
+                            <rect key="frame" x="0.0" y="39.5" width="331" height="40"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5I-9B-QVc">
-                                    <rect key="frame" x="0.0" y="0.0" width="77" height="30"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="98" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="98" id="JQN-rm-AId"/>
+                                    </constraints>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="ESTRELAS">
@@ -54,7 +56,10 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQM-zW-R1F">
-                                    <rect key="frame" x="95" y="0.0" width="77" height="30"/>
+                                    <rect key="frame" x="110" y="0.0" width="130" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="130" id="V2R-fs-YqO"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -64,7 +69,11 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMV-Ad-3Jh">
-                                    <rect key="frame" x="190" y="0.0" width="77" height="30"/>
+                                    <rect key="frame" x="252" y="0.0" width="79" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="79" id="5Mg-dG-5yr"/>
+                                        <constraint firstAttribute="height" constant="40" id="QmF-dT-Xes"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="DATA">
@@ -77,8 +86,6 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="AQM-zW-R1F" firstAttribute="height" secondItem="O5I-9B-QVc" secondAttribute="height" id="LCR-f0-a1c"/>
-                                <constraint firstItem="AQM-zW-R1F" firstAttribute="width" secondItem="O5I-9B-QVc" secondAttribute="width" id="UuG-1d-13D"/>
-                                <constraint firstItem="AQM-zW-R1F" firstAttribute="width" secondItem="qMV-Ad-3Jh" secondAttribute="width" id="gLE-YI-495"/>
                                 <constraint firstItem="AQM-zW-R1F" firstAttribute="height" secondItem="qMV-Ad-3Jh" secondAttribute="height" id="qQJ-bj-awF"/>
                             </constraints>
                         </stackView>
@@ -87,9 +94,12 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhg-T3-g4z" userLabel="LInha">
                     <rect key="frame" x="0.0" y="124.5" width="414" height="1"/>
                     <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="p8N-qv-BFx"/>
+                    </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="0oU-IG-4gb" userLabel="Ordem View">
-                    <rect key="frame" x="22.5" y="126" width="280" height="68.5"/>
+                    <rect key="frame" x="30" y="165.5" width="322" height="78.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORDEM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIf-FG-74f">
                             <rect key="frame" x="0.0" y="0.0" width="40.5" height="13.5"/>
@@ -97,11 +107,15 @@
                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hQy-Ak-ngx">
-                            <rect key="frame" x="0.0" y="38.5" width="280" height="30"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hQy-Ak-ngx">
+                            <rect key="frame" x="0.0" y="38.5" width="322" height="40"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBZ-WJ-jQr">
-                                    <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="141" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="141" id="F99-sF-64a"/>
+                                        <constraint firstAttribute="height" constant="40" id="qPi-B9-jun"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -113,7 +127,10 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iap-X6-ZoQ">
-                                    <rect key="frame" x="160" y="0.0" width="120" height="30"/>
+                                    <rect key="frame" x="181" y="0.0" width="141" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="141" id="d4z-Uk-V5d"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -127,30 +144,23 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="MBZ-WJ-jQr" firstAttribute="height" secondItem="iap-X6-ZoQ" secondAttribute="height" id="DTK-S7-Zi0"/>
-                                <constraint firstItem="MBZ-WJ-jQr" firstAttribute="width" secondItem="iap-X6-ZoQ" secondAttribute="width" id="d1W-xg-Pdu"/>
                             </constraints>
                         </stackView>
                     </subviews>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="hQy-Ak-ngx" secondAttribute="trailing" id="9O8-Fb-5Ef"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="0oU-IG-4gb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="22.5" id="2zu-DD-c3s"/>
+                <constraint firstItem="0oU-IG-4gb" firstAttribute="top" secondItem="Lhg-T3-g4z" secondAttribute="bottom" constant="40" id="322-hx-OnG"/>
+                <constraint firstItem="Lhg-T3-g4z" firstAttribute="top" secondItem="ERa-UT-nlG" secondAttribute="bottom" constant="24.5" id="J3W-Rp-Jt9"/>
                 <constraint firstItem="Lhg-T3-g4z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LRT-du-U3E"/>
                 <constraint firstAttribute="trailing" secondItem="Lhg-T3-g4z" secondAttribute="trailing" id="Sfs-vG-tZJ"/>
-                <constraint firstItem="Lhg-T3-g4z" firstAttribute="top" secondItem="ERa-UT-nlG" secondAttribute="bottom" constant="25" id="aDW-kn-fOb"/>
-                <constraint firstItem="Lhg-T3-g4z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="124.5" id="gUp-R2-3P5"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0oU-IG-4gb" secondAttribute="trailing" constant="111.5" id="gqS-eb-SQs"/>
-                <constraint firstItem="ERa-UT-nlG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="kDJ-jm-BNH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="ERa-UT-nlG" secondAttribute="top" constant="23.5" id="jT3-rc-gcK"/>
                 <constraint firstItem="Lhg-T3-g4z" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kuB-ZO-OWP"/>
-                <constraint firstItem="0oU-IG-4gb" firstAttribute="top" secondItem="Lhg-T3-g4z" secondAttribute="bottom" constant="0.5" id="qpe-Kq-KFp"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0oU-IG-4gb" secondAttribute="bottom" constant="55.5" id="uI5-yb-gYV"/>
-                <constraint firstItem="ERa-UT-nlG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="wfQ-JV-UHg"/>
+                <constraint firstItem="Lhg-T3-g4z" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="qqt-de-aA6"/>
+                <constraint firstItem="ERa-UT-nlG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" constant="10" id="wfQ-JV-UHg"/>
+                <constraint firstItem="0oU-IG-4gb" firstAttribute="leading" secondItem="ERa-UT-nlG" secondAttribute="leading" id="woV-Wv-dSm"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-136.23188405797103" y="-239.0625"/>
