@@ -30,15 +30,15 @@ class ViewController: UIViewController {
     }
 
     func setupNavigationBar() {
-        if let navigationBar = self.navigationController?.navigationBar {
-            let firstFrame = CGRect(x: navigationBar.frame.width/6, y: 0,
-                                    width: navigationBar.frame.width/2,
-                                    height: navigationBar.frame.height)
-            let firstLabel = UILabel(frame: firstFrame)
-            firstLabel.text = "Github"
-            firstLabel.textColor = .white
-            navigationBar.addSubview(firstLabel)
-        }
+//        if let navigationBar = self.navigationController?.navigationBar {
+//            let firstFrame = CGRect(x: navigationBar.frame.width/6, y: 0,
+//                                    width: navigationBar.frame.width/2,
+//                                    height: navigationBar.frame.height)
+//            let firstLabel = UILabel(frame: firstFrame)
+//            firstLabel.text = "Github"
+//            firstLabel.textColor = .white
+//            navigationBar.addSubview(firstLabel)
+//        }
 
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self,
                                                             action: #selector(search))
@@ -52,6 +52,9 @@ class ViewController: UIViewController {
 
         navigationItem.rightBarButtonItems = [filterButton, searchButton]
         navigationItem.backBarButtonItem = backButton
+        navigationItem.title = "Github"
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
 
     @objc func openFilter() {
