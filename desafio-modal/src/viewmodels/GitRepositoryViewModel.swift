@@ -50,11 +50,15 @@ class GitRepositoryViewModel {
     }
 
     func removeFilterItem(item: FilterButton) {
-//        filters.onNext()
         guard let filterOptions = try? filters.value() else { return }
 
-        let selected = filterOptions.filters.filter { $0 != item }
-        let newFilter = Filter(filters: selected, order: filterOptions.order)
-        filters.onNext(newFilter)
+        if item == .order {
+            let newFilter = Filter(filters: filterOptions.filters, order: nil)
+            filters.onNext(newFilter)
+        } else {
+            let selected = filterOptions.filters.filter { $0 != item }
+            let newFilter = Filter(filters: selected, order: filterOptions.order)
+            filters.onNext(newFilter)
+        }
     }
 }

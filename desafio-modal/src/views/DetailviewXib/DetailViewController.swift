@@ -30,9 +30,14 @@ class DetailViewController: UIViewController {
         detailUI.repoNameLabel.text = viewModel.repoNameText
         detailUI.starCountLabel.text = viewModel.starCountText
 
+        viewModel.image.bind(to: detailUI.repoImage.rx.image)
+            .disposed(by: disposeBag)
         viewModel.readmeScrollText.bind(to: detailUI.readmeTextArea.rx.text)
             .disposed(by: disposeBag)
-
+        viewModel.commitsText.bind(to: detailUI.commitsLabel.rx.text)
+            .disposed(by: disposeBag)
+        viewModel.branchsText.bind(to: detailUI.branchsLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 
 }

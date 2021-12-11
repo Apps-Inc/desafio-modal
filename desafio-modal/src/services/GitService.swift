@@ -60,7 +60,32 @@ class GitService {
             return Disposables.create()
         }
         .asSingle()
+    }
 
+    func getCommitCount(fullName: String) -> Single<Int> {
+        Observable.create { observer in
+            GitHubApi.Get.countCommits(fullName: fullName) { result in
+                if let readme = result {
+                    observer.onNext(readme)
+                }
+                observer.onCompleted()
+            }
+            return Disposables.create()
+        }
+        .asSingle()
+    }
+
+    func getBranchesCount(fullName: String) -> Single<Int> {
+        Observable.create { observer in
+            GitHubApi.Get.countBranches(fullName: fullName) { result in
+                if let readme = result {
+                    observer.onNext(readme)
+                }
+                observer.onCompleted()
+            }
+            return Disposables.create()
+        }
+        .asSingle()
     }
 
 }

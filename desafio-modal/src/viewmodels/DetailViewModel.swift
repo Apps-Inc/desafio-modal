@@ -7,25 +7,24 @@
 
 import Foundation
 import RxSwift
+import UIKit
 
-struct DetailViewModel {
+class DetailViewModel {
     private let disposeBag = DisposeBag()
-    var repoImagePath: String!
-    var repoNameText: String!
-    var starCountText: String!
-    var commitsText: String!
-    var realeasesText: String!
-    var branchsText: String!
-    var colaboratorText: String!
+    var repoImagePath: URL?
+    var image = BehaviorSubject<UIImage?>(value: nil)
+    var repoNameText: String
+    var starCountText: String
+    var commitsText = BehaviorSubject<String>(value: "")
+    var realeasesText = BehaviorSubject<String>(value: "")
+    var branchsText = BehaviorSubject<String>(value: "")
+    var colaboratorText = BehaviorSubject<String>(value: "")
     var readmeScrollText = BehaviorSubject<String>(value: "")
 
     init(gitService: GitService, repository: RepositoryDetails) {
         repoNameText = repository.name
         starCountText = String(repository.stargazersCount)
-        commitsText = ""
-        realeasesText = ""
-        branchsText = ""
-        colaboratorText = ""
+        repoImagePath = repository.avatarUrl
 
         gitService.getReadme(fullName: repository.fullName).subscribe { [weak readmeScrollText] result in
             guard let readmeText = try? result.get() else { return }
@@ -33,5 +32,25 @@ struct DetailViewModel {
         }
         .disposed(by: disposeBag)
 
+        gitService.getBranchesCount(fullName: repository.fullName).subscribe { [weak branchsText] result in
+            guard let count = try? result.get() else { return }
+            branchsText?.onNext(String(count))
+        }
+        .disposed(by: disposeBag)
+
+        gitService.getCommitCount(fullName: repository.fullName).subscribe { [weak commitsText] result in
+            guard let count = try? result.get() else { return }
+            commitsText?.onNext(String(count))
+        }
+        .disposed(by: disposeBag)
+
+        DispatchQueue.global(qos: .userInteractive).async { [weak image, repoImagePath] in
+            if
+                let imageUrl = repoImagePath,
+                let data = try? Data(contentsOf: imageUrl)
+            {
+                image?.onNext(UIImage(data: data))
+            }
+        }
     }
 }
