@@ -14,7 +14,12 @@ class DesafioModalUITests: XCTestCase {
         continueAfterFailure = false
 
         app = XCUIApplication()
-        app.launchArguments.append("--uitesting")
+        app.launchArguments = [
+            "--uitesting",
+
+            "-AppleLanguages", "(pt)",
+            "-AppleLocale", "pt_BR"
+        ]
         app.launch()
     }
 
