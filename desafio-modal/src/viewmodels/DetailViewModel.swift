@@ -7,10 +7,12 @@
 
 import Foundation
 import RxSwift
+import UIKit
 
-struct DetailViewModel {
+class DetailViewModel {
     private let disposeBag = DisposeBag()
     var repoImagePath: URL?
+    var image = BehaviorSubject<UIImage?>(value: nil)
     var repoNameText: String
     var starCountText: String
     var commitsText = BehaviorSubject<String>(value: "")
@@ -41,5 +43,14 @@ struct DetailViewModel {
             commitsText?.onNext(String(count))
         }
         .disposed(by: disposeBag)
+
+        DispatchQueue.global(qos: .userInteractive).async { [weak image, repoImagePath] in
+            if
+                let imageUrl = repoImagePath,
+                let data = try? Data(contentsOf: imageUrl)
+            {
+                image?.onNext(UIImage(data: data))
+            }
+        }
     }
 }

@@ -33,8 +33,6 @@ class FilterViewModel {
     }
 
     func apply(filters: [FilterButton], order: Order?) {
-
-        print("selec", filters)
         let filterOptions = Filter(filters: filters, order: order)
         filterService.filter.onNext(filterOptions)
     }
