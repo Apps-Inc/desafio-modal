@@ -25,7 +25,7 @@ class GitRepositoryViewModel {
         self.gitService = gitService
         self.allRepositories = repositories.asObservable()
 
-        gitService.test()
+        _ = gitService.test()
             .subscribe { print($0) }
     }
 

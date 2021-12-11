@@ -29,13 +29,13 @@ class FilterViewModel {
             filterB = BehaviorSubject<Bool>(value: false)
         }
 
-        filterA.subscribe { res in
+        _ = filterA.subscribe { res in
             if let val = res.element {
                 print("val1", val)
             }
         }
 
-        filterService.filter.subscribe { res in
+        _ = filterService.filter.subscribe { res in
             if let val = res.element {
                 print("filtro", val)
             }
