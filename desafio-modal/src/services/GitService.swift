@@ -8,48 +8,22 @@
 import Foundation
 import RxSwift
 
-struct RepositoryItem {
-    let id: Int
-    let name: String
-    let fullName: String
-    let htmlUrl: String
-    let url: String
-    let estrelas: Int
-//    let seguidores: Int
-//    let data: Date
-
-    init(_ repository: Repository, estrelas: Int) {
-        id = repository.id
-        name = repository.name
-        fullName = repository.fullName
-        htmlUrl = repository.htmlUrl
-        url = repository.url
-        self.estrelas = estrelas
-    }
-}
-
 class GitService {
     private let lastId = 0
     let repositoriesCache = BehaviorSubject<Repositories>(value: [])
 
-    func test(lastId: Int = 0) -> Single<[RepositoryItem]> {
-
-        return repositories(lastId: lastId)
+    func getRepositoriesDetailList(lastId: Int = 0) -> Observable<[RepositoryDetails]> {
+        return getRepositoriesList(lastId: lastId)
             .asObservable()
-            .flatMap { [weak self] repo in
-                return Observable.zip(repo[0..<5].map {self!.getRepositoryItem(repository: $0) })
+            .flatMap { [weak self] (repos: [Repository]) in
+                return Observable.zip(repos[0..<5].map { (repo: Repository) in
+                        self!.getRepositoryDetail(repository: repo).asObservable()
+
+                })
             }
-            .asSingle()
-
     }
 
-    func repositories(lastId: Int = 0) -> Single<Repositories> {
-
-        return getRepositories(lastId: lastId)
-    }
-
-    private func getRepositories(lastId: Int = 0) -> Single<Repositories> {
-
+    private func getRepositoriesList(lastId: Int = 0) -> Single<Repositories> {
         return Observable.create { observer in
             GitHubApi.Get.repositories(lastId: lastId) { repositories in
                 observer.onNext(repositories ?? [])
@@ -60,13 +34,7 @@ class GitService {
         .asSingle()
     }
 
-    func getRepositoryDetail() -> Single<GitRepositoryDetail> {
-        return Single.just(
-            GitRepositoryDetail(name: "Flygondex")
-        )
-    }
-
-    func getRepositoryDetail2(repository: Repository) -> Single<RepositoryDetails> {
+    private func getRepositoryDetail(repository: Repository) -> Single<RepositoryDetails> {
         return Observable.create { observer in
             GitHubApi.Get.repositoryDetails(fullName: repository.fullName) { detail in
                 if let detail = detail {
@@ -76,19 +44,23 @@ class GitService {
                     observer.onCompleted()
                 }
             }
-
             return Disposables.create()
         }
         .asSingle()
     }
 
-    func getRepositoryItem(repository: Repository) -> Observable<RepositoryItem> {
-        return getRepositoryDetail2(repository: repository)
-            .map { detail in
-                RepositoryItem(repository, estrelas: detail.stargazersCount)
-
+    func getReadme(fullName: String) -> Single<String> {
+        return Observable.create { observer in
+            GitHubApi.Get.readme(fullName: fullName) { result in
+                if let readme = result {
+                    observer.onNext(readme)
+                }
+                observer.onCompleted()
             }
-            .asObservable()
+            return Disposables.create()
+        }
+        .asSingle()
+
     }
 
 }

@@ -1,24 +1,25 @@
 //
-//  DetailView.swift
+//  SearchInputButton.swift
 //  desafio-modal
 //
-//  Created by DIOGO OLIVEIRA NEISS on 08/12/21.
+//  Created by DIOGO OLIVEIRA NEISS on 09/12/21.
 //
 
 import UIKit
 
-class DetailView: UIView {
+class SearchInputButton: UIView {
 
-    @IBOutlet weak var repoImage: UIImageView!
-    @IBOutlet weak var repoNameLabel: UILabel!
-    @IBOutlet weak var starCountLabel: UILabel!
-    @IBOutlet weak var commitsLabel: UILabel!
-    @IBOutlet weak var realeasesLabel: UILabel!
-    @IBOutlet weak var branchsLabel: UILabel!
-    @IBOutlet weak var colaboratorLabel: UILabel!
-    @IBOutlet weak var readmeScrollView: UIScrollView!
-    @IBOutlet weak var readmeTextArea: UITextView!
-    static let identifier = "DetailView"
+    // TODO: tirar o text field background, mover o texto pra esquerda,
+    // consertar bordas arredondadas, aumentar tamanho do text field
+
+    @IBOutlet weak var searchBar: UISearchBar!
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
 
     var view: UIView!
 
@@ -41,7 +42,7 @@ class DetailView: UIView {
 
     func loadViewFromNib() -> UIView {
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: DetailView.identifier, bundle: bundle)
+        let nib = UINib(nibName: "SearchInputButton", bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil).first as? UIView
         guard let view = view else { return self.view }
         return view

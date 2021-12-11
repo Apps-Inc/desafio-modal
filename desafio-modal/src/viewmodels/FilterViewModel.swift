@@ -12,42 +12,30 @@ protocol FilterDelegate: AnyObject {
     func onFilterApply()
 }
 
+enum Order: String {
+    case DESCENDING = "Decrescente"
+    case ASCENDING = "Crescente"
+}
+
 class FilterViewModel {
     private let filterService: FilterService
 
-    let filterA: BehaviorSubject<Bool>
-    let filterB: BehaviorSubject<Bool>
+    var filter: Filter
 
     init(filterService: FilterService) {
         self.filterService = filterService
 
         if let filterValue = try? filterService.filter.value() {
-            filterA = BehaviorSubject<Bool>(value: filterValue.filtroA)
-            filterB = BehaviorSubject<Bool>(value: filterValue.filtroB)
+            filter = filterValue
         } else {
-            filterA = BehaviorSubject<Bool>(value: false)
-            filterB = BehaviorSubject<Bool>(value: false)
-        }
-
-        _ = filterA.subscribe { res in
-            if let val = res.element {
-                print("val1", val)
-            }
-        }
-
-        _ = filterService.filter.subscribe { res in
-            if let val = res.element {
-                print("filtro", val)
-            }
+            filter = Filter()
         }
     }
 
-    func apply() {
-        guard
-            let filtroA = try? filterA.value(),
-            let filtroB = try? filterB.value() else { return }
+    func apply(filters: [FilterButton], order: Order?) {
 
-        let filter = Filter(filtroA: filtroA, filtroB: filtroB)
-        filterService.filter.onNext(filter)
+        print("selec", filters)
+        let filterOptions = Filter(filters: filters, order: order)
+        filterService.filter.onNext(filterOptions)
     }
 }

@@ -160,6 +160,16 @@
                     <constraint firstAttribute="bottomMargin" secondItem="2AG-eG-YiP" secondAttribute="bottom" constant="-1" id="o4G-J5-A3F"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="bottonView" destination="2AG-eG-YiP" id="hdg-8T-R02"/>
+                <outlet property="dataLabel" destination="tNZ-TK-lcM" id="hMm-tF-G1F"/>
+                <outlet property="followersLabel" destination="ZU2-nn-p4C" id="lLD-YY-Wl0"/>
+                <outlet property="gitImage" destination="3fW-Ia-Lvk" id="X6I-sq-A2E"/>
+                <outlet property="labelExtra" destination="H5g-af-XKh" id="Ctn-mD-QXm"/>
+                <outlet property="repositoryLabel" destination="Bl6-MX-zcg" id="JoS-AO-DMN"/>
+                <outlet property="starCountLabel" destination="dD5-8y-lA6" id="h7R-J6-qfZ"/>
+                <outlet property="topView" destination="bIH-6e-bDi" id="cQh-1g-hah"/>
+            </connections>
             <point key="canvasLocation" x="263.768115942029" y="-49.553571428571423"/>
         </tableViewCell>
     </objects>
