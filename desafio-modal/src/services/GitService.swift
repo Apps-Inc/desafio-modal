@@ -102,4 +102,30 @@ class GitService {
         .asSingle()
     }
 
+    func getContributors(fullName: String) -> Single<Int> {
+        Observable.create { observer in
+            GitHubApi.Get.countContributors(fullName: fullName) { result in
+                if let contributors = result {
+                    observer.onNext(contributors)
+                }
+                observer.onCompleted()
+            }
+            return Disposables.create()
+        }
+        .asSingle()
+    }
+
+    func getReleases(fullName: String) -> Single<Int> {
+        Observable.create { observer in
+            GitHubApi.Get.countReleases(fullName: fullName) { result in
+                if let releases = result {
+                    observer.onNext(releases)
+                }
+                observer.onCompleted()
+            }
+            return Disposables.create()
+        }
+        .asSingle()
+    }
+
 }
