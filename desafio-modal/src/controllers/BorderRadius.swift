@@ -10,11 +10,6 @@ import UIKit
 
 extension UIView {
 
-//    func roundCorners(cornerRadiuns: CGFloat, typeCorners: CACornerMask) {
-//        self.layer.cornerRadius = cornerRadiuns
-//        self.layer.maskedCorners = typeCorners
-//        self.clipsToBounds = true
-//    }
     func roundTop(viewName: UIView!) {
         viewName.clipsToBounds = true
         viewName.layer.cornerRadius = 10
