@@ -248,6 +248,33 @@ struct GitHubApi {
         ) {
             countContributors(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
         }
+
+        static func countReleases(
+            fullName: String,
+            completionHandler: @escaping (Int?) -> Void
+        ) { if useMockedResponses {
+            completionHandler(decode(
+                as: RepositoryReleasesResponseDto.self,
+                data: RepositoryReleasesResponseDto.dataMock
+            )?.count)
+        } else {
+            let url = baseUrl + String(
+                format: "repos/%@/releases",
+                fullName
+            )
+
+            getDecoded(as: RepositoryReleasesResponseDto.self, from: url) { decoded in
+                completionHandler(decoded?.count)
+            }
+        }}
+
+        static func countReleases(
+            owner: String,
+            repo: String,
+            completionHandler: @escaping (Int?) -> Void
+        ) {
+            countReleases(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
+        }
     }
 }
 
