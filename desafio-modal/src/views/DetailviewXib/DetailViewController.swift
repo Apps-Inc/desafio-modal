@@ -38,6 +38,10 @@ class DetailViewController: UIViewController {
             .disposed(by: disposeBag)
         viewModel.branchsText.bind(to: detailUI.branchsLabel.rx.text)
             .disposed(by: disposeBag)
+        viewModel.colaboratorText.bind(to: detailUI.colaboratorLabel.rx.text)
+            .disposed(by: disposeBag)
+        viewModel.realeasesText.bind(to: detailUI.realeasesLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 
 }

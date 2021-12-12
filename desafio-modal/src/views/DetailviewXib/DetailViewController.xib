@@ -37,7 +37,7 @@
                         <backgroundConfiguration key="background" cornerRadius="6">
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </backgroundConfiguration>
-                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="13"/>
                     </buttonConfiguration>
                 </button>
             </subviews>
