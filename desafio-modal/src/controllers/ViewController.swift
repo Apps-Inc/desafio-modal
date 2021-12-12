@@ -4,6 +4,7 @@ import RxCocoa
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var searchInput: UITextField!
     @IBOutlet var searchBar: UIStackView!
     @IBOutlet weak var viewBackgroundRadius: UIView!
     static let identifier = "ViewController"
@@ -32,6 +33,23 @@ class ViewController: UIViewController {
         setupNavigationBar()
         setUpTableView()
         setUpFilterView()
+        setUpSearch()
+
+    }
+
+    func setUpSearch() {
+        guard let viewModel = viewModel else { return }
+        searchInput.rx
+                .controlEvent([.editingChanged])
+                .asObservable()
+                .subscribe {[weak searchInput, viewModel] _ in
+                    viewModel.filterName.onNext(searchInput?.text ?? "")
+                }
+                .disposed(by: disposeBag)
+
+        viewModel.filterName.bind(to: searchInput.rx.text)
+            .disposed(by: disposeBag)
+
     }
 
     func setupNavigationBar() {
@@ -102,6 +120,7 @@ class ViewController: UIViewController {
             guard let item = item as? UIButton else {return}
             item.sendActions(for: .touchUpInside)
         }
+        viewModel?.filterName.onNext("")
     }
 
     func enableFilterButton(button: UIButton, label: String? = nil, atIndex: Int = 0) {
