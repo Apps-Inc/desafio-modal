@@ -23,6 +23,20 @@ class GitService {
             }
     }
 
+    func getRepositoriesDetailList(searchBy name: String) -> Observable<[RepositoryDetails]> {
+        return Observable.create { observer in
+            GitHubApi.Get.search(query: name) { detail in
+                if let detail = detail {
+                    observer.onNext(detail.items)
+                    observer.onCompleted()
+                } else {
+                    observer.onCompleted()
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
     private func getRepositoriesList(lastId: Int = 0) -> Single<Repositories> {
         return Observable.create { observer in
             GitHubApi.Get.repositories(lastId: lastId) { repositories in
