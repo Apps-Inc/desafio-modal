@@ -9,7 +9,8 @@ import UIKit
 
 class SearchInputButton: UIView {
 
-   // TODO: tirar o text field background, mover o texto pra esquerda, consertar bordas arredondadas, aumentar tamanho do text field
+    // TODO: tirar o text field background, mover o texto pra esquerda,
+    // consertar bordas arredondadas, aumentar tamanho do text field
 
     @IBOutlet weak var searchBar: UISearchBar!
     /*

@@ -36,7 +36,12 @@ class FilterViewController: UIViewController {
         filterUI.formatButton(button: filterUI.decrescente)
 
         navigationItem.title = "Filtrar"
-        let cleanFilterButton = UIBarButtonItem(title: "Limpar", style: .plain, target: self, action: #selector(cleanFilters))
+        let cleanFilterButton = UIBarButtonItem(
+            title: "Limpar",
+            style: .plain,
+            target: self,
+            action: #selector(cleanFilters)
+        )
         cleanFilterButton.tintColor = UIColor(red: 100.0, green: 255.0, blue: 218.0, alpha: 1.0)
         navigationItem.rightBarButtonItem = cleanFilterButton
     }

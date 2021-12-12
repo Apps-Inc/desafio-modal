@@ -8,7 +8,12 @@ struct GitHubApi {
     // forma, então e mais facil manter esse setting nesse arquivo.
     //
     // Precisa continuar como static var por causa dos testes.
-    static var useMockedResponses = false
+    static var useMockedResponses: Bool = {
+        let testing = CommandLine.arguments.contains("--uitesting")
+        if testing { print("WARNING: using mocked data") }
+
+        return testing
+    }()
 
     static let baseUrl = "https://api.github.com/"
 
