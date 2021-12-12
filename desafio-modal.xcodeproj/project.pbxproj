@@ -12,6 +12,8 @@
 		00B877BA275E71EB00F91872 /* Github_Teste.md in Resources */ = {isa = PBXBuildFile; fileRef = 00B877B9275E71EB00F91872 /* Github_Teste.md */; };
 		07B92E553E14049B816A6674 /* BorderRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5357B670195CB3756A1A2834 /* BorderRadius.swift */; };
 		0E12AF4B275E2DC900B67984 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E12AF4A275E2DC800B67984 /* ViewController.xib */; };
+		0E1C9E9027667DE900B14435 /* RepositoryReleasesResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C9E8F27667DE900B14435 /* RepositoryReleasesResponseDto.swift */; };
+		0E1C9E92276680E900B14435 /* repository-releases-response-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E1C9E91276680E900B14435 /* repository-releases-response-mock.json */; };
 		0EF776CB275E296C00F0B742 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CA275E296C00F0B742 /* AppDelegate.swift */; };
 		0EF776CD275E296C00F0B742 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CC275E296C00F0B742 /* SceneDelegate.swift */; };
 		0EF776CF275E296C00F0B742 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF776CE275E296C00F0B742 /* ViewController.swift */; };
@@ -74,7 +76,7 @@
 		C6B1C39AC215541B533F09C9 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127D62E4286C040E2745E6B4 /* FilterButton.swift */; };
 		E0E08A52AB323CB1D4A78766 /* RepositoryBranchesResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E3A50CD86CDD5660F50DB /* RepositoryBranchesResponseDto.swift */; };
 		E7DE068B66E0A026BD7DC122 /* repository-details-response-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = E533576A4269E1D63A117BD3 /* repository-details-response-mock.json */; };
-		F7697E3AC035E6F7BB76E11F /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		F7697E3AC035E6F7BB76E11F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		FD9CA136521D734F46100987 /* SearchInputButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161909D1E3CBCEEAAED63716 /* SearchInputButton.xib */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +105,8 @@
 		03912BEB5C46BAD1A15B0131 /* RepositoryBranchResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBranchResponseDto.swift; sourceTree = "<group>"; };
 		0B4FDE9AA9DF22D755B09D3F /* RepositoriesResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesResponseDto.swift; sourceTree = "<group>"; };
 		0E12AF4A275E2DC800B67984 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		0E1C9E8F27667DE900B14435 /* RepositoryReleasesResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryReleasesResponseDto.swift; sourceTree = "<group>"; };
+		0E1C9E91276680E900B14435 /* repository-releases-response-mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "repository-releases-response-mock.json"; sourceTree = "<group>"; };
 		0EF776C7275E296C00F0B742 /* desafio-modal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-modal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF776CA275E296C00F0B742 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EF776CC275E296C00F0B742 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -400,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				E533576A4269E1D63A117BD3 /* repository-details-response-mock.json */,
+				0E1C9E91276680E900B14435 /* repository-releases-response-mock.json */,
 				F6368108D4D551A060D57A83 /* repository-branches-response-mock.json */,
 				3117FF9643A9F2DBE4AC62B1 /* repository-contributors-response-mock.json */,
 				F0C2A86F1BB97A294880B08C /* repositories-response-mock.json */,
@@ -421,6 +426,7 @@
 				2E194FC273F9240D5B92737F /* RepositoryContributorsResponseDto.swift */,
 				9F182FC04943582695B287FD /* RepositoryContributorResponseDto.swift */,
 				A7FE035244B7E5658C71AA02 /* GitHubSearchResponseDto.swift */,
+				0E1C9E8F27667DE900B14435 /* RepositoryReleasesResponseDto.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 				00B877BA275E71EB00F91872 /* Github_Teste.md in Resources */,
 				0E12AF4B275E2DC900B67984 /* ViewController.xib in Resources */,
 				0EF776D4275E296E00F0B742 /* Assets.xcassets in Resources */,
+				0E1C9E92276680E900B14435 /* repository-releases-response-mock.json in Resources */,
 				2917261CEECBCFB2664FD599 /* repository-contributors-response-mock.json in Resources */,
 				0092836F276150EB00C7E13E /* LowerButton.xib in Resources */,
 				BB770405C38C29995E8A6649 /* repository-readme-mock.md in Resources */,
@@ -647,7 +654,7 @@
 				AF8C84EA268EAB5424E3A89A /* RepositoryBranchResponseDto.swift in Sources */,
 				4DEE13888DF1D3B66C698E7C /* RepositoryReadmeResponseDto.swift in Sources */,
 				E0E08A52AB323CB1D4A78766 /* RepositoryBranchesResponseDto.swift in Sources */,
-				F7697E3AC035E6F7BB76E11F /* BuildFile in Sources */,
+				F7697E3AC035E6F7BB76E11F /* (null) in Sources */,
 				4393DCBC8892800377A9A7B4 /* RepositoryResponseDto.swift in Sources */,
 				40FB74695C7A655FE7A23039 /* RepositoryDetailsResponseDto.swift in Sources */,
 				4CD5810C2761205400D8BC3C /* FilterViewController.swift in Sources */,
@@ -663,6 +670,7 @@
 				5A8DAC0179ACE0FBADE1BA95 /* DetailViewController.swift in Sources */,
 				07B92E553E14049B816A6674 /* BorderRadius.swift in Sources */,
 				302695B72CAD6B3E1752BEF4 /* ApiOrder.swift in Sources */,
+				0E1C9E9027667DE900B14435 /* RepositoryReleasesResponseDto.swift in Sources */,
 				5A59F432BD349BD2AE89B556 /* ApiSort.swift in Sources */,
 				1C056E4F4F9A0793A8E312B8 /* GitHubSearchResponseDto.swift in Sources */,
 				A0C84295B5CBE540EBDE8C08 /* Queriable.swift in Sources */,
@@ -705,15 +713,12 @@
 		};
 		81C441DA2763C84D000044EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 81C441D92763C84D000044EA;
 		};
 		81C441DC2763C854000044EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 81C441DB2763C854000044EA;
 		};
 		81C441DE2763C858000044EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 81C441DD2763C858000044EA;
 		};
 /* End PBXTargetDependency section */
 
