@@ -221,6 +221,33 @@ struct GitHubApi {
                 completionHandler(GitHubSearchResults(decoded, page: page))
             }
         }}
+
+        static func countContributors(
+            fullName: String,
+            completionHandler: @escaping (Int?) -> Void
+        ) { if useMockedResponses {
+            completionHandler(decode(
+                as: RepositoryContributorsResponseDto.self,
+                data: RepositoryContributorsResponseDto.dataMock
+            )?.count)
+        } else {
+            let url = baseUrl + String(
+                format: "repos/%@/stats/contributors",
+                fullName
+            )
+
+            getDecoded(as: RepositoryContributorsResponseDto.self, from: url) { decoded in
+                completionHandler(decoded?.count)
+            }
+        }}
+
+        static func countContributors(
+            owner: String,
+            repo: String,
+            completionHandler: @escaping (Int?) -> Void
+        ) {
+            countContributors(fullName: "\(owner)/\(repo)", completionHandler: completionHandler)
+        }
     }
 }
 
