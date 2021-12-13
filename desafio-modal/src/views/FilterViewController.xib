@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,7 +46,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="backgroundColor"/>
             <constraints>
                 <constraint firstItem="yET-8J-cWq" firstAttribute="top" secondItem="Whu-aR-5AW" secondAttribute="bottom" constant="29" id="0iQ-WF-wvC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yET-8J-cWq" secondAttribute="trailing" id="1a8-4J-xHM"/>
@@ -60,11 +61,11 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="backgroundColor">
+            <color red="0.92199999094009399" green="0.92500001192092896" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

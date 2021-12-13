@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -65,12 +66,15 @@
                         <constraint firstItem="386-GX-H5e" firstAttribute="height" secondItem="xLE-Lx-oA7" secondAttribute="height" multiplier="0.551724" id="dlZ-zi-pc9"/>
                     </constraints>
                 </stackView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="172" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAT-Wg-VIz">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="172" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAT-Wg-VIz">
                     <rect key="frame" x="10" y="238" width="394" height="530"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" name="backgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="530" id="MHi-xd-tOc"/>
                     </constraints>
+                    <color key="separatorColor" name="backgroundColor"/>
+                    <color key="sectionIndexBackgroundColor" name="backgroundColor"/>
+                    <color key="sectionIndexTrackingBackgroundColor" name="backgroundColor"/>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="7Ca-BC-CJE">
                     <rect key="frame" x="82" y="95" width="250" height="60"/>
@@ -102,7 +106,7 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="backgroundColor"/>
             <constraints>
                 <constraint firstItem="VTf-LT-PsC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="2ae-JX-lKw"/>
                 <constraint firstAttribute="bottom" secondItem="DHW-tP-vyf" secondAttribute="bottom" id="4L1-Xu-qMg"/>
@@ -120,11 +124,11 @@
     </objects>
     <resources>
         <image name="multiply" catalog="system" width="128" height="111"/>
+        <namedColor name="backgroundColor">
+            <color red="0.92199999094009399" green="0.92500001192092896" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
