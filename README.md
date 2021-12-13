@@ -15,7 +15,8 @@
 ## Funcionalidades pendentes
 
 - Paginação com rolagem infinita.
-- Implementar os filtros no array de repositórios
+- Achar caminho para evitar limitação de requests na API para aumentar a quantidade de repositórios mostrados
+- Imagem dos repositorios na home
 - Ajustes finos de UI
 - Testes completos de UI, verificando a implementação correta do que foi pedido
 
