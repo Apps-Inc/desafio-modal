@@ -26,3 +26,36 @@ extension Array where Element: Filterable {
         }
     }
 }
+
+ struct StarsGreaterThanFilter: Filterable {
+    typealias ListItemT = RepositoryDetails
+    typealias ParamT = Int
+
+    var param: ParamT
+
+    func keep(item: RepositoryDetails) -> Bool {
+        item.stargazersCount > param
+    }
+}
+
+ struct DateGreaterThanFilter: Filterable {
+    typealias ListItemT = RepositoryDetails
+    typealias ParamT = Date
+
+    var param: ParamT
+
+    func keep(item: RepositoryDetails) -> Bool {
+        item.createdAt > param
+    }
+}
+
+ struct FollowersGreaterThanFilter: Filterable {
+    typealias ListItemT = RepositoryDetails
+    typealias ParamT = Int
+
+    var param: ParamT
+
+    func keep(item: RepositoryDetails) -> Bool {
+        item.watchers > param
+    }
+}

@@ -17,9 +17,9 @@ class GitRepositoryViewModel {
     private let disposeBag = DisposeBag()
     private let gitService: GitService
     private let filterService: FilterService
-    private let repositories = BehaviorSubject<[RepositoryDetails]>(value: [])
+    private let repositoriesCached = BehaviorSubject<[RepositoryDetails]>(value: [])
 
-    let allRepositories: Observable<[RepositoryDetails]>
+    let repositories = BehaviorSubject<[RepositoryDetails]>(value: [])
     let filters: BehaviorSubject<Filter>
     let filterName = BehaviorSubject<String>(value: "")
 
@@ -30,7 +30,10 @@ class GitRepositoryViewModel {
         self.filterService = filterService
         self.filters = filterService.filter
 
-        self.allRepositories = repositories.asObservable()
+        repositoriesCached
+            .map {[weak self] in self?.filter(repositories: $0) ?? []}
+            .bind(to: repositories)
+            .disposed(by: disposeBag)
 
         filterName
             .distinctUntilChanged()
@@ -39,6 +42,17 @@ class GitRepositoryViewModel {
                 self?.updateRepositoryList()
         }
         .disposed(by: disposeBag)
+
+        filters
+            .subscribe { [weak self, repositoriesCached, repositories] _ in
+                guard
+                    let self = self,
+                    let repos = try? repositoriesCached.value() else { return }
+
+                let filtered = self.filter(repositories: repos)
+                repositories.onNext(filtered)
+            }
+            .disposed(by: disposeBag)
     }
 
     func updateRepositoryList() {
@@ -55,9 +69,9 @@ class GitRepositoryViewModel {
             .subscribe {[weak self] res in
                 guard !res.isCompleted else { return }
                 if let list = res.element {
-                    self?.repositories.onNext(list)
+                    self?.repositoriesCached.onNext(list)
                 } else {
-                   self?.repositories.onNext([])
+                   self?.repositoriesCached.onNext([])
                 }
             }
             .disposed(by: disposeBag)
@@ -68,9 +82,9 @@ class GitRepositoryViewModel {
             .subscribe {[weak self] res in
                 guard !res.isCompleted else { return }
                 if let list = res.element {
-                    self?.repositories.onNext(list)
+                    self?.repositoriesCached.onNext(list)
                 } else {
-                   self?.repositories.onNext([])
+                   self?.repositoriesCached.onNext([])
                 }
             }
             .disposed(by: disposeBag)
@@ -88,4 +102,40 @@ class GitRepositoryViewModel {
             filters.onNext(newFilter)
         }
     }
+
+    private func filter(repositories: [RepositoryDetails]) -> [RepositoryDetails] {
+        var repositories = repositories
+        guard let filterOptions = try? filters.value() else { return repositories }
+
+        repositories = repositories.filter {
+            return self.filter(repository: $0, by: filterOptions.filters)
+        }
+
+        guard let order = filterOptions.order else { return repositories}
+        return self.order(by: order, repositories: repositories)
+    }
+
+    private func filter(repository: RepositoryDetails, by filters: [FilterButton]) -> Bool {
+        return filters.allSatisfy {
+            switch $0 {
+            case .star:
+                return StarsGreaterThanFilter(param: 99).keep(item: repository)
+            case .followers:
+                return FollowersGreaterThanFilter(param: 100).keep(item: repository)
+            case .date:
+                return DateGreaterThanFilter(param: Date()).keep(item: repository)
+            default:
+                return true
+            }
+        }
+    }
+
+    private func order(by order: Order, repositories: [RepositoryDetails]) -> [RepositoryDetails] {
+        if order == .ASCENDING {
+            return repositories.sorted(by: {$0.name < $1.name})
+        } else {
+            return repositories.sorted(by: {$0.name > $1.name})
+        }
+    }
+
 }

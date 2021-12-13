@@ -34,7 +34,6 @@ class ViewController: UIViewController {
         setUpTableView()
         setUpFilterView()
         setUpSearch()
-
     }
 
     func setUpSearch() {
@@ -144,7 +143,7 @@ class ViewController: UIViewController {
         guard let viewModel = viewModel else { return }
 
         viewModel.updateRepositoryList()
-        viewModel.allRepositories
+        viewModel.repositories
             .bind(to: gitTableView.rx.items(
                 cellIdentifier: GitTableViewCell.identifier, cellType: GitTableViewCell.self)) { idx, repo, cel in
                     cel.updateColor(type: idx % 2 == 0 ? .black : .white)
