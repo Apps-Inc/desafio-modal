@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var filtrosStackView: UIStackView!
     var activeButtons = Set<FilterButton>()
     var buttons: [FilterButton: UIButton] = [:]
+    var refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,22 @@ class ViewController: UIViewController {
         setUpTableView()
         setUpFilterView()
         setUpSearch()
+
+        refreshControl.attributedTitle = NSAttributedString(string: "Puxe para atualizar")
+
+        refreshControl.addTarget(self, action: #selector(refreshOnPullToLoad(_:)), for: .valueChanged)
+
+        self.gitTableView.addSubview(refreshControl)
+
+    }
+
+    @objc func refreshOnPullToLoad(_ sender: AnyObject) {
+        guard let viewModel = viewModel else { return }
+
+        viewModel.updateRepositoryList()
+
+        self.gitTableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
 
     func setUpSearch() {
