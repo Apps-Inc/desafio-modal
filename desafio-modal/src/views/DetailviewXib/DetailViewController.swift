@@ -44,4 +44,14 @@ class DetailViewController: UIViewController {
             .disposed(by: disposeBag)
     }
 
+    @IBAction func share(_ sender: Any) {
+        let message = "Share this repository with your friends: "
+        let link = "https://www.github.com/"
+        if let link = NSURL(string: link) {
+            let objectsToShare = [message, link] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+            self.present(activityVC, animated: true, completion: nil)
+        }
+    }
 }
