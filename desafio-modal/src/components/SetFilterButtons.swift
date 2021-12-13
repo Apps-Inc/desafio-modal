@@ -98,13 +98,14 @@ class SetFilterButtons: UIView {
     }
 
     func formatButtonUnSelected(button: UIButton) {
-        button.backgroundColor = .white
+        button.backgroundColor = UIColor(named: "backgroundColor")
         button.titleLabel?.textColor = .black
         button.setImage(UIImage(named: ""), for: .normal)
     }
 
     func initialButtonFormat(buttons: [UIButton]) {
         for button in buttons {
+            button.backgroundColor = UIColor(named: "backgroundColor")
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.black.cgColor
             button.layer.cornerRadius = 5

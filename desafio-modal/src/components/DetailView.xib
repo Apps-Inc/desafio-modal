@@ -81,14 +81,14 @@
                             <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="30" trailing="8"/>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFL-lf-nAF">
-                            <rect key="frame" x="0.0" y="134" width="414" height="3"/>
-                            <color key="backgroundColor" systemColor="systemGrayColor"/>
+                            <rect key="frame" x="0.0" y="134" width="414" height="1"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="3" id="l8P-yY-EmS"/>
+                                <constraint firstAttribute="height" constant="1" id="rgy-up-Yph"/>
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Dck-GA-gB9">
-                            <rect key="frame" x="0.0" y="137" width="414" height="200"/>
+                            <rect key="frame" x="0.0" y="135" width="414" height="200"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M0Z-Kf-MvC">
                                     <rect key="frame" x="8" y="8" width="73.5" height="184"/>
@@ -189,14 +189,14 @@
                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="80"/>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgJ-CW-8DS">
-                            <rect key="frame" x="0.0" y="337" width="414" height="3"/>
-                            <color key="backgroundColor" systemColor="systemGrayColor"/>
+                            <rect key="frame" x="0.0" y="335" width="414" height="1"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="3" id="Gtm-L1-yHd"/>
+                                <constraint firstAttribute="height" constant="1" id="iK5-cC-fZD"/>
                             </constraints>
                         </view>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6ua-Z7-R4y">
-                            <rect key="frame" x="0.0" y="340" width="414" height="516"/>
+                            <rect key="frame" x="0.0" y="336" width="414" height="520"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <color key="textColor" systemColor="labelColor"/>
@@ -235,6 +235,9 @@
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
