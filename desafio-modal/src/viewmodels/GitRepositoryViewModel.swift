@@ -123,7 +123,8 @@ class GitRepositoryViewModel {
             case .followers:
                 return FollowersGreaterThanFilter(param: 100).keep(item: repository)
             case .date:
-                return DateGreaterThanFilter(param: Date()).keep(item: repository)
+                let date = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
+                return DateGreaterThanFilter(param: date).keep(item: repository)
             default:
                 return true
             }
