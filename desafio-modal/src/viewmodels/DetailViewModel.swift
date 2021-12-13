@@ -44,6 +44,18 @@ class DetailViewModel {
         }
         .disposed(by: disposeBag)
 
+        gitService.getContributors(fullName: repository.fullName).subscribe { [weak colaboratorText] result in
+            guard let count = try? result.get() else { return }
+            colaboratorText?.onNext(String(count))
+        }
+        .disposed(by: disposeBag)
+
+        gitService.getReleases(fullName: repository.fullName).subscribe { [weak realeasesText] result in
+            guard let count = try? result.get() else { return }
+            realeasesText?.onNext(String(count))
+        }
+        .disposed(by: disposeBag)
+
         DispatchQueue.global(qos: .userInteractive).async { [weak image, repoImagePath] in
             if
                 let imageUrl = repoImagePath,
