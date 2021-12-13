@@ -13,6 +13,7 @@ class DetailViewModel {
     private let disposeBag = DisposeBag()
     var repoImagePath: URL?
     var image = BehaviorSubject<UIImage?>(value: nil)
+    var repoFullName: String
     var repoNameText: String
     var starCountText: String
     var commitsText = BehaviorSubject<String>(value: "")
@@ -22,6 +23,7 @@ class DetailViewModel {
     var readmeScrollText = BehaviorSubject<String>(value: "")
 
     init(gitService: GitService, repository: RepositoryDetails) {
+        repoFullName = repository.fullName
         repoNameText = repository.name
         starCountText = String(repository.stargazersCount)
         repoImagePath = repository.avatarUrl
