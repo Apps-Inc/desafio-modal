@@ -16,7 +16,7 @@ class GitService {
         return getRepositoriesList(lastId: lastId)
             .asObservable()
             .flatMap { [weak self] (repos: [Repository]) in
-                return Observable.zip(repos[0..<5].map { (repo: Repository) in
+                return Observable.zip(repos[0..<10].map { (repo: Repository) in
                         self!.getRepositoryDetail(repository: repo).asObservable()
 
                 })

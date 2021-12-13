@@ -47,7 +47,7 @@ class DetailViewController: UIViewController {
     @IBAction func share(_ sender: Any) {
         guard let viewModel = viewModel else { return }
         let message = "Share this repository with your friends: "
-        let link = "https://www.github.com/" + viewModel.repoNameText
+        let link = "https://www.github.com/" + viewModel.repoFullName
         if let link = NSURL(string: link) {
             let objectsToShare = [message, link] as [Any]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
